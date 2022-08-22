@@ -1,0 +1,157 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Tile
+  m_Shader: {fileID: 4800000, guid: bee44b4a58655ee4cbff107302a3e131, type: 3}
+  m_ShaderKeywords: DR_CEL_EXTRA_ON _ALLOWALPHAOVERFLOW_OFF _CELPRIMARYMODE_SINGLE
+    _OVERRIDELIGHTMAPDIR_ON _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A _TEXTUREBLENDINGMODE_MULTIPLY
+    _UNITYSHADOWMODE_MULTIPLY
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _CelCurveTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _CelStepTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 0.12, y: 0.12}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 5a3832cc82e2e954194cde511c27c616, type: 3}
+        m_Scale: {x: 0.1, y: 0.11}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SpecGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _AllowAlphaOverflow: 0
+    - _AlphaClip: 0
+    - _Blend: 0
+    - _BumpScale: 1
+    - _CameraDistanceFadeClose: 0
+    - _CameraDistanceFadeFar: 10
+    - _CelExtraEnabled: 1
+    - _CelNumSteps: 3
+    - _CelPrimaryMode: 1
+    - _Cull: 2
+    - _Cutoff: 0.5
+    - _Depth: 500
+    - _DetailNormalMapScale: 1
+    - _DirectionPitch: 0
+    - _DirectionYaw: 0
+    - _DstBlend: 0
+    - _EnableHeightBlend: 0
+    - _Exponent: 1
+    - _FlatRimEdgeSmoothness: 1
+    - _FlatRimLightAlign: 1
+    - _FlatRimSize: 1
+    - _FlatSpecularEdgeSmoothness: 1
+    - _FlatSpecularSize: 0.195
+    - _Flatness: 0.637
+    - _FlatnessExtra: 0
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+    - _GradientAngle: 203
+    - _GradientCenterX: 5
+    - _GradientCenterY: 5
+    - _GradientEnabled: 0
+    - _GradientSize: 10
+    - _HeightTransition: 0.522
+    - _Intensity: 1
+    - _LightContribution: 0.444
+    - _LightmapDirectionPitch: 360
+    - _LightmapDirectionYaw: 162
+    - _Metallic: 0
+    - _Mode: 0
+    - _NumLayersCount: 1
+    - _OcclusionStrength: 1
+    - _OutlineDepthOffset: 0
+    - _OutlineWidth: 0.01
+    - _OverrideLightmapDir: 1
+    - _Parallax: 0.02
+    - _QueueOffset: 0
+    - _RimEnabled: 0
+    - _SelfShadingSize: 0.508
+    - _SelfShadingSizeExtra: 0.5
+    - _ShadowEdgeSize: 0.198
+    - _ShadowEdgeSizeExtra: 0
+    - _SmoothnessTextureChannel: 1
+    - _SpecularEnabled: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _Surface: 0
+    - _TextureBlendingMode: 0
+    - _TextureImpact: 0.5
+    - _UVSec: 0
+    - _UnityShadowMode: 1
+    - _UnityShadowPower: 0.4
+    - _UnityShadowSharpness: 1
+    - _UvFadeX: 3.68
+    - _UvFadeY: 6.75
+    - _VertexColorsEnabled: 0
+    - _ZWrite: 1
+    m_Colors:
+    - _Color: {r: 0.6792453, g: 0.6792453, b: 0.6792453, a: 1}
+    - _Color1: {r: 0, g: 0.7, b: 0.74, a: 0}
+    - _Color2: {r: 0.6415094, g: 0.53321636, b: 0.4750801, a: 0}
+    - _ColorDim: {r: 0, g: 0, b: 0, a: 1}
+    - _ColorDimCurve: {r: 0.85023, g: 0.85034, b: 0.85045, a: 0.85056}
+    - _ColorDimExtra: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
+    - _ColorDimSteps: {r: 0.85023, g: 0.85034, b: 0.85045, a: 0.85056}
+    - _ColorGradient: {r: 1, g: 1, b: 1, a: 1}
+    - _Direction: {r: 0, g: 1, b: 0, a: 0}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FlatRimColor: {r: 1, g: 1, b: 1, a: 1}
+    - _FlatSpecularColor: {r: 0.6320754, g: 0.6320754, b: 0.6320754, a: 0.8862745}
+    - _LightmapDirection: {r: 0.000000054030252, g: 1, b: -0.00000016628799, a: 0}
+    - _OutlineColor: {r: 0.8867924, g: 0.8867924, b: 0.8867924, a: 1}
+    - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
+    - _UnityShadowColor: {r: 0.85023, g: 0.85034, b: 0.85045, a: 0.85056}
+  m_BuildTextureStacks: []
