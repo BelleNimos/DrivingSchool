@@ -45,9 +45,7 @@ public abstract class JoystickHandler : MonoBehaviour, IDragHandler, IPointerDow
             Vector2 backgroundPosition;
 
             if (RectTransformUtility.ScreenPointToLocalPointInRectangle(_joystickArea.rectTransform, eventData.position, _camera, out backgroundPosition))
-            {
                 _joystickBackground.rectTransform.anchoredPosition = new Vector2(backgroundPosition.x * 0.5f, backgroundPosition.y * 0.5f);
-            }
         }
     }
 
@@ -58,9 +56,7 @@ public abstract class JoystickHandler : MonoBehaviour, IDragHandler, IPointerDow
         Vector2 backgroundPosition;
 
         if (RectTransformUtility.ScreenPointToLocalPointInRectangle(_joystickArea.rectTransform, eventData.position, _camera, out backgroundPosition))
-        {
             _joystickBackground.rectTransform.anchoredPosition = new Vector2(backgroundPosition.x, backgroundPosition.y);
-        }
     }
 
     public void OnPointerUp(PointerEventData eventData)
@@ -73,7 +69,7 @@ public abstract class JoystickHandler : MonoBehaviour, IDragHandler, IPointerDow
         _joystick.rectTransform.anchoredPosition = Vector2.zero;
     }
 
-    public void ClickEffect()
+    private void ClickEffect()
     {
         if (!_joystickIsActive)
         {
