@@ -8,6 +8,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] private List<Wave> _waves;
     [SerializeField] private GameObject _cone;
     [SerializeField] private float _delay;
+    [SerializeField] private UnityEvent AllConesInWaveSpawned;
 
     private Stack<Cone> _cones;
     private Wave _currentWave;
@@ -18,7 +19,7 @@ public class Spawner : MonoBehaviour
     private const int MaxCountCones = 20;
     private const int CountCones = 4;
 
-    [SerializeField] private UnityEvent AllConeSpawned;
+    public int CurrentConesCount => _cones.Count;
 
     private void Start()
     {
@@ -28,25 +29,21 @@ public class Spawner : MonoBehaviour
 
     private void Update()
     {
-        if (_currentWave == null)
-            return;
-
         _timeAfterLastSpawn += Time.deltaTime;
 
-        if (_timeAfterLastSpawn >= _delay && _cones.Count < MaxCountCones)
+        if (CurrentConesCount < MaxCountCones)
         {
-            InstantiateCone();
-            _counter++;
-            _timeAfterLastSpawn = 0;
+            if (_timeAfterLastSpawn >= _delay)
+            {
+                InstantiateCone();
+                _counter++;
+                _timeAfterLastSpawn = 0;
+            }
         }
 
-        if (CountCones <= _counter)
-        {
-            if (_waves.Count > _currentWaveNumber + 1)
-                AllConeSpawned?.Invoke();
-
-            _currentWave = null;
-        }
+        if (_waves.Count > _currentWaveNumber + 1)
+            if (_counter == CountCones)
+                AllConesInWaveSpawned?.Invoke();
     }
 
     public void NextWave()
@@ -54,6 +51,11 @@ public class Spawner : MonoBehaviour
         _currentWaveNumber++;
         SetWave(_currentWaveNumber);
         _counter = 0;
+    }
+
+    public Cone GetCone()
+    {
+        return _cones.Pop();
     }
 
     private void SetWave(int index)
@@ -65,22 +67,22 @@ public class Spawner : MonoBehaviour
     {
         if (_counter == 0)
         {
-            Cone cone = Instantiate(_cone, _waves[_currentWaveNumber].SpawnPoint1.transform).GetComponent<Cone>();
+            Cone cone = Instantiate(_cone, _waves[_currentWaveNumber].SpawnPoint2.transform).GetComponent<Cone>();
             _cones.Push(cone);
         }
         if (_counter == 1)
         {
-            Cone cone = Instantiate(_cone, _waves[_currentWaveNumber].SpawnPoint2.transform).GetComponent<Cone>();
+            Cone cone = Instantiate(_cone, _waves[_currentWaveNumber].SpawnPoint3.transform).GetComponent<Cone>();
             _cones.Push(cone);
         }
         if (_counter == 2)
         {
-            Cone cone = Instantiate(_cone, _waves[_currentWaveNumber].SpawnPoint3.transform).GetComponent<Cone>();
+            Cone cone = Instantiate(_cone, _waves[_currentWaveNumber].SpawnPoint4.transform).GetComponent<Cone>();
             _cones.Push(cone);
         }
         if (_counter == 3)
         {
-            Cone cone = Instantiate(_cone, _waves[_currentWaveNumber].SpawnPoint4.transform).GetComponent<Cone>();
+            Cone cone = Instantiate(_cone, _waves[_currentWaveNumber].SpawnPoint1.transform).GetComponent<Cone>();
             _cones.Push(cone);
         }
     }

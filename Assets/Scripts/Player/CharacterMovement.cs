@@ -2,20 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(CharacterController), typeof(Animator))]
+[RequireComponent(typeof(CharacterController), typeof(Animator), typeof(Bag))]
 public class CharacterMovement : MonoBehaviour
 {
     [SerializeField] private float _moveSpeed;
     [SerializeField] private float _rotateSpeed;
     [SerializeField] private float _gravityForce;
-    [SerializeField] private Bag _bag;
 
+    private Bag _bag;
     private Animator _animator;
     private CharacterController _characterController;
     private float _currentGravity = 0;
 
     private void Start()
     {
+        _bag = GetComponent<Bag>();
         _animator = GetComponent<Animator>();
         _characterController = GetComponent<CharacterController>();
     }
@@ -31,14 +32,14 @@ public class CharacterMovement : MonoBehaviour
 
         if (moveDirection.x == 0 && moveDirection.z == 0)
         {
-            if (_bag.CurrentCones > 0)
+            if (_bag.CurrentConesCount > 0)
             {
                 _animator.SetBool("Carry Idle", true);
                 _animator.SetBool("Carry", false);
                 _animator.SetBool("Run", false);
                 _animator.SetBool("Idle", false);
             }
-            else if (_bag.CurrentCones <= 0)
+            else if (_bag.CurrentConesCount <= 0)
             {
                 _animator.SetBool("Idle", true);
                 _animator.SetBool("Run", false);
@@ -48,14 +49,14 @@ public class CharacterMovement : MonoBehaviour
         }
         else if (moveDirection.x != 0 || moveDirection.z != 0)
         {
-            if (_bag.CurrentCones > 0)
+            if (_bag.CurrentConesCount > 0)
             {
                 _animator.SetBool("Carry", true);
                 _animator.SetBool("Run", false);
                 _animator.SetBool("Carry Idle", false);
                 _animator.SetBool("Idle", false);
             }
-            else if (_bag.CurrentCones <= 0)
+            else if (_bag.CurrentConesCount <= 0)
             {
                 _animator.SetBool("Run", true);
                 _animator.SetBool("Carry", false);

@@ -13,8 +13,8 @@ public class Bag : MonoBehaviour
     private const float Duration = 0.2f;
     private const int NumsJump = 1;
 
-    public int MaxCones { get; private set; } = 12;
-    public int CurrentCones => _cones.Count;
+    public int MaxConesCount { get; private set; } = 12;
+    public int CurrentConesCount => _cones.Count;
 
     private void Start()
     {
@@ -23,7 +23,7 @@ public class Bag : MonoBehaviour
 
     public void AddCone(Cone cone)
     {
-        Vector3 nextPosition = new Vector3(0, 0.5f * CurrentCones, 0);
+        Vector3 nextPosition = new Vector3(0, 0.8f * CurrentConesCount, 0);
 
         cone.transform.DOJump((_bagPosition.position + nextPosition), JumpPower, NumsJump, Duration)
             .OnComplete(() =>
@@ -33,7 +33,12 @@ public class Bag : MonoBehaviour
                 cone.transform.localRotation = Quaternion.identity;
             }
             );
-        
+
         _cones.Push(cone);
+    }
+
+    public Cone GetCone()
+    {
+        return _cones.Pop();
     }
 }
