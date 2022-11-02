@@ -18,13 +18,29 @@ public abstract class JoystickHandler : MonoBehaviour, IDragHandler, IPointerDow
     private Vector2 _backgroundStartPosition;
     private bool _joystickIsActive = false;
 
-    protected Vector2 _inputVector;
+    protected Vector2 InputVector;
 
     private void Start()
     {
         ClickEffect();
 
         _backgroundStartPosition = _joystickBackground.rectTransform.anchoredPosition;
+    }
+
+    private void ClickEffect()
+    {
+        if (!_joystickIsActive)
+        {
+            _joystickIsActive = true;
+            _joystickBackground.color = _inActiveBackground;
+            _joystick.color = _inActiveJoystick;
+        }
+        else
+        {
+            _joystickIsActive = false;
+            _joystickBackground.color = _activeBackground;
+            _joystick.color = _activeJoystick;
+        }
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -36,11 +52,11 @@ public abstract class JoystickHandler : MonoBehaviour, IDragHandler, IPointerDow
             joystickPosition.x = joystickPosition.x * 2 / _joystickBackground.rectTransform.sizeDelta.x;
             joystickPosition.y = joystickPosition.y * 2 / _joystickBackground.rectTransform.sizeDelta.y;
 
-            _inputVector = new Vector2(joystickPosition.x, joystickPosition.y);
+            InputVector = new Vector2(joystickPosition.x, joystickPosition.y);
 
-            _inputVector = (_inputVector.magnitude > 1f) ? _inputVector.normalized : _inputVector;
+            InputVector = (InputVector.magnitude > 1f) ? InputVector.normalized : InputVector;
 
-            _joystick.rectTransform.anchoredPosition = new Vector2(_inputVector.x * _joystickBackground.rectTransform.sizeDelta.x / 2, _inputVector.y * _joystickBackground.rectTransform.sizeDelta.y / 2);
+            _joystick.rectTransform.anchoredPosition = new Vector2(InputVector.x * _joystickBackground.rectTransform.sizeDelta.x / 2, InputVector.y * _joystickBackground.rectTransform.sizeDelta.y / 2);
 
             Vector2 backgroundPosition;
 
@@ -65,23 +81,7 @@ public abstract class JoystickHandler : MonoBehaviour, IDragHandler, IPointerDow
 
         ClickEffect();
 
-        _inputVector = Vector2.zero;
+        InputVector = Vector2.zero;
         _joystick.rectTransform.anchoredPosition = Vector2.zero;
-    }
-
-    private void ClickEffect()
-    {
-        if (!_joystickIsActive)
-        {
-            _joystickIsActive = true;
-            _joystickBackground.color = _inActiveBackground;
-            _joystick.color = _inActiveJoystick;
-        }
-        else
-        {
-            _joystickIsActive = false;
-            _joystickBackground.color = _activeBackground;
-            _joystick.color = _activeJoystick;
-        }
     }
 }

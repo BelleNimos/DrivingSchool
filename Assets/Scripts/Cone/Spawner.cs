@@ -6,15 +6,16 @@ using UnityEngine.Events;
 public class Spawner : MonoBehaviour
 {
     [SerializeField] private List<Wave> _waves;
+    [SerializeField] private Scale _sliderCone;
     [SerializeField] private GameObject _cone;
     [SerializeField] private float _delay;
-    [SerializeField] private UnityEvent AllConesInWaveSpawned;
+    [SerializeField] private UnityEvent _allConesInWaveSpawned;
 
     private Stack<Cone> _cones;
     private Wave _currentWave;
-    private int _currentWaveNumber = 0;
-    private int _counter;
     private float _timeAfterLastSpawn;
+    private int _counter;
+    private int _currentWaveNumber = 0;
 
     private const int MaxCountCones = 20;
     private const int CountCones = 4;
@@ -28,6 +29,18 @@ public class Spawner : MonoBehaviour
     }
 
     private void Update()
+    {
+        if (_sliderCone.IsEmpty == true)
+        {
+            _sliderCone.gameObject.SetActive(false);
+
+            ResetWave();
+        }
+
+        Generate();
+    }
+
+    private void Generate()
     {
         _timeAfterLastSpawn += Time.deltaTime;
 
@@ -43,19 +56,7 @@ public class Spawner : MonoBehaviour
 
         if (_waves.Count > _currentWaveNumber + 1)
             if (_counter == CountCones)
-                AllConesInWaveSpawned?.Invoke();
-    }
-
-    public void NextWave()
-    {
-        _currentWaveNumber++;
-        SetWave(_currentWaveNumber);
-        _counter = 0;
-    }
-
-    public Cone GetCone()
-    {
-        return _cones.Pop();
+                _allConesInWaveSpawned?.Invoke();
     }
 
     private void SetWave(int index)
@@ -85,6 +86,24 @@ public class Spawner : MonoBehaviour
             Cone cone = Instantiate(_cone, _waves[_currentWaveNumber].SpawnPoint1.transform).GetComponent<Cone>();
             _cones.Push(cone);
         }
+    }
+
+    public void NextWave()
+    {
+        _currentWaveNumber++;
+        SetWave(_currentWaveNumber);
+        _counter = 0;
+    }
+
+    public void ResetWave()
+    {
+        _currentWaveNumber = 0;
+        _counter = 0;
+    }
+
+    public Cone GetCone()
+    {
+        return _cones.Pop();
     }
 
     [System.Serializable]
