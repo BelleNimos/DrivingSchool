@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
@@ -9,21 +8,26 @@ public class Bag : MonoBehaviour
     private Stack<Cone> _cones;
     private Animator _animator;
 
+    private const string Idle = "Idle";
+    private const string Rocking = "Rocking";
     private const float JumpPower = 0.1f;
     private const float Duration = 0.1f;
     private const float Distance = 0.7f;
     private const int NumJumps = 1;
+    private const int SurplusFactor = 1;
 
-    private const string Idle = "Idle";
-    private const string Rocking = "Rocking";
-
-    public int MaxConesCount { get; private set; } = 12;
+    public int MaxConesCount { get; private set; }
     public int CurrentConesCount => _cones.Count;
 
     private void Start()
     {
         _cones = new Stack<Cone>();
         _animator = GetComponent<Animator>();
+
+        if (SceneData.CapacityBag > 0)
+            MaxConesCount = SceneData.CapacityBag;
+        else
+            MaxConesCount = 12;
     }
 
     public void AddCone(Cone cone)
@@ -42,20 +46,25 @@ public class Bag : MonoBehaviour
         _cones.Push(cone);
     }
 
-    public Cone GetCone()
+    public void GiveAwayCone(ConePoint conePoint)
     {
-        return _cones.Pop();
+        conePoint.AddCone(_cones.Pop());
     }
 
-    public void StartAnimation()
+    public void StartAnimationRocking()
     {
         _animator.SetBool(Rocking, true);
         _animator.SetBool(Idle, false);
     }
 
-    public void StopAnimation()
+    public void StopAnimationRocking()
     {
         _animator.SetBool(Idle, true);
         _animator.SetBool(Rocking, false);
+    }
+
+    public void IncreaseCapacity()
+    {
+        MaxConesCount += SurplusFactor;
     }
 }

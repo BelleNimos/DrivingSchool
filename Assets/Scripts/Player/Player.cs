@@ -5,21 +5,19 @@ using TMPro;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private Scale _sliderCone;
-    [SerializeField] private Scale _sliderCustomer;
-    [SerializeField] private Scale _sliderWZN;
-    [SerializeField] private Scale _sliderWZS;
-    [SerializeField] private TMP_Text _maxConesText;
+    [SerializeField] private MoneyPoint _moneyPoint;
     [SerializeField] private Bag _bag;
+    [SerializeField] private TMP_Text _maxConesText;
 
     private Stack<Customer> _customers;
-    private WaitForSeconds _waitForSeconds = new WaitForSeconds(0.05f);
+    private WaitForSeconds _waitForSeconds;
 
     public int CurrentCustomersCount => _customers.Count;
 
     private void Start()
     {
         _customers = new Stack<Customer>();
+        _waitForSeconds = new WaitForSeconds(0.05f);
     }
 
     private void Update()
@@ -30,58 +28,63 @@ public class Player : MonoBehaviour
             _maxConesText.gameObject.SetActive(false);
     }
 
-    private IEnumerator AddCones(Spawner spawner)
+    private void OnTriggerExit(Collider collision)
     {
-
-        for (int i = 0; i < _bag.MaxConesCount; i++)
-        {
-            if (spawner.CurrentConesCount > 0)
-                if (_bag.CurrentConesCount < _bag.MaxConesCount)
-                    _bag.AddCone(spawner.GetCone());
-            
-            yield return _waitForSeconds;
-        }
+        if (collision.TryGetComponent<UpgradesStand>(out UpgradesStand upgradesStand))
+            upgradesStand.DisableUpgrades();
     }
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.TryGetComponent<Spawner>(out Spawner spawner))
-        {
-            StartCoroutine(AddCones(spawner));
+        if (collision.TryGetComponent<UpgradesStand>(out UpgradesStand upgradesStand))
+            upgradesStand.EnableSlider();
 
-            if (spawner.CurrentConesCount == 0)
-                _sliderCone.gameObject.SetActive(true);
-        }
+        if (collision.TryGetComponent<ConeUpgrades>(out ConeUpgrades conesUpgrade))
+            conesUpgrade.Unlock();
+
+        if (collision.TryGetComponent<TransitionLevel>(out TransitionLevel transitionLevel))
+            transitionLevel.GoToNextLevel();
 
         if (collision.TryGetComponent<CustomerArea>(out CustomerArea customerArea))
-        {
             if (customerArea.CurrentCustomersCount > 0)
-                _sliderCustomer.gameObject.SetActive(true);
-        }
+                customerArea.EnableSlider();
+
+        if (collision.TryGetComponent<StandWZ>(out StandWZ standWZ))
+            if (CurrentCustomersCount > 0)
+                standWZ.EnableSlider();
 
         if (collision.TryGetComponent<ConePoint>(out ConePoint conePoint))
-        {
             if (_bag.CurrentConesCount > 0 && conePoint.IsFree == true)
-                conePoint.AddCone(_bag.GetCone());
-        }
+                _bag.GiveAwayCone(conePoint);
 
-        if (collision.TryGetComponent<StandWZN>(out StandWZN standWZN))
+        if (collision.TryGetComponent<Spawner>(out Spawner spawner))
         {
-            _sliderWZN.gameObject.SetActive(true);
-        }
+            if (spawner.CurrentConesCount == 0)
+                spawner.EnableSilder();
 
-        if (collision.TryGetComponent<StandWZS>(out StandWZS standWZS))
-        {
-            _sliderWZS.gameObject.SetActive(true);
+            if (spawner.IsReady)
+                StartCoroutine(AddCones(spawner));
         }
 
         if (collision.TryGetComponent<StackDollars>(out StackDollars stackDollars))
         {
             if (stackDollars.IsReady == true)
             {
-                stackDollars.StartMove();
-                stackDollars.ChangeValue();
+                stackDollars.StartMove(_moneyPoint);
+                stackDollars.ChangeReadyValue();
             }
+        }
+    }
+
+    private IEnumerator AddCones(Spawner spawner)
+    {
+        for (int i = 0; i < _bag.MaxConesCount; i++)
+        {
+            if (spawner.CurrentConesCount > 0)
+                if (_bag.CurrentConesCount < _bag.MaxConesCount)
+                    spawner.GiveAwayCone(_bag);
+            
+            yield return _waitForSeconds;
         }
     }
 
@@ -90,8 +93,8 @@ public class Player : MonoBehaviour
         _customers.Push(customer);
     }
 
-    public Customer GetCustomer()
+    public void AssignTargetCustomer(WaitingZone waitingZone)
     {
-        return _customers.Pop();
+        waitingZone.SetTarget(_customers.Pop());
     }
 }
