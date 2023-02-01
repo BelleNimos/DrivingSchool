@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.agava.yandexgames": "https://github.com/forcepusher/com.agava.yandexgames.git#11.1.0",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.2d.tilemap": "1.0.0",
     "com.unity.cinemachine": "2.8.6",
