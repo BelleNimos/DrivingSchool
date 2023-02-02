@@ -14,6 +14,8 @@ public abstract class Cone : MonoBehaviour
     protected WaitForSeconds WaitForSeconds;
     protected int CountDollars;
 
+    public bool IsCollision { get; private set; }
+
     private const string Fall = "Fall";
 
     private const float PowerFallDollar = 1f;
@@ -30,6 +32,13 @@ public abstract class Cone : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody>();
         _collider = GetComponent<BoxCollider>();
         WaitForSeconds = new WaitForSeconds(0.6f);
+        IsCollision = false;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.TryGetComponent<Car>(out Car car) || collision.gameObject.TryGetComponent<Cone>(out Cone cone))
+            IsCollision = true;
     }
 
     protected void InstantiateDollar(MoneyPoint moneyPoint, Transform transform)
@@ -68,5 +77,12 @@ public abstract class Cone : MonoBehaviour
     public void OffTrigger()
     {
         _collider.isTrigger = false;
+    }
+
+    public void ResetState()
+    {
+        _rigidbody.isKinematic = true;
+        _collider.isTrigger = true;
+        IsCollision = false;
     }
 }

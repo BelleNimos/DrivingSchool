@@ -33,13 +33,14 @@ public class Bag : MonoBehaviour
     public void AddCone(Cone cone)
     {
         Vector3 nextPosition = new Vector3(0, Distance * CurrentConesCount, 0);
+        Vector3 nextRotation = new Vector3(0, 0, 0);
 
         cone.transform.DOJump((transform.position + nextPosition), JumpPower, NumJumps, Duration)
             .OnComplete(() =>
             {
                 cone.transform.SetParent(transform, true);
                 cone.transform.localPosition = nextPosition;
-                cone.transform.localRotation = Quaternion.identity;
+                cone.transform.localRotation = Quaternion.LookRotation(nextRotation);
             }
             );
 

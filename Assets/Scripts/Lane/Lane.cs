@@ -7,7 +7,7 @@ public class Lane : MonoBehaviour
 
     private int _counter = 0;
 
-    private const float Delay = 1f;
+    private const float Delay = 0.5f;
     private const string UnlockPhysics = "UnlockPhysics";
 
     public bool IsReady { get; private set; }
@@ -19,23 +19,24 @@ public class Lane : MonoBehaviour
 
     private void Update()
     {
-        _counter = 0;
+        if (GetValueCounter() == _conePoints.Count)
+            IsReady = true;
+        else
+            IsReady = false;
 
         if (IsReady == true)
             foreach (var conePoint in _conePoints)
                 conePoint.Invoke(UnlockPhysics, Delay);
-        else
-            for (int i = 0; i < _conePoints.Count; i++)
-                if (_conePoints[i].IsFree == false)
-                    _counter++;
-
-        if (_counter == _conePoints.Count)
-            IsReady = true;
     }
 
-    public void ResetState()
+    private int GetValueCounter()
     {
-        for (int i = 0; i < _conePoints.Count; i++)
-            _conePoints[i].ResetConePosition();
+        _counter = 0;
+
+        foreach (var conePoint in _conePoints)
+            if (conePoint.IsFree == false && conePoint.CheckForCone() == false)
+                _counter++;
+
+        return _counter;
     }
 }

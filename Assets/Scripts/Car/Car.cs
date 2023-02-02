@@ -16,7 +16,9 @@ public class Car : MonoBehaviour
     private bool _isCollision;
     private bool _isSuccessfully;
 
+    private const float Delay = 2f;
     private const int MaxDrivesLeftCount = 2;
+    private const string StartMove = "StartMove";
 
     public bool IsFree { get; private set; }
     public bool IsFinish { get; private set; }
@@ -42,7 +44,7 @@ public class Car : MonoBehaviour
         if (_drivesLeftCount < MaxDrivesLeftCount)
         {
             if (IsFree == false && _lane.IsReady == true)
-                _movement.StartMove();
+                _movement.Invoke(StartMove, Delay);
 
             if (_customer != null)
             {
@@ -90,8 +92,6 @@ public class Car : MonoBehaviour
 
             if (IsFinish == true)
             {
-                _lane.ResetState();
-
                 IsFinish = false;
                 _isCollision = false;
 

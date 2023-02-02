@@ -4,6 +4,7 @@ using DG.Tweening;
 [RequireComponent(typeof(Renderer))]
 public class ConePoint : MonoBehaviour
 {
+    [SerializeField] private Material _elderMaterial;
     [SerializeField] private Material _newMaterial;
     [SerializeField] private MoneyPoint _moneyPoint;
 
@@ -41,16 +42,30 @@ public class ConePoint : MonoBehaviour
         _cone.CreateDollar(_moneyPoint, transform);
     }
 
+    public bool CheckForCone()
+    {
+        if (_cone.IsCollision == true)
+            return true;
+        else
+            return false;
+    }
+
+    public void GiveAwayCone(Bag bag)
+    {
+        _cone.ResetState();
+        bag.AddCone(_cone);
+    }
+
+    public void RemoveCone()
+    {
+        _cone = null;
+        IsFree = true;
+        _renderer.material = _elderMaterial;
+    }
+
     public void UnlockPhysics()
     {
         _cone.OffKinematic();
         _cone.OffTrigger();
-    }
-
-    public void ResetConePosition()
-    {
-        Vector3 nextRotation = new Vector3(0, -90, 0);
-        _cone.transform.position = transform.position;
-        _cone.transform.localRotation = Quaternion.LookRotation(nextRotation);
     }
 }

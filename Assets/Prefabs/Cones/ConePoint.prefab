@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dc49ac4f2ddadb46941018c07851793, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _elderMaterial: {fileID: 2100000, guid: 1fac5bcdf5eb8a441bd4a40b036bdb6b, type: 2}
   _newMaterial: {fileID: 2100000, guid: 386fdde0ed5f54741b6ee182f20d1e47, type: 2}
   _moneyPoint: {fileID: 0}
 --- !u!65 &6459232040217722495

@@ -53,10 +53,6 @@ public class Player : MonoBehaviour
             if (CurrentCustomersCount > 0 && standWZ.CustomersCount < standWZ.MaxCustomersCount)
                 standWZ.EnableSlider();
 
-        if (collision.TryGetComponent<ConePoint>(out ConePoint conePoint))
-            if (_bag.CurrentConesCount > 0 && conePoint.IsFree == true)
-                _bag.GiveAwayCone(conePoint);
-
         if (collision.TryGetComponent<Spawner>(out Spawner spawner))
         {
             if (spawner.CurrentConesCount == 0)
@@ -72,6 +68,22 @@ public class Player : MonoBehaviour
             {
                 stackDollars.StartMove(_moneyPoint);
                 stackDollars.ChangeReadyValue();
+            }
+        }
+
+        if (collision.TryGetComponent<ConePoint>(out ConePoint conePoint))
+        {
+            if (_bag.CurrentConesCount > 0 && conePoint.IsFree == true)
+            {
+                _bag.GiveAwayCone(conePoint);
+            }
+            else if (_bag.CurrentConesCount < _bag.MaxConesCount && conePoint.IsFree == false)
+            {
+                if (conePoint.CheckForCone() == true)
+                {
+                    conePoint.GiveAwayCone(_bag);
+                    conePoint.RemoveCone();
+                }
             }
         }
     }
