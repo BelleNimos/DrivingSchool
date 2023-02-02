@@ -37,7 +37,7 @@ public class Player : MonoBehaviour
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.TryGetComponent<UpgradesStand>(out UpgradesStand upgradesStand))
-            upgradesStand.EnableSlider();
+            upgradesStand.EnableUpgrades();
 
         if (collision.TryGetComponent<ConeUpgrades>(out ConeUpgrades conesUpgrade))
             conesUpgrade.Unlock();
@@ -50,7 +50,7 @@ public class Player : MonoBehaviour
                 customerArea.EnableSlider();
 
         if (collision.TryGetComponent<StandWZ>(out StandWZ standWZ))
-            if (CurrentCustomersCount > 0)
+            if (CurrentCustomersCount > 0 && standWZ.CustomersCount < standWZ.MaxCustomersCount)
                 standWZ.EnableSlider();
 
         if (collision.TryGetComponent<ConePoint>(out ConePoint conePoint))

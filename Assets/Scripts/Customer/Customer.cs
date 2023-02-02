@@ -3,32 +3,31 @@ using UnityEngine;
 [RequireComponent(typeof(CustomerMovement))]
 public class Customer : MonoBehaviour
 {
-    [SerializeField] private Transform _firstTarget;
     [SerializeField] private Transform _lastTarget;
     [SerializeField] private StackDollars _stackDollarsPrefab;
 
     private CustomerMovement _movement;
+    private Transform _firstTarget;
     private Transform _target;
     private TargetWZ _targetWZ;
-    private bool _isFinish;
     private bool _isPaid;
     private bool _isFree;
 
+    public bool IsFinish { get; private set; }
     public bool IsReady { get; private set; }
 
     private void Start()
     {
         _movement = GetComponent<CustomerMovement>();
-        
+
         _target = _firstTarget;
         _movement.SetTarget(_target);
 
         _targetWZ = null;
-        _isFinish = false;
         _isPaid = false;
         _isFree = true;
+        IsFinish = false;
         IsReady = false;
-
     }
 
     private void Update()
@@ -38,7 +37,7 @@ public class Customer : MonoBehaviour
         else
             transform.position = _targetWZ.transform.position;
 
-        if (_isFinish == true)
+        if (IsFinish == true)
         {
             _target = _lastTarget;
             _movement.SetTarget(_lastTarget);
@@ -48,7 +47,7 @@ public class Customer : MonoBehaviour
         {
             _target = _firstTarget;
             _movement.SetTarget(_target);
-            _isFinish = false;
+            IsFinish = false;
         }
 
         if (_isFree == false)
@@ -59,52 +58,20 @@ public class Customer : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider collision)
-    {
-        if (collision.TryGetComponent<CustomerFirstTarget>(out CustomerFirstTarget firstTarget))
-        {
-            if (firstTarget.transform == _target.transform)
-            {
-                StopMove();
-                _isFree = false;
-            }
-        }
-
-        if (collision.TryGetComponent<TargetWZ>(out TargetWZ targetWZ))
-        {
-            if (targetWZ.transform == _target.transform)
-            {
-                StopMove();
-
-                _targetWZ = targetWZ;
-                IsReady = true;
-            }
-        }
-
-        if (collision.TryGetComponent<CustomerLastTarget>(out CustomerLastTarget lastTarget))
-        {
-            if (lastTarget.transform == _target.transform)
-            {
-                if (_isFinish == true)
-                {
-                    InstantiateStackDollars();
-
-                    _isPaid = true;
-                    _isFinish = false;
-                }
-            }
-        }
-    }
-
-    private void InstantiateStackDollars()
+    public void InstantiateStackDollars()
     {
         Instantiate(_stackDollarsPrefab, transform.position, Quaternion.identity);
     }
 
-    private void StopMove()
+    public void StopMove()
     {
         _movement.RemoveTarget();
         _movement.DisableAgent();
+    }
+
+    public void SetFirstTarget(Transform transform)
+    {
+        _firstTarget = transform;
     }
 
     public void SetTarget(Transform target)
@@ -115,6 +82,11 @@ public class Customer : MonoBehaviour
             _movement.SetTarget(_target);
 
         _isFree = true;
+    }
+
+    public void SetTargetWZ(TargetWZ targetWZ)
+    {
+        _targetWZ = targetWZ;
     }
 
     public bool CheckPosition(Transform transform)
@@ -146,6 +118,26 @@ public class Customer : MonoBehaviour
 
     public void Finish()
     {
-        _isFinish = true;
+        IsFinish = true;
+    }
+
+    public void IsFinishFalse()
+    {
+        IsFinish = false;
+    }
+
+    public void IsFreeFalse()
+    {
+        _isFree = false;
+    }
+
+    public void IsPaidTrue()
+    {
+        _isPaid = true;
+    }
+
+    public void IsReadyTrue()
+    {
+        IsReady = true;
     }
 }

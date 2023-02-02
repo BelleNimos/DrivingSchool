@@ -24,7 +24,7 @@ public class CharacterMovement : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
         _characterController = GetComponent<CharacterController>();
-        _rotateSpeed = 0.5f;
+        _rotateSpeed = 1f;
         _gravityForce = 10;
         _currentGravity = 0;
 

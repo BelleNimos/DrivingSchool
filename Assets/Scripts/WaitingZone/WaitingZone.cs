@@ -68,4 +68,16 @@ public class WaitingZone : MonoBehaviour
             }
         }
     }
+
+    public void SetTargetCustomer(Transform transform, Customer customer)
+    {
+        for (int i = 0; i < _targets.Count; i++)
+        {
+            if (_targets[i].transform == transform)
+            {
+                customer.SetTargetWZ(_targets[i]);
+                break;
+            }
+        }
+    }
 }

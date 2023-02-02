@@ -33,7 +33,7 @@ PrefabInstance:
       objectReference: {fileID: 9122588291598880805}
     - target: {fileID: 3378172968638549387, guid: cfddfba91dcef6849a000e04911bfcf6, type: 3}
       propertyPath: m_Name
-      value: TargetsLaneNorth
+      value: TargetsLaneNorth Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3378172968638549396, guid: cfddfba91dcef6849a000e04911bfcf6, type: 3}
       propertyPath: m_RootOrder
@@ -620,7 +620,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4075287003561045128, guid: ad3c75bfd86854f4f8f9c10b0d05a750, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 20.759998
+      value: 19.939999
       objectReference: {fileID: 0}
     - target: {fileID: 4075287003561045128, guid: ad3c75bfd86854f4f8f9c10b0d05a750, type: 3}
       propertyPath: m_LocalRotation.w

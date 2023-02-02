@@ -6,6 +6,9 @@ public class StandWZ : MonoBehaviour
     [SerializeField] private WaitingZone _waitingZone;
     [SerializeField] private Player _player;
 
+    public int CustomersCount => _waitingZone.CurrentCustomersCount;
+    public int MaxCustomersCount => _waitingZone.MaxCountCustomers;
+
     private void Update()
     {
         if (_sliderWZ.IsEmpty == true)
