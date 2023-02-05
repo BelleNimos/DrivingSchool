@@ -52,6 +52,11 @@ public class Bag : MonoBehaviour
         conePoint.AddCone(_cones.Pop());
     }
 
+    public void GiveAwayCone(Utilizer utilizer)
+    {
+        utilizer.DestoyCone(_cones.Pop());
+    }
+
     public void StartAnimationRocking()
     {
         _animator.SetBool(Rocking, true);

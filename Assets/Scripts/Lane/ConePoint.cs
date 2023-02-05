@@ -7,6 +7,7 @@ public class ConePoint : MonoBehaviour
     [SerializeField] private Material _elderMaterial;
     [SerializeField] private Material _newMaterial;
     [SerializeField] private MoneyPoint _moneyPoint;
+    [SerializeField] private WarningPoint _warningPoint;
 
     private Renderer _renderer;
     private Cone _cone;
@@ -21,6 +22,21 @@ public class ConePoint : MonoBehaviour
     {
         _renderer = GetComponent<Renderer>();
         IsFree = true;
+    }
+
+    private void Update()
+    {
+        if (_cone != null)
+        {
+            if (CheckForConeCollision() == true)
+                _warningPoint.gameObject.SetActive(true);
+            else
+                _warningPoint.gameObject.SetActive(false);
+        }
+        else
+        {
+            _warningPoint.gameObject.SetActive(false);
+        }
     }
 
     public void AddCone(Cone cone)
@@ -38,11 +54,11 @@ public class ConePoint : MonoBehaviour
             );
 
         _renderer.material = _newMaterial;
-        IsFree = false;
         _cone.CreateDollar(_moneyPoint, transform);
+        IsFree = false;
     }
 
-    public bool CheckForCone()
+    public bool CheckForConeCollision()
     {
         if (_cone.IsCollision == true)
             return true;

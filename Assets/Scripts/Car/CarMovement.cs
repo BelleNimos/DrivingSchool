@@ -31,10 +31,15 @@ public class CarMovement : MonoBehaviour
             Turn();
             Move();
 
-            if (_rigidbody.velocity.magnitude < MaxSpeedEnableDrift && _rigidbody.velocity.magnitude > MinSpeedEnableDrift)
+            if (_rigidbody.velocity.magnitude > MinSpeedEnableDrift && _rigidbody.velocity.magnitude < MaxSpeedEnableDrift)
                 SetValueTraces(true);
             else
                 SetValueTraces(false);
+        }
+        else
+        {
+            SetValueTraces(false);
+            _rigidbody.velocity = Vector3.zero;
         }
     }
 
@@ -73,6 +78,5 @@ public class CarMovement : MonoBehaviour
     public void StopMove()
     {
         IsReady = false;
-        _rigidbody.velocity = Vector3.zero;
     }
 }

@@ -34,7 +34,7 @@ public class Lane : MonoBehaviour
         _counter = 0;
 
         foreach (var conePoint in _conePoints)
-            if (conePoint.IsFree == false && conePoint.CheckForCone() == false)
+            if (conePoint.IsFree == false && conePoint.CheckForConeCollision() == false)
                 _counter++;
 
         return _counter;

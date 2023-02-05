@@ -28,6 +28,13 @@ public class Player : MonoBehaviour
             _maxConesText.gameObject.SetActive(false);
     }
 
+    private void OnTriggerStay(Collider collision)
+    {
+        if (collision.TryGetComponent<Utilizer>(out Utilizer utilizer))
+            if (_bag.CurrentConesCount > 0)
+                _bag.GiveAwayCone(utilizer);
+    }
+
     private void OnTriggerExit(Collider collision)
     {
         if (collision.TryGetComponent<UpgradesStand>(out UpgradesStand upgradesStand))
@@ -79,7 +86,7 @@ public class Player : MonoBehaviour
             }
             else if (_bag.CurrentConesCount < _bag.MaxConesCount && conePoint.IsFree == false)
             {
-                if (conePoint.CheckForCone() == true)
+                if (conePoint.CheckForConeCollision() == true)
                 {
                     conePoint.GiveAwayCone(_bag);
                     conePoint.RemoveCone();

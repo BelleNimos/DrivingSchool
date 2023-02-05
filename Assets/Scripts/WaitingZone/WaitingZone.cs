@@ -32,9 +32,7 @@ public class WaitingZone : MonoBehaviour
             int index = Random.Range(0, CurrentCustomersCount);
 
             if (_customers[index].IsReady && _car.IsFree == true)
-            {
                 GiveAwayCustomer(_car, index);
-            }
         }
     }
 
