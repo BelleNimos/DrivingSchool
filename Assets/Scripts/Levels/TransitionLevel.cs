@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class TransitionLevel : MonoBehaviour
 {
+    [SerializeField] private NextLevelUI _nextLevelUI;
     [SerializeField] private MoneyPoint _moneyPoint;
     [SerializeField] private Spawner _spawner;
     [SerializeField] private CharacterMovement _characterMovement;
@@ -13,13 +14,22 @@ public class TransitionLevel : MonoBehaviour
     [SerializeField] private int _price;
     [SerializeField] private int _idNextLevel;
 
-    private bool _isUse;
+    private bool _isEmpty;
 
     private void Start()
     {
-        _priceText.text = _price.ToString();
-        _isUse = false;
         _idNextLevel -= 1;
+        _priceText.text = _price.ToString();
+        _isEmpty = false;
+    }
+
+    private void Update()
+    {
+        if (_isEmpty == true)
+        {
+            ChangeOptionsNextLevel();
+            SceneManager.LoadScene(_idNextLevel);
+        }
     }
 
     private void ChangeOptionsNextLevel()
@@ -33,14 +43,28 @@ public class TransitionLevel : MonoBehaviour
         SceneData.ChangeBagUpgradePrice(_upgrades.BagPrice);
     }
 
+    public void EnablePanel()
+    {
+        _nextLevelUI.gameObject.SetActive(true);
+        Time.timeScale = 0;
+    }
+
+    public void DisablePanel()
+    {
+        _nextLevelUI.gameObject.SetActive(false);
+        Time.timeScale = 1;
+    }
+
     public void GoToNextLevel()
     {
-        if (_moneyPoint.CurrentDollarsCount >= _price && _isUse == false)
+        if (_moneyPoint.CurrentDollarsCount >= _price)
         {
             _moneyPoint.SpendMoney(_price);
-            _isUse = true;
-            ChangeOptionsNextLevel();
-            SceneManager.LoadScene(_idNextLevel);
+            _isEmpty = true;
+        }
+        else
+        {
+            _isEmpty = false;
         }
     }
 }

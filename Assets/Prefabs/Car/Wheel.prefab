@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 660145661114726069}
   - component: {fileID: 7825448778894556394}
   - component: {fileID: 8964511959490426481}
-  - component: {fileID: 7685503821993569846}
   - component: {fileID: 9125715800105643254}
+  - component: {fileID: 7685503821993569846}
   - component: {fileID: 6704974430926202663}
   m_Layer: 0
   m_Name: Wheel
@@ -228,18 +228,6 @@ TrailRenderer:
   m_MinVertexDistance: 1
   m_Autodestruct: 0
   m_Emitting: 1
---- !u!114 &7685503821993569846
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5775338912913396135}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bb48c6e2fafc9c45ac1b60e06419594, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!198 &9125715800105643254
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -4947,6 +4935,18 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &7685503821993569846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5775338912913396135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bb48c6e2fafc9c45ac1b60e06419594, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!199 &6704974430926202663
 ParticleSystemRenderer:
   serializedVersion: 6

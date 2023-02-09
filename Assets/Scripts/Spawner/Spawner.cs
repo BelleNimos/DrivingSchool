@@ -40,22 +40,15 @@ public class Spawner : MonoBehaviour
             IsReady = true;
         else
             IsReady = false;
-            
 
         if (_sliderCone.IsEmpty == true)
         {
             _sliderCone.gameObject.SetActive(false);
-
-            InstantiateCones();
+            StartCoroutine(InstantiateCones());
         }
     }
 
-    private void InstantiateCones()
-    {
-        StartCoroutine(Instantiate());
-    }
-
-    private IEnumerator Instantiate()
+    private IEnumerator InstantiateCones()
     {
         float distanceCoefficient = 0.25f;
 
@@ -75,7 +68,7 @@ public class Spawner : MonoBehaviour
                 positionY = (positionY + i) * distanceCoefficient;
 
                 Vector3 position = new Vector3(positionX, positionY, positionZ);
-                cone = Instantiate(_conePrefab, position, Quaternion.identity).GetComponent<Cone>();
+                cone = Instantiate(_conePrefab, position, Quaternion.identity);
 
                 _cones.Push(cone);
 

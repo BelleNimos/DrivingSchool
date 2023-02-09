@@ -28,46 +28,21 @@ public class Player : MonoBehaviour
             _maxConesText.gameObject.SetActive(false);
     }
 
-    private void OnTriggerStay(Collider collision)
-    {
-        if (collision.TryGetComponent<Utilizer>(out Utilizer utilizer))
-            if (_bag.CurrentConesCount > 0)
-                _bag.GiveAwayCone(utilizer);
-    }
-
-    private void OnTriggerExit(Collider collision)
-    {
-        if (collision.TryGetComponent<UpgradesStand>(out UpgradesStand upgradesStand))
-            upgradesStand.DisableUpgrades();
-    }
-
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.TryGetComponent<UpgradesStand>(out UpgradesStand upgradesStand))
             upgradesStand.EnableUpgrades();
 
-        if (collision.TryGetComponent<ConeUpgrades>(out ConeUpgrades conesUpgrade))
-            conesUpgrade.Unlock();
-
         if (collision.TryGetComponent<TransitionLevel>(out TransitionLevel transitionLevel))
-            transitionLevel.GoToNextLevel();
+            transitionLevel.EnablePanel();
 
-        if (collision.TryGetComponent<CustomerArea>(out CustomerArea customerArea))
-            if (customerArea.CurrentCustomersCount > 0)
-                customerArea.EnableSlider();
+        if (collision.TryGetComponent<ConeUpgrades>(out ConeUpgrades conesUpgrade))
+            if (_moneyPoint.CurrentDollarsCount >= conesUpgrade.Price)
+                conesUpgrade.Unlock();
 
-        if (collision.TryGetComponent<StandWZ>(out StandWZ standWZ))
-            if (CurrentCustomersCount > 0 && standWZ.CustomersCount < standWZ.MaxCustomersCount)
-                standWZ.EnableSlider();
-
-        if (collision.TryGetComponent<Spawner>(out Spawner spawner))
-        {
-            if (spawner.CurrentConesCount == 0)
-                spawner.EnableSilder();
-
-            if (spawner.IsReady)
-                StartCoroutine(AddCones(spawner));
-        }
+        if (collision.TryGetComponent<ConePoint>(out ConePoint conePoint))
+            if (_bag.CurrentConesCount > 0 && conePoint.IsFree == true)
+                _bag.GiveAwayCone(conePoint);
 
         if (collision.TryGetComponent<StackDollars>(out StackDollars stackDollars))
         {
@@ -78,21 +53,44 @@ public class Player : MonoBehaviour
             }
         }
 
-        if (collision.TryGetComponent<ConePoint>(out ConePoint conePoint))
+        if (collision.TryGetComponent<Cone>(out Cone cone))
         {
-            if (_bag.CurrentConesCount > 0 && conePoint.IsFree == true)
+            if (cone.IsCollision == true)
             {
-                _bag.GiveAwayCone(conePoint);
-            }
-            else if (_bag.CurrentConesCount < _bag.MaxConesCount && conePoint.IsFree == false)
-            {
-                if (conePoint.CheckForConeCollision() == true)
-                {
-                    conePoint.GiveAwayCone(_bag);
-                    conePoint.RemoveCone();
-                }
+                cone.ResetState();
+                _bag.AddCone(cone);
             }
         }
+
+        if (collision.TryGetComponent<Spawner>(out Spawner spawner))
+        {
+            if (spawner.CurrentConesCount == 0)
+                spawner.EnableSilder();
+
+            if (spawner.IsReady)
+                StartCoroutine(AddCones(spawner));
+        }
+    }
+
+    private void OnTriggerExit(Collider collision)
+    {
+        if (collision.TryGetComponent<UpgradesStand>(out UpgradesStand upgradesStand))
+            upgradesStand.DisableUpgrades();
+    }
+
+    private void OnTriggerStay(Collider collision)
+    {
+        if (collision.TryGetComponent<Utilizer>(out Utilizer utilizer))
+            if (_bag.CurrentConesCount > 0)
+                _bag.GiveAwayCone(utilizer);
+
+        if (collision.TryGetComponent<CustomerArea>(out CustomerArea customerArea))
+            if (customerArea.CurrentCustomersCount > 0)
+                customerArea.EnableSlider();
+
+        if (collision.TryGetComponent<StandWZ>(out StandWZ standWZ))
+            if (CurrentCustomersCount > 0 && standWZ.CustomersCount < standWZ.MaxCustomersCount)
+                standWZ.EnableSlider();
     }
 
     private IEnumerator AddCones(Spawner spawner)
@@ -102,7 +100,7 @@ public class Player : MonoBehaviour
             if (spawner.CurrentConesCount > 0)
                 if (_bag.CurrentConesCount < _bag.MaxConesCount)
                     spawner.GiveAwayCone(_bag);
-            
+
             yield return _waitForSeconds;
         }
     }

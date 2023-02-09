@@ -61,7 +61,7 @@ public class Car : MonoBehaviour
             if (IsFinish == true)
             {
                 IsFinish = false;
-                _customer.Finish();
+                _customer.IsFinishTrue();
                 _customer = null;
             }
         }

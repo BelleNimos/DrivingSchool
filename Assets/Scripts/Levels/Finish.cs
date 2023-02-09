@@ -17,7 +17,7 @@ public class Finish : MonoBehaviour
 
     public void Finished()
     {
-        if (_moneyPoint.CurrentDollarsCount >= _price && _isUse == false)
+        if (_isUse == false)
         {
             _moneyPoint.SpendMoney(_price);
             _isUse = true;

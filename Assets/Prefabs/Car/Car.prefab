@@ -182,8 +182,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea3bd076941639d49ba7a3cf371a2787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _drivesLeftCountText: {fileID: 0}
-  _maxDrivesLeftCountText: {fileID: 0}
   _seat: {fileID: 0}
   _lane: {fileID: 0}
   _firstPosition: {fileID: 0}

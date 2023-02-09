@@ -9,8 +9,7 @@ public class Scale : MonoBehaviour
 
     private const float MinValue = 0;
     private const float MaxValue = 1;
-    private const float ValueChange = 0.04f;
-    private const float Duration = 0.05f;
+    private const float Duration = 0.0025f;
 
     public bool IsEmpty { get; private set; }
     public float CurrentValue => _slider.value;
@@ -44,6 +43,6 @@ public class Scale : MonoBehaviour
 
     private void OnValueChanged()
     {
-        _slider.DOValue(_slider.value + ValueChange, Duration);
+        _slider.DOValue(_slider.value + Time.deltaTime, Duration);
     }
 }

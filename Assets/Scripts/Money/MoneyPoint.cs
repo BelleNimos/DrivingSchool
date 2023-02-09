@@ -37,7 +37,8 @@ public class MoneyPoint : MonoBehaviour
 
     public void SpendMoney(int price)
     {
-        for (int i = 0; i < price; i++)
-            _dollars.Pop();
+        if (_dollars.Count >= price)
+            for (int i = 0; i < price; i++)
+                _dollars.Pop();
     }
 }

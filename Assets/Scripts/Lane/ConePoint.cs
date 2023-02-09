@@ -7,7 +7,6 @@ public class ConePoint : MonoBehaviour
     [SerializeField] private Material _elderMaterial;
     [SerializeField] private Material _newMaterial;
     [SerializeField] private MoneyPoint _moneyPoint;
-    [SerializeField] private WarningPoint _warningPoint;
 
     private Renderer _renderer;
     private Cone _cone;
@@ -15,6 +14,8 @@ public class ConePoint : MonoBehaviour
     private const float PowerJumpCone = 1f;
     private const float DurationJumpCone = 0.2f;
     private const int NumJumpsCone = 1;
+    private const float Delay = 2f;
+    private const string UnlockPhysicsText = "UnlockPhysics";
 
     public bool IsFree { get; private set; }
 
@@ -26,16 +27,23 @@ public class ConePoint : MonoBehaviour
 
     private void Update()
     {
-        if (_cone != null)
+        if (_cone == null)
         {
-            if (CheckForConeCollision() == true)
-                _warningPoint.gameObject.SetActive(true);
-            else
-                _warningPoint.gameObject.SetActive(false);
+            IsFree = true;
+            _renderer.material = _elderMaterial;
         }
         else
         {
-            _warningPoint.gameObject.SetActive(false);
+            IsFree = false;
+            _renderer.material = _newMaterial;
+        }
+
+        if (IsFree == false)
+        {
+            if (_cone.IsCollision == true)
+                _cone = null;
+            else
+                _cone.Invoke(UnlockPhysicsText, Delay);
         }
     }
 
@@ -53,7 +61,6 @@ public class ConePoint : MonoBehaviour
             }
             );
 
-        _renderer.material = _newMaterial;
         _cone.CreateDollar(_moneyPoint, transform);
         IsFree = false;
     }
@@ -64,24 +71,5 @@ public class ConePoint : MonoBehaviour
             return true;
         else
             return false;
-    }
-
-    public void GiveAwayCone(Bag bag)
-    {
-        _cone.ResetState();
-        bag.AddCone(_cone);
-    }
-
-    public void RemoveCone()
-    {
-        _cone = null;
-        IsFree = true;
-        _renderer.material = _elderMaterial;
-    }
-
-    public void UnlockPhysics()
-    {
-        _cone.OffKinematic();
-        _cone.OffTrigger();
     }
 }

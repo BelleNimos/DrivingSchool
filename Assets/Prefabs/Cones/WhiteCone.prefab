@@ -79,3 +79,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dollarPrefab: {fileID: 4707887741355687753, guid: ff1c8859fa01170409dcdecb5f1a0f7c, type: 3}
+  _warningPoint: {fileID: 8883041326273011905}
+--- !u!114 &8883041326273011905 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3067619985280979543, guid: 188d0479721b3334fb8c868ae8ca0d32, type: 3}
+  m_PrefabInstance: {fileID: 5896486358696981142}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55a9d90f928b903459ec0fb4bc0e0a12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

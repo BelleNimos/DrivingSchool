@@ -7,9 +7,6 @@ public class Lane : MonoBehaviour
 
     private int _counter = 0;
 
-    private const float Delay = 0.5f;
-    private const string UnlockPhysics = "UnlockPhysics";
-
     public bool IsReady { get; private set; }
 
     private void Start()
@@ -23,10 +20,6 @@ public class Lane : MonoBehaviour
             IsReady = true;
         else
             IsReady = false;
-
-        if (IsReady == true)
-            foreach (var conePoint in _conePoints)
-                conePoint.Invoke(UnlockPhysics, Delay);
     }
 
     private int GetValueCounter()
@@ -34,7 +27,7 @@ public class Lane : MonoBehaviour
         _counter = 0;
 
         foreach (var conePoint in _conePoints)
-            if (conePoint.IsFree == false && conePoint.CheckForConeCollision() == false)
+            if (conePoint.IsFree == false)
                 _counter++;
 
         return _counter;

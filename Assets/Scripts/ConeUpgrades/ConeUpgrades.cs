@@ -9,14 +9,7 @@ public abstract class ConeUpgrades : MonoBehaviour
     [SerializeField] private TMP_Text _priceText;
     [SerializeField] private UpgradeConesHorizontalUI _upgradeConesHorizontalUI;
 
-    private bool _isUse;
-
-    protected int Price;
-
-    private void Start()
-    {
-        _isUse = false;
-    }
+    public int Price { get; protected set; }
 
     private void Update()
     {
@@ -25,13 +18,10 @@ public abstract class ConeUpgrades : MonoBehaviour
 
     public void Unlock()
     {
-        if (_moneyPoint.CurrentDollarsCount >= Price && _isUse == false)
-        {
-            _spawner.ChangeConePrefab(_conePrefab);
-            _moneyPoint.SpendMoney(Price);
-            _isUse = true;
-            _upgradeConesHorizontalUI.gameObject.SetActive(false);
-            gameObject.SetActive(false);
-        }
+        _spawner.ChangeConePrefab(_conePrefab);
+        _moneyPoint.SpendMoney(Price);
+
+        _upgradeConesHorizontalUI.gameObject.SetActive(false);
+        gameObject.SetActive(false);
     }
 }
