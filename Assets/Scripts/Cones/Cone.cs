@@ -1,7 +1,7 @@
 using DG.Tweening;
 using UnityEngine;
 
-[RequireComponent(typeof(Animator), typeof(Rigidbody), typeof(BoxCollider))]
+[RequireComponent(typeof(Animator), typeof(Rigidbody), typeof(MeshCollider))]
 public abstract class Cone : MonoBehaviour
 {
     [SerializeField] private Dollar _dollarPrefab;
@@ -10,7 +10,7 @@ public abstract class Cone : MonoBehaviour
     private Dollar _dollar;
     private Animator _animator;
     private Rigidbody _rigidbody;
-    private BoxCollider _collider;
+    private MeshCollider _collider;
 
     protected WaitForSeconds WaitForSeconds;
     protected int CountDollars;
@@ -28,14 +28,14 @@ public abstract class Cone : MonoBehaviour
     private const float DurationFlightDollar = 1f;
     private const int NumFlightsDollar = 1;
 
-    private const float Delay = 5f;
+    private const float Delay = 6f;
     
 
     private void Start()
     {
         _animator = GetComponent<Animator>();
         _rigidbody = GetComponent<Rigidbody>();
-        _collider = GetComponent<BoxCollider>();
+        _collider = GetComponent<MeshCollider>();
         WaitForSeconds = new WaitForSeconds(0.6f);
         IsCollision = false;
     }

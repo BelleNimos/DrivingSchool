@@ -14,7 +14,7 @@ public class ConePoint : MonoBehaviour
     private const float PowerJumpCone = 1f;
     private const float DurationJumpCone = 0.2f;
     private const int NumJumpsCone = 1;
-    private const float Delay = 2f;
+    private const float Delay = 2.5f;
     private const string UnlockPhysicsText = "UnlockPhysics";
 
     public bool IsFree { get; private set; }

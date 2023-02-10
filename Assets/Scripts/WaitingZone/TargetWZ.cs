@@ -18,7 +18,6 @@ public class TargetWZ : MonoBehaviour
             if (customer.CheckPosition(transform))
             {
                 customer.StopMove();
-
                 _waitingZone.SetTargetCustomer(transform, customer);
                 customer.IsReadyTrue();
             }

@@ -1904,7 +1904,7 @@ MonoBehaviour:
   _bag: {fileID: 1419741714}
   _upgrades: {fileID: 971878144}
   _priceText: {fileID: 1940534265}
-  _price: 1250
+  _price: 1500
   _idNextLevel: 6
 --- !u!1001 &274451920
 PrefabInstance:
@@ -7336,7 +7336,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 35
+  field of view: 40
   orthographic: 0
   orthographic size: 6
   m_Depth: -1
@@ -8274,7 +8274,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh220154
+  m_Name: pb_Mesh62170
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -13831,7 +13831,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 1419741713}
   m_Follow: {fileID: 1419741712}
   m_Lens:
-    FieldOfView: 35
+    FieldOfView: 40
     OrthographicSize: 6
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -15435,7 +15435,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1325829968489570636, guid: adcf86916536d5f45ae9fa5e063f95f1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.4499998
+      value: 1.4
       objectReference: {fileID: 0}
     - target: {fileID: 1325829968489570636, guid: adcf86916536d5f45ae9fa5e063f95f1, type: 3}
       propertyPath: m_LocalPosition.z

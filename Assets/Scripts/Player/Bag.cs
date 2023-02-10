@@ -8,7 +8,6 @@ public class Bag : MonoBehaviour
     private Stack<Cone> _cones;
     private Animator _animator;
 
-    private const string Idle = "Idle";
     private const string Rocking = "Rocking";
     private const float JumpPower = 0.1f;
     private const float Duration = 0.1f;
@@ -60,12 +59,10 @@ public class Bag : MonoBehaviour
     public void StartAnimationRocking()
     {
         _animator.SetBool(Rocking, true);
-        _animator.SetBool(Idle, false);
     }
 
     public void StopAnimationRocking()
     {
-        _animator.SetBool(Idle, true);
         _animator.SetBool(Rocking, false);
     }
 

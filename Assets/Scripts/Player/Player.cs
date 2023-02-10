@@ -9,19 +9,23 @@ public class Player : MonoBehaviour
     [SerializeField] private Bag _bag;
     [SerializeField] private TMP_Text _maxConesText;
 
-    private Stack<Customer> _customers;
+    private List<Customer> _customers;
     private WaitForSeconds _waitForSeconds;
 
     public int CurrentCustomersCount => _customers.Count;
 
     private void Start()
     {
-        _customers = new Stack<Customer>();
+        _customers = new List<Customer>();
         _waitForSeconds = new WaitForSeconds(0.05f);
     }
 
     private void Update()
     {
+        for (int i = 0; i < _customers.Count; i++)
+            if (_customers[i].IsExitReady == true)
+                _customers.RemoveAt(i);
+
         if (_bag.CurrentConesCount == _bag.MaxConesCount)
             _maxConesText.gameObject.SetActive(true);
         else
@@ -55,7 +59,7 @@ public class Player : MonoBehaviour
 
         if (collision.TryGetComponent<Cone>(out Cone cone))
         {
-            if (cone.IsCollision == true)
+            if (cone.IsCollision == true && _bag.CurrentConesCount < _bag.MaxConesCount)
             {
                 cone.ResetState();
                 _bag.AddCone(cone);
@@ -107,11 +111,14 @@ public class Player : MonoBehaviour
 
     public void AddCustomer(Customer customer)
     {
-        _customers.Push(customer);
+        _customers.Add(customer);
     }
 
     public void AssignTargetCustomer(WaitingZone waitingZone)
     {
-        waitingZone.SetTarget(_customers.Pop());
+        int index = Random.Range(0, _customers.Count);
+        waitingZone.SetTarget(_customers[index]);
+        _customers[index].StopTimer();
+        _customers.RemoveAt(index);
     }
 }

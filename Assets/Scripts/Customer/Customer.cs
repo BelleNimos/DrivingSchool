@@ -18,6 +18,8 @@ public class Customer : MonoBehaviour
     private float _waitingSeconds;
     private int _moneyToWithdraw;
 
+    
+    public bool IsExitReady { get; private set; }
     public bool IsFinish { get; private set; }
     public bool IsReady { get; private set; }
 
@@ -34,11 +36,12 @@ public class Customer : MonoBehaviour
 
         _targetWZ = null;
         _isRunningTime = true;
+        IsExitReady = false;
         IsFinish = false;
         IsReady = false;
-        _maxWaitingSeconds = 100f;
+        _maxWaitingSeconds = 80f;
         _waitingSeconds = 0f;
-        _moneyToWithdraw = 10;
+        _moneyToWithdraw = 20;
     }
 
     private void Update()
@@ -46,7 +49,7 @@ public class Customer : MonoBehaviour
         _waitingSeconds += Time.deltaTime;
 
         if (_waitingSeconds >= _maxWaitingSeconds)
-            if (_isRunningTime)
+            if (_isRunningTime == true)
                 TakeMoney();
 
         if (_targetWZ == null)
@@ -118,6 +121,7 @@ public class Customer : MonoBehaviour
     public void GoToExit()
     {
         SetTarget(_exitTarget);
+        IsExitReady = true;
     }
 
     public void RemoveTargetWZ()

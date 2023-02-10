@@ -12,7 +12,6 @@ public class CharacterMovement : MonoBehaviour
     private float _gravityForce;
     private float _currentGravity;
 
-    private const string Idle = "Idle";
     private const string Carry = "Carry";
     private const string Run = "Run";
     private const string CarryIdle = "Carry Idle";
@@ -58,12 +57,10 @@ public class CharacterMovement : MonoBehaviour
                 _animator.SetBool(CarryIdle, true);
                 _animator.SetBool(Carry, false);
                 _animator.SetBool(Run, false);
-                _animator.SetBool(Idle, false);
                 _bag.StopAnimationRocking();
             }
             else if (_bag.CurrentConesCount <= 0)
             {
-                _animator.SetBool(Idle, true);
                 _animator.SetBool(Run, false);
                 _animator.SetBool(Carry, false);
                 _animator.SetBool(CarryIdle, false);
@@ -77,7 +74,6 @@ public class CharacterMovement : MonoBehaviour
                 _animator.SetBool(Carry, true);
                 _animator.SetBool(Run, false);
                 _animator.SetBool(CarryIdle, false);
-                _animator.SetBool(Idle, false);
                 _bag.StartAnimationRocking();
             }
             else if (_bag.CurrentConesCount <= 0)
@@ -85,7 +81,6 @@ public class CharacterMovement : MonoBehaviour
                 _animator.SetBool(Run, true);
                 _animator.SetBool(Carry, false);
                 _animator.SetBool(CarryIdle, false);
-                _animator.SetBool(Idle, false);
                 _bag.StopAnimationRocking();
             }
         }

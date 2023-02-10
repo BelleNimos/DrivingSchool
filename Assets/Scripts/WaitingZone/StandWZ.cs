@@ -15,7 +15,7 @@ public class StandWZ : MonoBehaviour
         {
             _sliderWZ.gameObject.SetActive(false);
 
-            if (_waitingZone.CurrentCustomersCount < _waitingZone.MaxCountCustomers)
+            if (_waitingZone.CurrentCustomersCount < _waitingZone.MaxCountCustomers && _player.CurrentCustomersCount > 0)
                 _player.AssignTargetCustomer(_waitingZone);
         }
     }

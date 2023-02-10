@@ -59,8 +59,8 @@ public class WaitingZone : MonoBehaviour
         {
             if (_targets[i].IsFree == true)
             {
-                customer.SetTarget(_targets[i].transform);
                 _customers.Add(customer);
+                customer.SetTarget(_targets[i].transform);
                 _targets[i].Block();
                 break;
             }
