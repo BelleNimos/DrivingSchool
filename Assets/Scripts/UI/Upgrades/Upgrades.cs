@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 
+[RequireComponent(typeof(Animator))]
 public class Upgrades : MonoBehaviour
 {
     [SerializeField] private TMP_Text _spawnerPriceText;
@@ -11,10 +12,12 @@ public class Upgrades : MonoBehaviour
     [SerializeField] private CharacterMovement _characterMovement;
     [SerializeField] private Bag _bag;
 
+    private Animator _animator;
     private int _spawnerPrice;
     private int _speedPrice;
     private int _bagPrice;
 
+    private const string Open = "Open";
     private const int SurplusFactor = 20;
 
     public bool IsEnable { get; private set; }
@@ -22,9 +25,15 @@ public class Upgrades : MonoBehaviour
     public int SpeedPrice => _speedPrice;
     public int BagPrice => _bagPrice;
 
+    private void Awake()
+    {
+        _animator = GetComponent<Animator>();
+    }
+
     private void OnEnable()
     {
         IsEnable = true;
+        _animator.SetTrigger(Open);
     }
 
     private void OnDisable()
