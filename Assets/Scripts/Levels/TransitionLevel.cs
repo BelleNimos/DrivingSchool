@@ -16,6 +16,8 @@ public class TransitionLevel : MonoBehaviour
 
     private bool _isEmpty;
 
+    private const string BlockPhysicsText = "BlockPhysics";
+
     private void Start()
     {
         _idNextLevel -= 1;
@@ -29,7 +31,6 @@ public class TransitionLevel : MonoBehaviour
         {
             ChangeOptionsNextLevel();
             SceneManager.LoadScene(_idNextLevel);
-            Time.timeScale = 1;
         }
     }
 
@@ -47,13 +48,11 @@ public class TransitionLevel : MonoBehaviour
     public void EnablePanel()
     {
         _nextLevelUI.gameObject.SetActive(true);
-        Time.timeScale = 0;
     }
 
     public void DisablePanel()
     {
         _nextLevelUI.gameObject.SetActive(false);
-        Time.timeScale = 1;
     }
 
     public void GoToNextLevel()

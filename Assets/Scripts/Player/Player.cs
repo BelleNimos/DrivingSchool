@@ -34,11 +34,11 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.TryGetComponent<UpgradesStand>(out UpgradesStand upgradesStand))
-            upgradesStand.EnableUpgrades();
-
         if (collision.TryGetComponent<TransitionLevel>(out TransitionLevel transitionLevel))
             transitionLevel.EnablePanel();
+
+        if (collision.TryGetComponent<UpgradesStand>(out UpgradesStand upgradesStand))
+            upgradesStand.EnableUpgrades();
 
         if (collision.TryGetComponent<ConeUpgrades>(out ConeUpgrades conesUpgrade))
             if (_moneyPoint.CurrentDollarsCount >= conesUpgrade.Price)

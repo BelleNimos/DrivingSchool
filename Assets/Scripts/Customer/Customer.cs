@@ -17,7 +17,6 @@ public class Customer : MonoBehaviour
     private float _maxWaitingSeconds;
     private float _waitingSeconds;
     private int _moneyToWithdraw;
-
     
     public bool IsExitReady { get; private set; }
     public bool IsFinish { get; private set; }
@@ -41,7 +40,7 @@ public class Customer : MonoBehaviour
         IsReady = false;
         _maxWaitingSeconds = 80f;
         _waitingSeconds = 0f;
-        _moneyToWithdraw = 20;
+        _moneyToWithdraw = 10;
     }
 
     private void Update()
