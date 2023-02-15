@@ -16,8 +16,6 @@ public class TransitionLevel : MonoBehaviour
 
     private bool _isEmpty;
 
-    private const string BlockPhysicsText = "BlockPhysics";
-
     private void Start()
     {
         _idNextLevel -= 1;

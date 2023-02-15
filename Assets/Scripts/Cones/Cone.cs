@@ -5,7 +5,6 @@ using UnityEngine;
 public abstract class Cone : MonoBehaviour
 {
     [SerializeField] private Dollar _dollarPrefab;
-    [SerializeField] private WarningPoint _warningPoint;
 
     private Dollar _dollar;
     private Animator _animator;
@@ -71,7 +70,6 @@ public abstract class Cone : MonoBehaviour
         {
             IsCollision = true;
             _waitingSeconds = 0f;
-            //gameObject.layer = ConeUsedLayer;
         }
     }
 
@@ -116,9 +114,9 @@ public abstract class Cone : MonoBehaviour
 
     public void UnlockPhysics()
     {
+        gameObject.layer = ConeLayer;
         _rigidbody.isKinematic = false;
         _collider.isTrigger = false;
-        gameObject.layer = ConeLayer;
     }
 
     public void ResetState()

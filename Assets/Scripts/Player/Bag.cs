@@ -29,6 +29,12 @@ public class Bag : MonoBehaviour
             MaxConesCount = 12;
     }
 
+    private void Update()
+    {
+        if (CurrentConesCount > 0)
+            _cones.Peek().ResetState();
+    }
+
     public void AddCone(Cone cone)
     {
         if (CurrentConesCount < MaxConesCount)

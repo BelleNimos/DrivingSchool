@@ -11,7 +11,7 @@ public class TargetWZ : MonoBehaviour
         IsFree = true;
     }
 
-    private void OnTriggerEnter(Collider collision)
+    private void OnTriggerStay(Collider collision)
     {
         if (collision.TryGetComponent<Customer>(out Customer customer))
         {

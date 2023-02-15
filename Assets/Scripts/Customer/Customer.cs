@@ -52,8 +52,6 @@ public class Customer : MonoBehaviour
 
         if (_targetWZ == null)
             IsReady = false;
-        else
-            transform.position = _targetWZ.transform.position;
 
         if (IsFinish == true)
         {

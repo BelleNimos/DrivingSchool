@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -10,14 +9,12 @@ public class Player : MonoBehaviour
     [SerializeField] private TMP_Text _maxConesText;
 
     private List<Customer> _customers;
-    //private WaitForSeconds _waitForSeconds;
 
     public int CurrentCustomersCount => _customers.Count;
 
     private void Start()
     {
         _customers = new List<Customer>();
-        //_waitForSeconds = new WaitForSeconds(0.05f);
     }
 
     private void Update()
@@ -49,13 +46,8 @@ public class Player : MonoBehaviour
                 _bag.GiveAwayCone(conePoint);
 
         if (collision.TryGetComponent<Cone>(out Cone cone))
-        {
             if (cone.IsCollision == true && _bag.CurrentConesCount < _bag.MaxConesCount)
-            {
-                cone.ResetState();
                 _bag.AddCone(cone);
-            }
-        }
 
         if (collision.TryGetComponent<StackDollars>(out StackDollars stackDollars))
         {
@@ -82,7 +74,6 @@ public class Player : MonoBehaviour
 
             if (spawner.IsReady && _bag.CurrentConesCount < _bag.MaxConesCount)
                 spawner.GiveAwayCone(_bag);
-                //StartCoroutine(AddCones(spawner));
         }
 
         if (collision.TryGetComponent<Utilizer>(out Utilizer utilizer))
@@ -97,18 +88,6 @@ public class Player : MonoBehaviour
             if (CurrentCustomersCount > 0 && standWZ.CustomersCount < standWZ.MaxCustomersCount)
                 standWZ.EnableSlider();
     }
-
-    //private IEnumerator AddCones(Spawner spawner)
-    //{
-    //    for (int i = 0; i < _bag.MaxConesCount; i++)
-    //    {
-    //        if (spawner.CurrentConesCount > 0)
-    //            if (_bag.CurrentConesCount < _bag.MaxConesCount)
-    //                spawner.GiveAwayCone(_bag);
-
-    //        yield return _waitForSeconds;
-    //    }
-    //}
 
     public void AddCustomer(Customer customer)
     {
