@@ -18,9 +18,9 @@ public class Upgrades : MonoBehaviour
     private int _bagPrice;
 
     private const string Open = "Open";
+    private const string Close = "Close";
     private const int SurplusFactor = 20;
 
-    public bool IsEnable { get; private set; }
     public int SpawnerPrice => _spawnerPrice;
     public int SpeedPrice => _speedPrice;
     public int BagPrice => _bagPrice;
@@ -28,17 +28,6 @@ public class Upgrades : MonoBehaviour
     private void Awake()
     {
         _animator = GetComponent<Animator>();
-    }
-
-    private void OnEnable()
-    {
-        IsEnable = true;
-        _animator.SetTrigger(Open);
-    }
-
-    private void OnDisable()
-    {
-        IsEnable = false;
     }
 
     private void Start()
@@ -70,6 +59,16 @@ public class Upgrades : MonoBehaviour
         price += SurplusFactor;
     }
 
+    public void OpenPanel()
+    {
+        _animator.SetTrigger(Open);
+    }
+
+    public void ClosePanel()
+    {
+        _animator.SetTrigger(Close);
+    }
+
     public void UpgradeSpawner()
     {
         if (_moneyPoint.CurrentDollarsCount >= _spawnerPrice)
@@ -95,15 +94,5 @@ public class Upgrades : MonoBehaviour
             Upgrade(ref _bagPrice);
             _bag.IncreaseCapacity();
         }
-    }
-
-    public void EnablePanel()
-    {
-        gameObject.SetActive(true);
-    }
-
-    public void DisablePanel()
-    {
-        gameObject.SetActive(false);
     }
 }

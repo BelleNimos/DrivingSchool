@@ -3,10 +3,9 @@ using UnityEngine;
 [RequireComponent(typeof(CustomerMovement))]
 public class Customer : MonoBehaviour
 {
-    [SerializeField] private StackDollars _stackDollarsPrefab;
-
     private CustomerMovement _movement;
     private CustomerAnimator _animator;
+    private StackDollars _stackDollars;
     private MoneyPoint _moneyPoint;
     private Transform _lastTarget;
     private Transform _firstTarget;
@@ -91,6 +90,11 @@ public class Customer : MonoBehaviour
         _targetWZ = targetWZ;
     }
 
+    public void SetStackDollars(StackDollars stackDollars)
+    {
+        _stackDollars = stackDollars;
+    }
+
     public void StopMove()
     {
         _movement.RemoveTarget();
@@ -102,7 +106,7 @@ public class Customer : MonoBehaviour
 
     public void InstantiateStackDollars()
     {
-        Instantiate(_stackDollarsPrefab, transform.position, Quaternion.identity);
+        Instantiate(_stackDollars, transform.position, Quaternion.identity);
     }
 
     public bool CheckPosition(Transform transform)

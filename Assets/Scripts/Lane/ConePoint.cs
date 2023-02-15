@@ -11,11 +11,11 @@ public class ConePoint : MonoBehaviour
     private Renderer _renderer;
     private Cone _cone;
 
+    //private const string UnlockPhysicsText = "UnlockPhysics";
+    private const float Delay = 1f;
     private const float PowerJumpCone = 1f;
     private const float DurationJumpCone = 0.2f;
     private const int NumJumpsCone = 1;
-    private const float Delay = 2.5f;
-    private const string UnlockPhysicsText = "UnlockPhysics";
 
     public bool IsFree { get; private set; }
 
@@ -40,10 +40,10 @@ public class ConePoint : MonoBehaviour
 
         if (IsFree == false)
         {
-            if (_cone.IsCollision == true)
-                _cone = null;
+            if (_cone.IsCollision == false)
+                _cone.UnlockPhysics();
             else
-                _cone.Invoke(UnlockPhysicsText, Delay);
+                _cone = null;
         }
     }
 

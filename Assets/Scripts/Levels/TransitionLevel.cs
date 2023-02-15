@@ -45,12 +45,12 @@ public class TransitionLevel : MonoBehaviour
         SceneData.ChangeBagUpgradePrice(_upgrades.BagPrice);
     }
 
-    public void EnablePanel()
+    public void OpenPanel()
     {
         _nextLevelUI.gameObject.SetActive(true);
     }
 
-    public void DisablePanel()
+    public void ClosePanel()
     {
         _nextLevelUI.gameObject.SetActive(false);
     }

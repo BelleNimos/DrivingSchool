@@ -21,7 +21,7 @@ public abstract class ConeUpgrades : MonoBehaviour
         _spawner.ChangeConePrefab(_conePrefab);
         _moneyPoint.SpendMoney(Price);
 
-        _upgradeConesHorizontalUI.gameObject.SetActive(false);
+        _upgradeConesHorizontalUI.StartAnimationClose();
         gameObject.SetActive(false);
     }
 }

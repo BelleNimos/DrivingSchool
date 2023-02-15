@@ -5,6 +5,7 @@ using UnityEngine;
 public class CustomerArea : MonoBehaviour
 {
     [SerializeField] private List<CustomerFirstTarget> _customerFirstTargets;
+    [SerializeField] private StackDollars _stackDollarsPrefab;
     [SerializeField] private Entrance _entrance;
     [SerializeField] private Scale _sliderCustomer;
     [SerializeField] private Player _player;
@@ -61,6 +62,7 @@ public class CustomerArea : MonoBehaviour
             int index = Random.Range(0, _customerFirstTargets.Count);
             _customers.Add(_entrance.InstantiateCustomer());
             _customers[_customers.Count - 1].SetFirstTarget(_customerFirstTargets[index].transform);
+            _customers[_customers.Count - 1].SetStackDollars(_stackDollarsPrefab);
 
             yield return _waitForSeconds;
         }

@@ -6,8 +6,8 @@ public abstract class JoystickHandler : MonoBehaviour, IDragHandler, IPointerDow
 {
     [SerializeField] private Camera _camera;
     [SerializeField] private Image _joystickBackground;
-    [SerializeField] private Image _joystick;
     [SerializeField] private Image _joystickArea;
+    [SerializeField] private Image _joystick;
     [SerializeField] private Color _inActiveJoystick;
     [SerializeField] private Color _activeJoystick;
     [SerializeField] private Color _inActiveBackground;
@@ -27,7 +27,7 @@ public abstract class JoystickHandler : MonoBehaviour, IDragHandler, IPointerDow
 
     private void ClickEffect()
     {
-        if (!_joystickIsActive)
+        if (_joystickIsActive == false)
         {
             _joystickIsActive = true;
             _joystickBackground.color = _inActiveBackground;

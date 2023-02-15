@@ -30,7 +30,10 @@ public abstract class Cone : MonoBehaviour
     private const float DurationFlightDollar = 1f;
     private const int NumFlightsDollar = 1;
 
-    private const float Delay = 6f;
+    private const float Delay = 1f;
+    private const float MaxSpeedRb = 0.1f;
+    private const int ConeLayer = 9;
+    private const int ConeUsedLayer = 10;
 
     public bool IsCollision { get; private set; }
 
@@ -56,13 +59,19 @@ public abstract class Cone : MonoBehaviour
                 Destroy(this.gameObject);
     }
 
+    private void FixedUpdate()
+    {
+        if (IsCollision == true && _rigidbody.velocity.magnitude < MaxSpeedRb)
+            Invoke(BlockPhysicsText, Delay);
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.TryGetComponent<Car>(out Car car) || collision.gameObject.TryGetComponent<Cone>(out Cone cone))
         {
             IsCollision = true;
             _waitingSeconds = 0f;
-            Invoke(BlockPhysicsText, Delay);
+            //gameObject.layer = ConeUsedLayer;
         }
     }
 
@@ -73,6 +82,7 @@ public abstract class Cone : MonoBehaviour
 
     private void BlockPhysics()
     {
+        gameObject.layer = ConeUsedLayer;
         _rigidbody.isKinematic = true;
         _collider.isTrigger = true;
     }
@@ -108,6 +118,7 @@ public abstract class Cone : MonoBehaviour
     {
         _rigidbody.isKinematic = false;
         _collider.isTrigger = false;
+        gameObject.layer = ConeLayer;
     }
 
     public void ResetState()

@@ -6,11 +6,11 @@ public class UpgradesStand : MonoBehaviour
 
     public void EnableUpgrades()
     {
-        _upgrades.EnablePanel();
+        _upgrades.OpenPanel();
     }
 
     public void DisableUpgrades()
     {
-        _upgrades.DisablePanel();
+        _upgrades.ClosePanel();
     }
 }

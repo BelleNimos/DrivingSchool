@@ -8,7 +8,7 @@ public class Bag : MonoBehaviour
     private Stack<Cone> _cones;
     private Animator _animator;
 
-    private const string Rocking = "Rocking";
+    private const string RockingText = "Rocking";
     private const float JumpPower = 0.1f;
     private const float Duration = 0.1f;
     private const float Distance = 0.7f;
@@ -31,19 +31,22 @@ public class Bag : MonoBehaviour
 
     public void AddCone(Cone cone)
     {
-        Vector3 nextPosition = new Vector3(0, Distance * CurrentConesCount, 0);
-        Vector3 nextRotation = new Vector3(0, 0, 0);
+        if (CurrentConesCount < MaxConesCount)
+        {
+            Vector3 nextPosition = new Vector3(0, Distance * CurrentConesCount, 0);
+            Vector3 nextRotation = new Vector3(0, 0, 0);
 
-        cone.transform.DOJump((transform.position + nextPosition), JumpPower, NumJumps, Duration)
-            .OnComplete(() =>
-            {
-                cone.transform.SetParent(transform, true);
-                cone.transform.localPosition = nextPosition;
-                cone.transform.localRotation = Quaternion.LookRotation(nextRotation);
-            }
-            );
+            cone.transform.DOJump((transform.position + nextPosition), JumpPower, NumJumps, Duration)
+                .OnComplete(() =>
+                {
+                    cone.transform.SetParent(transform, true);
+                    cone.transform.localPosition = nextPosition;
+                    cone.transform.localRotation = Quaternion.LookRotation(nextRotation);
+                }
+                );
 
-        _cones.Push(cone);
+            _cones.Push(cone);
+        }
     }
 
     public void GiveAwayCone(ConePoint conePoint)
@@ -53,17 +56,17 @@ public class Bag : MonoBehaviour
 
     public void GiveAwayCone(Utilizer utilizer)
     {
-        utilizer.DestoyCone(_cones.Pop());
+        utilizer.DestroyCone(_cones.Pop());
     }
 
     public void StartAnimationRocking()
     {
-        _animator.SetBool(Rocking, true);
+        _animator.SetBool(RockingText, true);
     }
 
     public void StopAnimationRocking()
     {
-        _animator.SetBool(Rocking, false);
+        _animator.SetBool(RockingText, false);
     }
 
     public void IncreaseCapacity()
