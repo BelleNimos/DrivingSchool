@@ -4,12 +4,12 @@ public class UpgradesStand : MonoBehaviour
 {
     [SerializeField] private Upgrades _upgrades;
 
-    public void EnableUpgrades()
+    public void EnableUpgradesPanel()
     {
         _upgrades.OpenPanel();
     }
 
-    public void DisableUpgrades()
+    public void DisableUpgradesPanel()
     {
         _upgrades.ClosePanel();
     }

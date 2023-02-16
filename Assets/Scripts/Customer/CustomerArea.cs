@@ -11,6 +11,8 @@ public class CustomerArea : MonoBehaviour
     [SerializeField] private Player _player;
     [SerializeField] private int _minDelay;
     [SerializeField] private int _maxDelay;
+    [SerializeField] private int _moneyToWithdraw;
+    [SerializeField] private float _maxWaitingSeconds;
 
     private List<Customer> _customers;
     private WaitForSeconds _waitForSeconds;
@@ -63,6 +65,8 @@ public class CustomerArea : MonoBehaviour
             _customers.Add(_entrance.InstantiateCustomer());
             _customers[_customers.Count - 1].SetFirstTarget(_customerFirstTargets[index].transform);
             _customers[_customers.Count - 1].SetStackDollars(_stackDollarsPrefab);
+            _customers[_customers.Count - 1].SetMoneyToWithdraw(_moneyToWithdraw);
+            _customers[_customers.Count - 1].SetMaxWaitingSeconds(_maxWaitingSeconds);
 
             yield return _waitForSeconds;
         }

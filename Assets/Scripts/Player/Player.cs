@@ -4,17 +4,18 @@ using TMPro;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private MoneyPoint _moneyPoint;
     [SerializeField] private Bag _bag;
     [SerializeField] private TMP_Text _maxConesText;
 
     private List<Customer> _customers;
+    private MoneyPoint _moneyPoint;
 
     public int CurrentCustomersCount => _customers.Count;
 
     private void Start()
     {
         _customers = new List<Customer>();
+        _moneyPoint = FindObjectOfType<MoneyPoint>();
     }
 
     private void Update()
@@ -31,45 +32,40 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.TryGetComponent<TransitionLevel>(out TransitionLevel transitionLevel))
-            transitionLevel.OpenPanel();
-
-        if (collision.TryGetComponent<UpgradesStand>(out UpgradesStand upgradesStand))
-            upgradesStand.EnableUpgrades();
-
-        if (collision.TryGetComponent<ConeUpgrades>(out ConeUpgrades conesUpgrade))
-            if (_moneyPoint.CurrentDollarsCount >= conesUpgrade.Price)
-                conesUpgrade.Unlock();
-
         if (collision.TryGetComponent<ConePoint>(out ConePoint conePoint))
             if (_bag.CurrentConesCount > 0 && conePoint.IsFree == true)
                 _bag.GiveAwayCone(conePoint);
 
         if (collision.TryGetComponent<Cone>(out Cone cone))
-            if (cone.IsCollision == true && _bag.CurrentConesCount < _bag.MaxConesCount)
-                _bag.AddCone(cone);
+            if (_bag.CurrentConesCount < _bag.MaxConesCount)
+                if (cone.IsCollision == true)
+                    _bag.AddCone(cone);
+
+        if (collision.TryGetComponent<ConeUpgrades>(out ConeUpgrades conesUpgrade))
+            if (_moneyPoint.CurrentDollarsCount >= conesUpgrade.Price)
+                conesUpgrade.Unlock();
+
+        if (collision.TryGetComponent<TransitionLevel>(out TransitionLevel transitionLevel))
+            transitionLevel.OpenPanel();
+
+        if (collision.TryGetComponent<UpgradesStand>(out UpgradesStand upgradesStand))
+            upgradesStand.EnableUpgradesPanel();
 
         if (collision.TryGetComponent<StackDollars>(out StackDollars stackDollars))
-        {
-            if (stackDollars.IsReady == true)
-            {
-                stackDollars.StartMove(_moneyPoint);
-                stackDollars.ChangeReadyValue();
-            }
-        }
+            stackDollars.StartMove();
     }
 
     private void OnTriggerExit(Collider collision)
     {
         if (collision.TryGetComponent<UpgradesStand>(out UpgradesStand upgradesStand))
-            upgradesStand.DisableUpgrades();
+            upgradesStand.DisableUpgradesPanel();
     }
 
     private void OnTriggerStay(Collider collision)
     {
         if (collision.TryGetComponent<Spawner>(out Spawner spawner))
         {
-            if (spawner.CurrentConesCount == 0 && _bag.CurrentConesCount < _bag.MaxConesCount)
+            if (spawner.CurrentConesCount == 0)
                 spawner.EnableSilder();
 
             if (spawner.IsReady && _bag.CurrentConesCount < _bag.MaxConesCount)

@@ -3,19 +3,19 @@ using UnityEngine;
 
 public class WhiteCone : Cone
 {
-    private IEnumerator InstantiateDollars(MoneyPoint moneyPoint, Transform transform)
+    private IEnumerator InstantiateDollars(Transform transform)
     {
         CountDollars = 11;
 
         for (int i = 0; i < CountDollars; i++)
         {
-            InstantiateDollar(moneyPoint, transform);
+            InstantiateDollar(transform);
             yield return WaitForSeconds;
         }
     }
 
-    public override void CreateDollar(MoneyPoint moneyPoint, Transform transform)
+    public override void CreateDollar(Transform transform)
     {
-        StartCoroutine(InstantiateDollars(moneyPoint, transform));
+        StartCoroutine(InstantiateDollars(transform));
     }
 }

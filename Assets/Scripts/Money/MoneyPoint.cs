@@ -24,12 +24,6 @@ public class MoneyPoint : MonoBehaviour
         _dollarsCount.text = CurrentDollarsCount.ToString();
     }
 
-    private void OnTriggerEnter(Collider collision)
-    {
-        if (collision.TryGetComponent<Dollar>(out Dollar dollar))
-            dollar.StopMoveAnimation();
-    }
-
     public void AddDollar(Dollar dollar)
     {
         _dollars.Push(dollar);

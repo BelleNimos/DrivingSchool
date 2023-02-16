@@ -4599,6 +4599,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1291846684}
     - target: {fileID: 2057930985838530163, guid: 2c8dd5ca91396a74fb5622134c5a1995, type: 3}
+      propertyPath: _moneyToWithdraw
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2057930985838530163, guid: 2c8dd5ca91396a74fb5622134c5a1995, type: 3}
+      propertyPath: _maxWaitingSeconds
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 2057930985838530163, guid: 2c8dd5ca91396a74fb5622134c5a1995, type: 3}
       propertyPath: _stackDollarsPrefab
       value: 
       objectReference: {fileID: 4074025093639186794, guid: aff6c6c45b81228478bbf115f34f4617, type: 3}
@@ -7556,7 +7564,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.36281562, y: -0.15015411, z: 0.059359618, w: 0.91776633}
+  m_LocalRotation: {x: 0.36281562, y: -0.15015414, z: 0.059359632, w: 0.91776633}
   m_LocalPosition: {x: 13.02, y: 20.14, z: 20.64}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -14316,7 +14324,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1901204534}
-  m_LocalRotation: {x: 0.36281562, y: -0.15015411, z: 0.059359618, w: 0.91776633}
+  m_LocalRotation: {x: 0.36281562, y: -0.15015414, z: 0.059359632, w: 0.91776633}
   m_LocalPosition: {x: 13.02, y: 20.14, z: 20.64}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -16108,6 +16116,7 @@ MonoBehaviour:
   - {fileID: 1756671304}
   _sliderCone: {fileID: 665841379}
   _startConePrefab: {fileID: 2959740828665998871, guid: 03570d588cf03934d8ac29847e93e621, type: 3}
+  _moneyToWithdraw: 3
 --- !u!65 &2143699574
 BoxCollider:
   m_ObjectHideFlags: 0

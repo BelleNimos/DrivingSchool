@@ -11753,6 +11753,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1291846684}
     - target: {fileID: 2057930985838530163, guid: 2c8dd5ca91396a74fb5622134c5a1995, type: 3}
+      propertyPath: _moneyToWithdraw
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2057930985838530163, guid: 2c8dd5ca91396a74fb5622134c5a1995, type: 3}
+      propertyPath: _maxWaitingSeconds
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 2057930985838530163, guid: 2c8dd5ca91396a74fb5622134c5a1995, type: 3}
       propertyPath: _stackDollarsPrefab
       value: 
       objectReference: {fileID: 1776092773010607037, guid: 6e16e280eb03f504ba9928c65792af92, type: 3}
@@ -12438,6 +12446,10 @@ PrefabInstance:
       propertyPath: _sliderCone
       value: 
       objectReference: {fileID: 665841379}
+    - target: {fileID: 4167762745439373309, guid: 62923e8327a11444d9ebce9eb9fff185, type: 3}
+      propertyPath: _moneyToWithdraw
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4167762745439373310, guid: 62923e8327a11444d9ebce9eb9fff185, type: 3}
       propertyPath: m_Size.y
       value: 1

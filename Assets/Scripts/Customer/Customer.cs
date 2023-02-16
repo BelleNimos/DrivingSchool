@@ -13,10 +13,10 @@ public class Customer : MonoBehaviour
     private Transform _exitTarget;
     private TargetWZ _targetWZ;
     private bool _isRunningTime;
+    private int _moneyToWithdraw;
     private float _maxWaitingSeconds;
     private float _waitingSeconds;
-    private int _moneyToWithdraw;
-    
+
     public bool IsExitReady { get; private set; }
     public bool IsFinish { get; private set; }
     public bool IsReady { get; private set; }
@@ -28,18 +28,14 @@ public class Customer : MonoBehaviour
         _moneyPoint = FindObjectOfType<MoneyPoint>();
         _lastTarget = FindObjectOfType<CustomerLastTarget>().transform;
         _exitTarget = FindObjectOfType<Exit>().transform;
-
         _target = _firstTarget;
         _movement.SetTarget(_target);
-
         _targetWZ = null;
         _isRunningTime = true;
         IsExitReady = false;
         IsFinish = false;
         IsReady = false;
-        _maxWaitingSeconds = 80f;
         _waitingSeconds = 0f;
-        _moneyToWithdraw = 10;
     }
 
     private void Update()
@@ -67,9 +63,9 @@ public class Customer : MonoBehaviour
         _waitingSeconds = 0f;
     }
 
-    public void StopTimer()
+    public void InstantiateStackDollars()
     {
-        _isRunningTime = false;
+        Instantiate(_stackDollars, transform.position, Quaternion.identity);
     }
 
     public void SetTarget(Transform target)
@@ -88,9 +84,45 @@ public class Customer : MonoBehaviour
         _targetWZ = targetWZ;
     }
 
+    public void SetMoneyToWithdraw(int value)
+    {
+        _moneyToWithdraw = value;
+    }
+
+    public void SetMaxWaitingSeconds(float value)
+    {
+        _maxWaitingSeconds = value;
+    }
+
     public void SetStackDollars(StackDollars stackDollars)
     {
         _stackDollars = stackDollars;
+    }
+
+    public void SetMinDistance(float minDistance)
+    {
+        _movement.SetMinDistance(minDistance);
+    }
+
+    public void RemoveTargetWZ()
+    {
+        _targetWZ = null;
+    }
+
+    public void StopTimer()
+    {
+        _isRunningTime = false;
+    }
+
+    public void GoToExit()
+    {
+        SetTarget(_exitTarget);
+        IsExitReady = true;
+    }
+
+    public void SitDown()
+    {
+        _animator.SitDown();
     }
 
     public void StopMove()
@@ -100,11 +132,6 @@ public class Customer : MonoBehaviour
 
         if (_target != null)
             transform.position = _target.position;
-    }
-
-    public void InstantiateStackDollars()
-    {
-        Instantiate(_stackDollars, transform.position, Quaternion.identity);
     }
 
     public bool CheckPosition(Transform transform)
@@ -117,27 +144,6 @@ public class Customer : MonoBehaviour
             value = false;
 
         return value;
-    }
-
-    public void GoToExit()
-    {
-        SetTarget(_exitTarget);
-        IsExitReady = true;
-    }
-
-    public void RemoveTargetWZ()
-    {
-        _targetWZ = null;
-    }
-
-    public void SetMinDistance(float minDistance)
-    {
-        _movement.SetMinDistance(minDistance);
-    }
-
-    public void SitDown()
-    {
-        _animator.SitDown();
     }
 
     public void IsFinishTrue()

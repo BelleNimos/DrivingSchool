@@ -7,7 +7,7 @@ public class Wheel : MonoBehaviour
     private TrailRenderer _trailRenderer;
     private ParticleSystem _particleSystem;
 
-    private void Start()
+    private void Awake()
     {
         _trailRenderer = GetComponent<TrailRenderer>();
         _particleSystem = GetComponent<ParticleSystem>();

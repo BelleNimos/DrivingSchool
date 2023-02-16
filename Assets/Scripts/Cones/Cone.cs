@@ -1,4 +1,3 @@
-using DG.Tweening;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator), typeof(Rigidbody), typeof(MeshCollider))]
@@ -6,7 +5,6 @@ public abstract class Cone : MonoBehaviour
 {
     [SerializeField] private Dollar _dollarPrefab;
 
-    private Dollar _dollar;
     private Animator _animator;
     private Rigidbody _rigidbody;
     private MeshCollider _collider;
@@ -19,17 +17,6 @@ public abstract class Cone : MonoBehaviour
     protected int CountDollars;
 
     private const string Fall = "Fall";
-    private const string BlockPhysicsText = "BlockPhysics";
-
-    private const float PowerFallDollar = 1f;
-    private const float DurationFallDollar = 0.6f;
-    private const int NumsFallsDollar = 1;
-
-    private const float PowerFlightDollar = 1f;
-    private const float DurationFlightDollar = 1f;
-    private const int NumFlightsDollar = 1;
-
-    private const float Delay = 1f;
     private const float MaxSpeedRb = 0.1f;
     private const int ConeLayer = 9;
     private const int ConeUsedLayer = 10;
@@ -45,7 +32,6 @@ public abstract class Cone : MonoBehaviour
         WaitForSeconds = new WaitForSeconds(0.6f);
         _maxWaitingSeconds = 50f;
         _waitingSeconds = 0f;
-        _moneyToWithdraw = 1;
         IsCollision = false;
     }
 
@@ -53,15 +39,12 @@ public abstract class Cone : MonoBehaviour
     {
         _waitingSeconds += Time.deltaTime;
 
+        if (_rigidbody.velocity.magnitude < MaxSpeedRb && IsCollision == true)
+            BlockPhysics();
+
         if (_waitingSeconds >= _maxWaitingSeconds)
             if (IsCollision == true)
                 Destroy(this.gameObject);
-    }
-
-    private void FixedUpdate()
-    {
-        if (IsCollision == true && _rigidbody.velocity.magnitude < MaxSpeedRb)
-            Invoke(BlockPhysicsText, Delay);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -78,39 +61,14 @@ public abstract class Cone : MonoBehaviour
         _moneyPoint.SpendMoney(_moneyToWithdraw);
     }
 
-    private void BlockPhysics()
+    protected void InstantiateDollar(Transform transform)
     {
-        gameObject.layer = ConeUsedLayer;
-        _rigidbody.isKinematic = true;
-        _collider.isTrigger = true;
+        Dollar dollar = Instantiate(_dollarPrefab, transform.position, Quaternion.identity);
+        dollar.SetMoneyPoint(_moneyPoint);
+        dollar.StartMove();
     }
 
-    protected void InstantiateDollar(MoneyPoint moneyPoint, Transform transform)
-    {
-        _dollar = Instantiate(_dollarPrefab, transform.position, Quaternion.identity);
-        _dollar.StartMoveHorizontalAnimation();
-
-        _dollar.transform.DOJump(_dollar.GetTarget(), PowerFallDollar, NumsFallsDollar, DurationFallDollar)
-            .OnComplete(() =>
-            {
-                _dollar.StartMoveVerticalAnimation();
-
-                _dollar.transform.DOJump(moneyPoint.transform.position, PowerFlightDollar, NumFlightsDollar, DurationFlightDollar)
-                    .OnComplete(() =>
-                    {
-                        moneyPoint.AddDollar(_dollar);
-                    }
-                    );
-            }
-            );
-    }
-
-    public abstract void CreateDollar(MoneyPoint moneyPoint, Transform transform);
-
-    public void StartFallAnimation()
-    {
-        _animator.Play(Fall);
-    }
+    public abstract void CreateDollar(Transform transform);
 
     public void UnlockPhysics()
     {
@@ -119,8 +77,25 @@ public abstract class Cone : MonoBehaviour
         _collider.isTrigger = false;
     }
 
+    public void BlockPhysics()
+    {
+        gameObject.layer = ConeUsedLayer;
+        _rigidbody.isKinematic = true;
+        _collider.isTrigger = true;
+    }
+
     public void ResetState()
     {
         IsCollision = false;
+    }
+
+    public void SetMoneyToWithdraw(int value)
+    {
+        _moneyToWithdraw = value;
+    }
+
+    public void StartFallAnimation()
+    {
+        _animator.Play(Fall);
     }
 }

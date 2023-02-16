@@ -1827,6 +1827,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1291846684}
     - target: {fileID: 2057930985838530163, guid: 2c8dd5ca91396a74fb5622134c5a1995, type: 3}
+      propertyPath: _moneyToWithdraw
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2057930985838530163, guid: 2c8dd5ca91396a74fb5622134c5a1995, type: 3}
+      propertyPath: _maxWaitingSeconds
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 2057930985838530163, guid: 2c8dd5ca91396a74fb5622134c5a1995, type: 3}
       propertyPath: _stackDollarsPrefab
       value: 
       objectReference: {fileID: 7244609503311560477, guid: 1cd26e8787913af499529e43920f82c9, type: 3}
@@ -7334,7 +7342,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh39888
+  m_Name: pb_Mesh35552
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -14161,6 +14169,7 @@ MonoBehaviour:
   - {fileID: 1756671304}
   _sliderCone: {fileID: 665841379}
   _startConePrefab: {fileID: 5865658098413155038, guid: 7ffa64f6d3f542a42bde899b822108fe, type: 3}
+  _moneyToWithdraw: 2
 --- !u!65 &2143699574
 BoxCollider:
   m_ObjectHideFlags: 0

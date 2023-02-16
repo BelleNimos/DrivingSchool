@@ -1,57 +1,40 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using DG.Tweening;
 
 public class StackDollars : MonoBehaviour
 {
     [SerializeField] private List<Dollar> _dollars;
 
-    private const float PowerFallDollar = 3f;
-    private const float DurationFallDollar = 0.6f;
-    private const int NumsFallDollar = 1;
-
-    private const float PowerFlightDollar = 2f;
-    private const float DurationFlightDollar = 1f;
-    private const int NumsFlightDollar = 1;
-
-    public bool IsReady { get; private set; }
+    private MoneyPoint _moneyPoint;
+    private WaitForSeconds _waitForSeconds;
 
     private void Start()
     {
-        IsReady = true;
+        _moneyPoint = FindObjectOfType<MoneyPoint>();
+        _waitForSeconds = new WaitForSeconds(0.01f);
     }
 
     private void Update()
     {
-        if (_dollars.Count == 0)
-            Destroy(gameObject);
+        for (int i = 0; i < _dollars.Count; i++)
+            if (_dollars[i].IsEnd == true)
+                _dollars.RemoveAt(i);
     }
 
-    public void StartMove(MoneyPoint moneyPoint)
+    private IEnumerator StartMovement()
     {
-        foreach (var dollar in _dollars)
+        for (int i = 0; i < _dollars.Count; i++)
         {
-            dollar.StartMoveHorizontalAnimation();
+            _dollars[i].SetMoneyPoint(_moneyPoint);
+            _dollars[i].StartMove();
 
-            dollar.transform.DOJump(dollar.GetTarget(), PowerFallDollar, NumsFallDollar, DurationFallDollar)
-            .OnComplete(() =>
-            {
-                dollar.StartMoveVerticalAnimation();
-
-                dollar.transform.DOJump(moneyPoint.transform.position, PowerFlightDollar, NumsFlightDollar, DurationFlightDollar)
-                    .OnComplete(() =>
-                    {
-                        moneyPoint.AddDollar(dollar);
-                        _dollars.Remove(dollar);
-                    }
-                    );
-            }
-            );
+            yield return _waitForSeconds;
         }
     }
 
-    public void ChangeReadyValue()
+    public void StartMove()
     {
-        IsReady = false;
+        StartCoroutine(StartMovement());
     }
 }

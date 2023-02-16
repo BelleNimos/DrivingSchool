@@ -59,16 +59,6 @@ public class Upgrades : MonoBehaviour
         price += SurplusFactor;
     }
 
-    public void OpenPanel()
-    {
-        _animator.SetTrigger(Open);
-    }
-
-    public void ClosePanel()
-    {
-        _animator.SetTrigger(Close);
-    }
-
     public void UpgradeSpawner()
     {
         if (_moneyPoint.CurrentDollarsCount >= _spawnerPrice)
@@ -94,5 +84,15 @@ public class Upgrades : MonoBehaviour
             Upgrade(ref _bagPrice);
             _bag.IncreaseCapacity();
         }
+    }
+
+    public void OpenPanel()
+    {
+        _animator.SetTrigger(Open);
+    }
+
+    public void ClosePanel()
+    {
+        _animator.SetTrigger(Close);
     }
 }

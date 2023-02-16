@@ -7,6 +7,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] private List<Transform> _points;
     [SerializeField] private Scale _sliderCone;
     [SerializeField] private Cone _startConePrefab;
+    [SerializeField] private int _moneyToWithdraw;
 
     private Stack<Cone> _cones;
     private WaitForSeconds _waitForSeconds;
@@ -64,12 +65,10 @@ public class Spawner : MonoBehaviour
                 positionX = _points[j].position.x;
                 positionY = _points[j].position.y;
                 positionZ = _points[j].position.z;
-
                 positionY = (positionY + i) * distanceCoefficient;
-
                 Vector3 position = new Vector3(positionX, positionY, positionZ);
                 cone = Instantiate(_conePrefab, position, Quaternion.identity);
-
+                cone.SetMoneyToWithdraw(_moneyToWithdraw);
                 _cones.Push(cone);
 
                 yield return _waitForSeconds;
@@ -79,7 +78,8 @@ public class Spawner : MonoBehaviour
 
     public void GiveAwayCone(Bag bag)
     {
-        bag.AddCone(_cones.Pop());
+        if (_cones.Count > 0)
+            bag.AddCone(_cones.Pop());
     }
 
     public void IncreaseCountWaves()

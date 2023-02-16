@@ -49,11 +49,8 @@ public abstract class JoystickHandler : MonoBehaviour, IDragHandler, IPointerDow
         {
             joystickPosition.x = joystickPosition.x * 2 / _joystickBackground.rectTransform.sizeDelta.x;
             joystickPosition.y = joystickPosition.y * 2 / _joystickBackground.rectTransform.sizeDelta.y;
-
             InputVector = new Vector2(joystickPosition.x, joystickPosition.y);
-
             InputVector = (InputVector.magnitude > 1f) ? InputVector.normalized : InputVector;
-
             _joystick.rectTransform.anchoredPosition = new Vector2(InputVector.x * _joystickBackground.rectTransform.sizeDelta.x / 2, InputVector.y * _joystickBackground.rectTransform.sizeDelta.y / 2);
         }
     }
@@ -61,7 +58,6 @@ public abstract class JoystickHandler : MonoBehaviour, IDragHandler, IPointerDow
     public void OnPointerDown(PointerEventData eventData)
     {
         ClickEffect();
-
         Vector2 backgroundPosition;
 
         if (RectTransformUtility.ScreenPointToLocalPointInRectangle(_joystickArea.rectTransform, eventData.position, _camera, out backgroundPosition))
@@ -71,9 +67,7 @@ public abstract class JoystickHandler : MonoBehaviour, IDragHandler, IPointerDow
     public void OnPointerUp(PointerEventData eventData)
     {
         _joystickBackground.rectTransform.anchoredPosition = _backgroundStartPosition;
-
         ClickEffect();
-
         InputVector = Vector2.zero;
         _joystick.rectTransform.anchoredPosition = Vector2.zero;
     }

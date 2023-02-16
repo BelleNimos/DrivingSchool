@@ -29,40 +29,37 @@ public class Bag : MonoBehaviour
             MaxConesCount = 12;
     }
 
-    private void Update()
-    {
-        if (CurrentConesCount > 0)
-            _cones.Peek().ResetState();
-    }
-
     public void AddCone(Cone cone)
     {
-        if (CurrentConesCount < MaxConesCount)
-        {
-            Vector3 nextPosition = new Vector3(0, Distance * CurrentConesCount, 0);
-            Vector3 nextRotation = new Vector3(0, 0, 0);
+        cone.ResetState();
+        cone.BlockPhysics();
 
-            cone.transform.DOJump((transform.position + nextPosition), JumpPower, NumJumps, Duration)
-                .OnComplete(() =>
-                {
-                    cone.transform.SetParent(transform, true);
-                    cone.transform.localPosition = nextPosition;
-                    cone.transform.localRotation = Quaternion.LookRotation(nextRotation);
-                }
-                );
+        Vector3 nextPosition = new Vector3(0, Distance * CurrentConesCount, 0);
+        Vector3 nextRotation = new Vector3(0, 0, 0);
 
-            _cones.Push(cone);
-        }
+        cone.transform.DOJump((transform.position + nextPosition), JumpPower, NumJumps, Duration)
+            .SetLink(cone.gameObject)
+            .OnKill(() =>
+            {
+                cone.transform.SetParent(transform, true);
+                cone.transform.localPosition = nextPosition;
+                cone.transform.localRotation = Quaternion.LookRotation(nextRotation);
+            }
+            );
+
+        _cones.Push(cone);
     }
 
     public void GiveAwayCone(ConePoint conePoint)
     {
-        conePoint.AddCone(_cones.Pop());
+        if (_cones.Count > 0)
+            conePoint.AddCone(_cones.Pop());
     }
 
     public void GiveAwayCone(Utilizer utilizer)
     {
-        utilizer.DestroyCone(_cones.Pop());
+        if (_cones.Count > 0)
+            utilizer.DestroyCone(_cones.Pop());
     }
 
     public void StartAnimationRocking()

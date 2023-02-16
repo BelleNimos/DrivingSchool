@@ -1,27 +1,24 @@
 using UnityEngine;
 
-[RequireComponent(typeof(CharacterController), typeof(Animator))]
+[RequireComponent(typeof(CharacterController), typeof(PlayerAnimator))]
 public class CharacterMovement : MonoBehaviour
 {
     [SerializeField] private Bag _bag;
 
+    private PlayerAnimator _playerAnimator;
     private CharacterController _characterController;
-    private Animator _animator;
     private float _moveSpeed;
     private float _rotateSpeed;
     private float _gravityForce;
     private float _currentGravity;
 
-    private const string Carry = "Carry";
-    private const string Run = "Run";
-    private const string CarryIdle = "Carry Idle";
     private const float SurplusFactor = 0.5f;
 
     public float MoveSpeed => _moveSpeed;
 
     private void Start()
     {
-        _animator = GetComponent<Animator>();
+        _playerAnimator = GetComponent<PlayerAnimator>();
         _characterController = GetComponent<CharacterController>();
         _rotateSpeed = 1f;
         _gravityForce = 10;
@@ -54,16 +51,12 @@ public class CharacterMovement : MonoBehaviour
         {
             if (_bag.CurrentConesCount > 0)
             {
-                _animator.SetBool(CarryIdle, true);
-                _animator.SetBool(Carry, false);
-                _animator.SetBool(Run, false);
+                _playerAnimator.StartCarryIdleAnimation();
                 _bag.StopAnimationRocking();
             }
             else if (_bag.CurrentConesCount <= 0)
             {
-                _animator.SetBool(Run, false);
-                _animator.SetBool(Carry, false);
-                _animator.SetBool(CarryIdle, false);
+                _playerAnimator.StartIdleAnimation();
                 _bag.StopAnimationRocking();
             }
         }
@@ -71,16 +64,12 @@ public class CharacterMovement : MonoBehaviour
         {
             if (_bag.CurrentConesCount > 0)
             {
-                _animator.SetBool(Carry, true);
-                _animator.SetBool(Run, false);
-                _animator.SetBool(CarryIdle, false);
+                _playerAnimator.StartCarryAnimation();
                 _bag.StartAnimationRocking();
             }
             else if (_bag.CurrentConesCount <= 0)
             {
-                _animator.SetBool(Run, true);
-                _animator.SetBool(Carry, false);
-                _animator.SetBool(CarryIdle, false);
+                _playerAnimator.StartRunAnimation();
                 _bag.StopAnimationRocking();
             }
         }
