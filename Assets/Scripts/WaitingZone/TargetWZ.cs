@@ -19,7 +19,7 @@ public class TargetWZ : MonoBehaviour
             {
                 customer.StopMove();
                 _waitingZone.SetTargetCustomer(transform, customer);
-                customer.IsReadyTrue();
+                customer.ReadyDrive();
             }
         }
     }

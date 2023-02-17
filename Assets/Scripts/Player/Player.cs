@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
     private void Update()
     {
         for (int i = 0; i < _customers.Count; i++)
-            if (_customers[i].IsExitReady == true)
+            if (_customers[i].IsReadyExit == true)
                 _customers.RemoveAt(i);
 
         if (_bag.CurrentConesCount == _bag.MaxConesCount)

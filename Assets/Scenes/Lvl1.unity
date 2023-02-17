@@ -3205,7 +3205,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh22320
+  m_Name: pb_Mesh22314
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5293,7 +5293,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.36281562, y: -0.15015417, z: 0.059359632, w: 0.91776633}
+  m_LocalRotation: {x: 0.36281562, y: -0.15015414, z: 0.059359632, w: 0.91776633}
   m_LocalPosition: {x: 13.02, y: 20.14, z: 20.64}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -10298,7 +10298,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1901204534}
-  m_LocalRotation: {x: 0.36281562, y: -0.15015417, z: 0.059359632, w: 0.91776633}
+  m_LocalRotation: {x: 0.36281562, y: -0.15015414, z: 0.059359632, w: 0.91776633}
   m_LocalPosition: {x: 13.02, y: 20.14, z: 20.64}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -13736,6 +13736,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2111984173}
     m_Modifications:
+    - target: {fileID: 7927341861869370827, guid: 4ab67e265d568054e9a5a695345b3f33, type: 3}
+      propertyPath: _price
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7927341861869370827, guid: 4ab67e265d568054e9a5a695345b3f33, type: 3}
+      propertyPath: _spawner
+      value: 
+      objectReference: {fileID: 2143699573}
+    - target: {fileID: 7927341861869370827, guid: 4ab67e265d568054e9a5a695345b3f33, type: 3}
+      propertyPath: _priceText
+      value: 
+      objectReference: {fileID: 1620408575}
+    - target: {fileID: 7927341861869370827, guid: 4ab67e265d568054e9a5a695345b3f33, type: 3}
+      propertyPath: _conePrefab
+      value: 
+      objectReference: {fileID: 5865658098413155038, guid: 7ffa64f6d3f542a42bde899b822108fe, type: 3}
+    - target: {fileID: 7927341861869370827, guid: 4ab67e265d568054e9a5a695345b3f33, type: 3}
+      propertyPath: _moneyPoint
+      value: 
+      objectReference: {fileID: 489420137}
+    - target: {fileID: 7927341861869370827, guid: 4ab67e265d568054e9a5a695345b3f33, type: 3}
+      propertyPath: _upgradeConesHorizontalUI
+      value: 
+      objectReference: {fileID: 6099687488399454450}
     - target: {fileID: 8195178240319600485, guid: 4ab67e265d568054e9a5a695345b3f33, type: 3}
       propertyPath: _spawner
       value: 
@@ -13802,28 +13826,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ab67e265d568054e9a5a695345b3f33, type: 3}
---- !u!1 &8195178241005685518 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9041669911726375712, guid: 4ab67e265d568054e9a5a695345b3f33, type: 3}
-  m_PrefabInstance: {fileID: 8195178241005685517}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &8195178241005685519
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8195178241005685518}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8be2d77de0bdc9459c2dc990f69e2f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _spawner: {fileID: 2143699573}
-  _conePrefab: {fileID: 5865658098413155038, guid: 7ffa64f6d3f542a42bde899b822108fe, type: 3}
-  _moneyPoint: {fileID: 489420137}
-  _priceText: {fileID: 1620408575}
-  _upgradeConesHorizontalUI: {fileID: 6099687488399454450}
 --- !u!1001 &8552595174929968752
 PrefabInstance:
   m_ObjectHideFlags: 0

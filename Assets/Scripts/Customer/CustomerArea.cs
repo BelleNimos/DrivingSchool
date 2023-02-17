@@ -35,7 +35,7 @@ public class CustomerArea : MonoBehaviour
     private void Update()
     {
         for (int i = 0; i < _customers.Count; i++)
-            if (_customers[i].IsExitReady == true)
+            if (_customers[i].IsReadyExit == true)
                 _customers.RemoveAt(i);
 
         if (_sliderCustomer.IsEmpty == true)
@@ -44,7 +44,7 @@ public class CustomerArea : MonoBehaviour
 
             _index = Random.Range(0, _customers.Count);
 
-            if (_customers[_index].IsExitReady == false)
+            if (_customers[_index].IsReadyExit == false)
             {
                 _customers[_index].SetMinDistance(MinDistance);
                 _customers[_index].SetTarget(_player.transform);

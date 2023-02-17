@@ -34,7 +34,11 @@ public class Dollar : MonoBehaviour
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.TryGetComponent<MoneyPoint>(out MoneyPoint moneyPoint))
+        {
+            transform.SetParent(moneyPoint.transform, true);
             IsEnd = true;
+        }
+            
     }
 
     private Vector3 GetTarget()

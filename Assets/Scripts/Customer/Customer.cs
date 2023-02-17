@@ -17,24 +17,27 @@ public class Customer : MonoBehaviour
     private float _maxWaitingSeconds;
     private float _waitingSeconds;
 
-    public bool IsExitReady { get; private set; }
+    public bool IsReadyDrive { get; private set; }
+    public bool IsReadyExit { get; private set; }
     public bool IsFinish { get; private set; }
-    public bool IsReady { get; private set; }
 
     private void Start()
     {
         _movement = GetComponent<CustomerMovement>();
         _animator = GetComponent<CustomerAnimator>();
+
         _moneyPoint = FindObjectOfType<MoneyPoint>();
         _lastTarget = FindObjectOfType<CustomerLastTarget>().transform;
         _exitTarget = FindObjectOfType<Exit>().transform;
+
         _target = _firstTarget;
         _movement.SetTarget(_target);
+
         _targetWZ = null;
         _isRunningTime = true;
-        IsExitReady = false;
+        IsReadyExit = false;
         IsFinish = false;
-        IsReady = false;
+        IsReadyDrive = false;
         _waitingSeconds = 0f;
     }
 
@@ -47,7 +50,7 @@ public class Customer : MonoBehaviour
                 TakeMoney();
 
         if (_targetWZ == null)
-            IsReady = false;
+            IsReadyDrive = false;
 
         if (IsFinish == true)
         {
@@ -63,27 +66,6 @@ public class Customer : MonoBehaviour
         _waitingSeconds = 0f;
     }
 
-    public void InstantiateStackDollars()
-    {
-        Instantiate(_stackDollars, transform.position, Quaternion.identity);
-    }
-
-    public void SetTarget(Transform target)
-    {
-        _target = target;
-        _movement.SetTarget(_target);
-    }
-
-    public void SetFirstTarget(Transform transform)
-    {
-        _firstTarget = transform;
-    }
-
-    public void SetTargetWZ(TargetWZ targetWZ)
-    {
-        _targetWZ = targetWZ;
-    }
-
     public void SetMoneyToWithdraw(int value)
     {
         _moneyToWithdraw = value;
@@ -97,6 +79,27 @@ public class Customer : MonoBehaviour
     public void SetStackDollars(StackDollars stackDollars)
     {
         _stackDollars = stackDollars;
+    }
+
+    public void SetFirstTarget(Transform transform)
+    {
+        _firstTarget = transform;
+    }
+
+    public void SetTargetWZ(TargetWZ targetWZ)
+    {
+        _targetWZ = targetWZ;
+    }
+
+    public void InstantiateStackDollars()
+    {
+        Instantiate(_stackDollars, transform.position, Quaternion.identity);
+    }
+
+    public void SetTarget(Transform target)
+    {
+        _target = target;
+        _movement.SetTarget(_target);
     }
 
     public void SetMinDistance(float minDistance)
@@ -117,7 +120,8 @@ public class Customer : MonoBehaviour
     public void GoToExit()
     {
         SetTarget(_exitTarget);
-        IsExitReady = true;
+        IsReadyExit = true;
+        IsFinish = false;
     }
 
     public void SitDown()
@@ -146,18 +150,13 @@ public class Customer : MonoBehaviour
         return value;
     }
 
-    public void IsFinishTrue()
+    public void ReadyDrive()
+    {
+        IsReadyDrive = true;
+    }
+
+    public void Finished()
     {
         IsFinish = true;
-    }
-
-    public void IsFinishFalse()
-    {
-        IsFinish = false;
-    }
-
-    public void IsReadyTrue()
-    {
-        IsReady = true;
     }
 }

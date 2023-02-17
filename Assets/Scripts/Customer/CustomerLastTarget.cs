@@ -13,7 +13,6 @@ public class CustomerLastTarget : MonoBehaviour
                 if (customer.IsFinish == true)
                 {
                     customer.InstantiateStackDollars();
-                    customer.IsFinishFalse();
                     customer.GoToExit();
                 }
             }

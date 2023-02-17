@@ -33,6 +33,6 @@ public class MoneyPoint : MonoBehaviour
     {
         if (_dollars.Count >= price)
             for (int i = 0; i < price; i++)
-                _dollars.Pop();
+                Destroy(_dollars.Pop().gameObject);
     }
 }

@@ -17,6 +17,9 @@ public class StackDollars : MonoBehaviour
 
     private void Update()
     {
+        if (_dollars.Count == 0)
+            Destroy(this.gameObject);
+
         for (int i = 0; i < _dollars.Count; i++)
             if (_dollars[i].IsEnd == true)
                 _dollars.RemoveAt(i);

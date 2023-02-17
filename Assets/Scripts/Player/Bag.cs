@@ -9,11 +9,11 @@ public class Bag : MonoBehaviour
     private Animator _animator;
 
     private const string RockingText = "Rocking";
+    private const int NumJumps = 1;
+    private const int SurplusFactor = 1;
     private const float JumpPower = 0.1f;
     private const float Duration = 0.1f;
     private const float Distance = 0.7f;
-    private const int NumJumps = 1;
-    private const int SurplusFactor = 1;
 
     public int MaxConesCount { get; private set; }
     public int CurrentConesCount => _cones.Count;

@@ -44,7 +44,7 @@ public abstract class Cone : MonoBehaviour
 
         if (_waitingSeconds >= _maxWaitingSeconds)
             if (IsCollision == true)
-                Destroy(this.gameObject);
+                TakeMoney();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -59,6 +59,7 @@ public abstract class Cone : MonoBehaviour
     private void TakeMoney()
     {
         _moneyPoint.SpendMoney(_moneyToWithdraw);
+        Destroy(this.gameObject);
     }
 
     protected void InstantiateDollar(Transform transform)
