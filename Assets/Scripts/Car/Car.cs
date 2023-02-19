@@ -42,7 +42,7 @@ public class Car : MonoBehaviour
             IsFree = true;
         }
 
-        if (_lane.IsReady == true && IsFree == false)
+        if (_lane.IsReady == true && IsFree == false && IsFinish == false)
             _movement.Invoke(StartMoveText, Delay);
     }
 
