@@ -29,6 +29,7 @@ public class TransitionLevel : MonoBehaviour
         {
             ChangeOptionsNextLevel();
             SceneManager.LoadScene(_idNextLevel);
+            Time.timeScale = 1;
         }
     }
 

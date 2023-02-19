@@ -11,7 +11,7 @@ public class Car : MonoBehaviour
     private Customer _customer;
 
     private const float Delay = 2f;
-    private const string StartMove = "StartMove";
+    private const string StartMoveText = "StartMove";
 
     public bool IsFree { get; private set; }
     public bool IsFinish { get; private set; }
@@ -43,7 +43,7 @@ public class Car : MonoBehaviour
         }
 
         if (_lane.IsReady == true && IsFree == false)
-            _movement.Invoke(StartMove, Delay);
+            _movement.Invoke(StartMoveText, Delay);
     }
 
     private void OnTriggerEnter(Collider collision)

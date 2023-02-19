@@ -59,7 +59,7 @@ public abstract class Cone : MonoBehaviour
     private void TakeMoney()
     {
         _moneyPoint.SpendMoney(_moneyToWithdraw);
-        Destroy(this.gameObject);
+        Destroy(gameObject);
     }
 
     protected void InstantiateDollar(Transform transform)

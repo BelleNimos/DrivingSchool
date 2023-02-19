@@ -23,6 +23,9 @@ public class Dollar : MonoBehaviour
     private const float DurationFlight = 1f;
     private const int NumFlights = 1;
 
+    private const string DeleteText = "Delete";
+    private const float Delay = 5f;
+
     public bool IsEnd { get; private set; }
 
     private void OnEnable()
@@ -37,8 +40,13 @@ public class Dollar : MonoBehaviour
         {
             transform.SetParent(moneyPoint.transform, true);
             IsEnd = true;
+            Invoke(DeleteText, Delay);
         }
-            
+    }
+
+    private void Delete()
+    {
+        Destroy(gameObject);
     }
 
     private Vector3 GetTarget()
@@ -69,6 +77,11 @@ public class Dollar : MonoBehaviour
         _animator.SetBool(MoveVertical, false);
     }
 
+    public void SetMoneyPoint(MoneyPoint moneyPoint)
+    {
+        _moneyPoint = moneyPoint;
+    }
+
     public void StartMove()
     {
         StartMoveHorizontalAnimation();
@@ -84,15 +97,10 @@ public class Dollar : MonoBehaviour
                     .OnKill(() =>
                     {
                         StopMoveAnimation();
-                        _moneyPoint.AddDollar(this);
+                        _moneyPoint.AddDollar();
                     }
                     );
             }
             );
-    }
-
-    public void SetMoneyPoint(MoneyPoint moneyPoint)
-    {
-        _moneyPoint = moneyPoint;
     }
 }
