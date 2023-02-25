@@ -104,6 +104,9 @@ MonoBehaviour:
   - {fileID: 860256966236261968}
   _sliderCone: {fileID: 0}
   _startConePrefab: {fileID: 7244947076298484157, guid: 290ec27ce0badb040a03cf112a6d90bc, type: 3}
+  _fallingCone: {fileID: 1207720972939008947, guid: 0d5772108ca21e849be3115e41fbee8e, type: 3}
+  _addCone: {fileID: 7071225913199441878, guid: 2f3d9785e0c4f4044b912bb10e23a432, type: 3}
+  _moneyToWithdraw: 0
 --- !u!1 &4167762746030413520
 GameObject:
   m_ObjectHideFlags: 0

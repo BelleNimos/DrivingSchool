@@ -9,10 +9,13 @@ public class StackDollars : MonoBehaviour
     private MoneyPoint _moneyPoint;
     private WaitForSeconds _waitForSeconds;
 
+    public bool IsUsed { get; private set; }
+
     private void Start()
     {
         _moneyPoint = FindObjectOfType<MoneyPoint>();
         _waitForSeconds = new WaitForSeconds(0.01f);
+        IsUsed = false;
     }
 
     private void Update()
@@ -38,6 +41,7 @@ public class StackDollars : MonoBehaviour
 
     public void StartMove()
     {
+        IsUsed = true;
         StartCoroutine(StartMovement());
     }
 }

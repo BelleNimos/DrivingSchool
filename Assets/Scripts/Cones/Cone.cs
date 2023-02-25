@@ -3,7 +3,9 @@ using UnityEngine;
 [RequireComponent(typeof(Animator), typeof(Rigidbody), typeof(MeshCollider))]
 public abstract class Cone : MonoBehaviour
 {
-    [SerializeField] private Dollar _dollarPrefab;
+    [SerializeField] private AudioSource _addSound;
+    [SerializeField] private AudioSource _fallSound;
+    [SerializeField] private AudioSource _collisionSound;
 
     private Animator _animator;
     private Rigidbody _rigidbody;
@@ -11,16 +13,15 @@ public abstract class Cone : MonoBehaviour
     private MoneyPoint _moneyPoint;
     private float _maxWaitingSeconds;
     private float _waitingSeconds;
-    private int _moneyToWithdraw;
-
-    protected WaitForSeconds WaitForSeconds;
-    protected int CountDollars;
 
     private const string Fall = "Fall";
     private const float MaxSpeedRb = 0.1f;
     private const int ConeLayer = 9;
     private const int ConeUsedLayer = 10;
 
+    protected int CountDollars;
+
+    public int DollarsCount => CountDollars;
     public bool IsCollision { get; private set; }
 
     private void Start()
@@ -28,8 +29,6 @@ public abstract class Cone : MonoBehaviour
         _animator = GetComponent<Animator>();
         _rigidbody = GetComponent<Rigidbody>();
         _collider = GetComponent<MeshCollider>();
-        _moneyPoint = FindObjectOfType<MoneyPoint>();
-        WaitForSeconds = new WaitForSeconds(0.6f);
         _maxWaitingSeconds = 50f;
         _waitingSeconds = 0f;
         IsCollision = false;
@@ -51,6 +50,7 @@ public abstract class Cone : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent<Car>(out Car car) || collision.gameObject.TryGetComponent<Cone>(out Cone cone))
         {
+            _collisionSound.Play();
             IsCollision = true;
             _waitingSeconds = 0f;
         }
@@ -58,18 +58,11 @@ public abstract class Cone : MonoBehaviour
 
     private void TakeMoney()
     {
-        _moneyPoint.SpendMoney(_moneyToWithdraw);
+        if (_moneyPoint.CurrentDollarsCount >= CountDollars)
+            _moneyPoint.SpendMoney(CountDollars);
+        
         Destroy(gameObject);
     }
-
-    protected void InstantiateDollar(Transform transform)
-    {
-        Dollar dollar = Instantiate(_dollarPrefab, transform.position, Quaternion.identity);
-        dollar.SetMoneyPoint(_moneyPoint);
-        dollar.StartMove();
-    }
-
-    public abstract void CreateDollar(Transform transform);
 
     public void UnlockPhysics()
     {
@@ -90,13 +83,23 @@ public abstract class Cone : MonoBehaviour
         IsCollision = false;
     }
 
-    public void SetMoneyToWithdraw(int value)
+    public void SetMoneyPoint(MoneyPoint moneyPoint)
     {
-        _moneyToWithdraw = value;
+        _moneyPoint = moneyPoint;
     }
 
     public void StartFallAnimation()
     {
         _animator.Play(Fall);
+    }
+
+    public void PlayAddSound()
+    {
+        _addSound.Play();
+    }
+
+    public void PlayFallSound()
+    {
+        _fallSound.Play();
     }
 }

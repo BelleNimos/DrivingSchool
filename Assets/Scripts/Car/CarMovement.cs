@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(Rigidbody), typeof(CarSound))]
 public class CarMovement : MonoBehaviour
 {
     [SerializeField] private TargetsCar _targetCar;
@@ -9,6 +9,7 @@ public class CarMovement : MonoBehaviour
     [SerializeField] private float _moveSpeed;
     [SerializeField] private float _turnSpeed;
 
+    private CarSound _carSound;
     private Rigidbody _rigidbody;
     private Transform _target;
 
@@ -21,6 +22,7 @@ public class CarMovement : MonoBehaviour
     {
         IsReady = false;
         _rigidbody = GetComponent<Rigidbody>();
+        _carSound = GetComponent<CarSound>();
         _targetCar.AssignTarget(ref _target);
     }
 
@@ -28,8 +30,8 @@ public class CarMovement : MonoBehaviour
     {
         if (IsReady == true)
         {
-            Turn();
             Move();
+            Turn();
 
             if (_rigidbody.velocity.magnitude > MinSpeedEnableDrift && _rigidbody.velocity.magnitude < MaxSpeedEnableDrift)
                 SetValueTraces(true);
@@ -54,6 +56,7 @@ public class CarMovement : MonoBehaviour
 
     private void Move()
     {
+        _carSound.PlayMove();
         _rigidbody.AddRelativeForce(Vector3.forward * _moveSpeed, ForceMode.VelocityChange);
     }
 
@@ -66,6 +69,9 @@ public class CarMovement : MonoBehaviour
 
     private void SetValueTraces(bool flag)
     {
+        //if (flag == true)
+        //    _carSound.PlayTurn();
+
         for (int i = 0; i < _wheels.Count; i++)
             _wheels[i].SetFlag(flag);
     }

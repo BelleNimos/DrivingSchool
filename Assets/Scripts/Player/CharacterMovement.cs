@@ -1,33 +1,43 @@
 using UnityEngine;
 
-[RequireComponent(typeof(CharacterController), typeof(PlayerAnimator))]
+[RequireComponent(typeof(CharacterController), typeof(PlayerAnimator), typeof(BoxCollider))]
 public class CharacterMovement : MonoBehaviour
 {
     [SerializeField] private Bag _bag;
 
     private PlayerAnimator _playerAnimator;
     private CharacterController _characterController;
+    private BoxCollider _boxCollider;
     private float _moveSpeed;
     private float _rotateSpeed;
     private float _gravityForce;
     private float _currentGravity;
 
-    private const float SurplusFactor = 0.5f;
+    private const float SurplusFactor = 0.2f;
+    private const float SurplusFactorRadius = 0.05f;
 
     public float MoveSpeed => _moveSpeed;
+    public Vector3 Radius => _boxCollider.size;
 
     private void Start()
     {
         _playerAnimator = GetComponent<PlayerAnimator>();
         _characterController = GetComponent<CharacterController>();
+        _boxCollider = GetComponent<BoxCollider>();
         _rotateSpeed = 1f;
         _gravityForce = 10;
         _currentGravity = 0;
 
         if (SceneData.MoveSpeedPlayer > 0)
+        {
             _moveSpeed = SceneData.MoveSpeedPlayer;
+            _boxCollider.size = SceneData.RadiusPlayer;
+        }
         else
+        {
             _moveSpeed = 8;
+            _boxCollider.size = new Vector3(0.5f, 1.8f, 0.5f);
+        }
     }
 
     private void Update()
@@ -41,6 +51,12 @@ public class CharacterMovement : MonoBehaviour
             _currentGravity -= _gravityForce * Time.deltaTime;
         else
             _currentGravity = 0;
+    }
+
+    private void IncreaseRadius()
+    {
+        Vector3 newSize = new Vector3(_boxCollider.size.x + SurplusFactorRadius, _boxCollider.size.y, _boxCollider.size.z + SurplusFactorRadius);
+        _boxCollider.size = newSize;
     }
 
     public void Move(Vector3 moveDirection)
@@ -93,5 +109,8 @@ public class CharacterMovement : MonoBehaviour
     public void IncreaseSpeed()
     {
         _moveSpeed += SurplusFactor;
+        IncreaseRadius();
+        _playerAnimator.IncreaseSpeedAnimation();
+        _bag.IncreaseSpeedAnimation();
     }
 }

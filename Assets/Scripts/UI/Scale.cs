@@ -5,6 +5,8 @@ using DG.Tweening;
 [RequireComponent (typeof(Slider))]
 public class Scale : MonoBehaviour
 {
+    [SerializeField] private AudioSource _fillingSound;
+
     private Slider _slider;
 
     private const float MinValue = 0;
@@ -21,6 +23,7 @@ public class Scale : MonoBehaviour
 
     private void OnEnable()
     {
+        _fillingSound.Play();
         _slider.value = MinValue;
         IsEmpty = false;
     }

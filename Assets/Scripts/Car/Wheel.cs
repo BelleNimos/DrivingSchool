@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI.Extensions;
 
 [RequireComponent(typeof(TrailRenderer), typeof(ParticleSystem))]
 public class Wheel : MonoBehaviour

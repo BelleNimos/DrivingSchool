@@ -4,10 +4,14 @@ using UnityEngine.SceneManagement;
 
 public class TransitionLevel : MonoBehaviour
 {
+    [SerializeField] private AudioSource _yesSound;
+    [SerializeField] private AudioSource _noSound;
+    [SerializeField] private AudioSource _crashSound;
     [SerializeField] private NextLevelUI _nextLevelUI;
     [SerializeField] private MoneyPoint _moneyPoint;
     [SerializeField] private Spawner _spawner;
     [SerializeField] private CharacterMovement _characterMovement;
+    [SerializeField] private PlayerAnimator _playerAnimator;
     [SerializeField] private Bag _bag;
     [SerializeField] private Upgrades _upgrades;
     [SerializeField] private TMP_Text _priceText;
@@ -42,27 +46,37 @@ public class TransitionLevel : MonoBehaviour
         SceneData.ChangeSpawnerUpgradePrice(_upgrades.SpawnerPrice);
         SceneData.ChangeSpeedUpgradePrice(_upgrades.SpeedPrice);
         SceneData.ChangeBagUpgradePrice(_upgrades.BagPrice);
+        SceneData.ChangeSpeedAnimatorBag(_bag.SpeedAnimator);
+        SceneData.ChangeSpeedAnimatorPlayer(_playerAnimator.SpeedAnimator);
+        SceneData.ChangeRadiusPlayer(_characterMovement.Radius);
     }
 
     public void OpenPanel()
     {
-        _nextLevelUI.gameObject.SetActive(true);
+        if (_nextLevelUI.IsActive == false)
+            _nextLevelUI.OpenPanel();
     }
 
     public void ClosePanel()
     {
-        _nextLevelUI.gameObject.SetActive(false);
+        if (_nextLevelUI.IsActive == true)
+        {
+            _noSound.Play();
+            _nextLevelUI.ClosePanel();
+        }
     }
 
     public void GoToNextLevel()
     {
         if (_moneyPoint.CurrentDollarsCount >= _price)
         {
+            _yesSound.Play();
             _moneyPoint.SpendMoney(_price);
             _isEmpty = true;
         }
         else
         {
+            _crashSound.Play();
             _isEmpty = false;
         }
     }

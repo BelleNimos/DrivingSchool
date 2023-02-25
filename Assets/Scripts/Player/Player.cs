@@ -45,20 +45,24 @@ public class Player : MonoBehaviour
             if (_moneyPoint.CurrentDollarsCount >= conesUpgrade.Price)
                 conesUpgrade.Unlock();
 
+        if (collision.TryGetComponent<StackDollars>(out StackDollars stackDollars))
+            if (stackDollars.IsUsed == false)
+                stackDollars.StartMove();
+
         if (collision.TryGetComponent<TransitionLevel>(out TransitionLevel transitionLevel))
             transitionLevel.OpenPanel();
 
         if (collision.TryGetComponent<UpgradesStand>(out UpgradesStand upgradesStand))
             upgradesStand.EnableUpgradesPanel();
-
-        if (collision.TryGetComponent<StackDollars>(out StackDollars stackDollars))
-            stackDollars.StartMove();
     }
 
     private void OnTriggerExit(Collider collision)
     {
         if (collision.TryGetComponent<UpgradesStand>(out UpgradesStand upgradesStand))
             upgradesStand.DisableUpgradesPanel();
+
+        if (collision.TryGetComponent<TransitionLevel>(out TransitionLevel transitionLevel))
+            transitionLevel.ClosePanel();
     }
 
     private void OnTriggerStay(Collider collision)

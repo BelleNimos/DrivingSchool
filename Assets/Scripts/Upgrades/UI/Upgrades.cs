@@ -4,6 +4,9 @@ using TMPro;
 [RequireComponent(typeof(Animator))]
 public class Upgrades : MonoBehaviour
 {
+    [SerializeField] private AudioSource _purchase;
+    [SerializeField] private AudioSource _notEnough;
+    [SerializeField] private AudioSource _departure;
     [SerializeField] private TMP_Text _spawnerPriceText;
     [SerializeField] private TMP_Text _speedPriceText;
     [SerializeField] private TMP_Text _bagPriceText;
@@ -55,39 +58,45 @@ public class Upgrades : MonoBehaviour
 
     private void Upgrade(ref int price)
     {
-        _moneyPoint.SpendMoney(price);
-        price += SurplusFactor;
+        if (_moneyPoint.CurrentDollarsCount >= price)
+        {
+            _purchase.Play();
+            _moneyPoint.SpendMoney(price);
+            price += SurplusFactor;
+        }
+        else
+        {
+            _notEnough.Play();
+        }
     }
 
     public void UpgradeSpawner()
     {
+        Upgrade(ref _spawnerPrice);
+
         if (_moneyPoint.CurrentDollarsCount >= _spawnerPrice)
-        {
-            Upgrade(ref _spawnerPrice);
             _spawner.IncreaseCountWaves();
-        }
     }
 
     public void UpgradeSpeed()
     {
+        Upgrade(ref _speedPrice);
+
         if (_moneyPoint.CurrentDollarsCount >= _speedPrice)
-        {
-            Upgrade(ref _speedPrice);
             _characterMovement.IncreaseSpeed();
-        }
     }
 
     public void UpgradeBag()
     {
+        Upgrade(ref _bagPrice);
+
         if (_moneyPoint.CurrentDollarsCount >= _bagPrice)
-        {
-            Upgrade(ref _bagPrice);
             _bag.IncreaseCapacity();
-        }
     }
 
     public void OpenPanel()
     {
+        _departure.Play();
         _animator.SetTrigger(Open);
     }
 

@@ -63,7 +63,7 @@ public class CustomerArea : MonoBehaviour
 
             int index = Random.Range(0, _customerFirstTargets.Count);
             _customers.Add(_entrance.InstantiateCustomer());
-            _customers[_customers.Count - 1].SetFirstTarget(_customerFirstTargets[index].transform);
+            _customers[_customers.Count - 1].SetFirstTarget(_customerFirstTargets[index]);
             _customers[_customers.Count - 1].SetStackDollars(_stackDollarsPrefab);
             _customers[_customers.Count - 1].SetMoneyToWithdraw(_moneyToWithdraw);
             _customers[_customers.Count - 1].SetMaxWaitingSeconds(_maxWaitingSeconds);

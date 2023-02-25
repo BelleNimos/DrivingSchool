@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1372381028544994061}
   - component: {fileID: 8517763634649747442}
   - component: {fileID: 4802564158441040194}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 7256910320809795389}
   - component: {fileID: 7355095051809951869}
   - component: {fileID: 7355095051809951865}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Exit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -197,7 +197,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 1.5, z: 2}
+  m_Size: {x: 1.5, y: 1.5, z: 3}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &7355095051809951865
 MonoBehaviour:

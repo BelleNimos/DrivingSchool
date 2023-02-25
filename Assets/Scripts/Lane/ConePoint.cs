@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using DG.Tweening;
 
@@ -7,7 +8,10 @@ public class ConePoint : MonoBehaviour
     [SerializeField] private Material _eldenMaterial;
     [SerializeField] private Material _newMaterial;
     [SerializeField] private Transform _positionSpawnDollar;
+    [SerializeField] private Dollar _dollarPrefab;
+    [SerializeField] private MoneyPoint _moneyPoint;
 
+    private WaitForSeconds _waitForSeconds;
     private Renderer _renderer;
     private Cone _cone;
 
@@ -20,6 +24,7 @@ public class ConePoint : MonoBehaviour
     private void Start()
     {
         _renderer = GetComponent<Renderer>();
+        _waitForSeconds = new WaitForSeconds(0.6f);
     }
 
     private void Update()
@@ -52,9 +57,29 @@ public class ConePoint : MonoBehaviour
             _renderer.material = _eldenMaterial;
     }
 
+    private void CreateDollar(Transform transform, int count)
+    {
+        StartCoroutine(InstantiateDollars(transform, count));
+    }
+
+    private void InstantiateDollar(Transform transform, int count)
+    {
+        Dollar dollar = Instantiate(_dollarPrefab, transform.position, Quaternion.identity);
+        dollar.SetMoneyPoint(_moneyPoint);
+        dollar.StartMove();
+    }
+
+    private IEnumerator InstantiateDollars(Transform transform, int count)
+    {
+        for (int i = 0; i < count; i++)
+        {
+            InstantiateDollar(transform, count);
+            yield return _waitForSeconds;
+        }
+    }
+
     public void AddCone(Cone cone)
     {
-        _cone = cone;
         Vector3 nextRotation = new Vector3(0, -90, 0);
 
         cone.transform.DOJump(transform.position, PowerJumpCone, NumJumpsCone, DurationJumpCone)
@@ -63,10 +88,13 @@ public class ConePoint : MonoBehaviour
             {
                 cone.transform.SetParent(transform, true);
                 cone.transform.localRotation = Quaternion.LookRotation(nextRotation);
+                CreateDollar(_positionSpawnDollar, cone.DollarsCount);
                 cone.StartFallAnimation();
-                cone.CreateDollar(_positionSpawnDollar);
-                IsFree = false;
+                cone.PlayFallSound();
             }
             );
+
+        _cone = cone;
+        IsFree = false;
     }
 }

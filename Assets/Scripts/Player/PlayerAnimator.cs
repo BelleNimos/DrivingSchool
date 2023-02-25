@@ -9,9 +9,16 @@ public class PlayerAnimator : MonoBehaviour
     private const string Run = "Run";
     private const string CarryIdle = "Carry Idle";
 
+    public float SpeedAnimator => _animator.speed;
+
     private void Start()
     {
         _animator = GetComponent<Animator>();
+
+        if (SceneData.SpeedAnimatorPlayer > 0f)
+            _animator.speed = SceneData.SpeedAnimatorPlayer;
+        else
+            _animator.speed = 1f;
     }
 
     public void StartRunAnimation()
@@ -40,5 +47,10 @@ public class PlayerAnimator : MonoBehaviour
         _animator.SetBool(CarryIdle, true);
         _animator.SetBool(Carry, false);
         _animator.SetBool(Run, false);
+    }
+
+    public void IncreaseSpeedAnimation()
+    {
+        _animator.speed += 0.02f;
     }
 }

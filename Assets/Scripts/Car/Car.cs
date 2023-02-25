@@ -1,12 +1,13 @@
 using UnityEngine;
 
-[RequireComponent(typeof(CarMovement))]
+[RequireComponent(typeof(CarMovement), typeof(CarSound))]
 public class Car : MonoBehaviour
 {
     [SerializeField] private Seat _seat;
     [SerializeField] private Lane _lane;
     [SerializeField] private CarFirstPosition _firstPosition;
 
+    private CarSound _carSound;
     private CarMovement _movement;
     private Customer _customer;
 
@@ -19,6 +20,7 @@ public class Car : MonoBehaviour
     private void Start()
     {
         _movement = GetComponent<CarMovement>();
+        _carSound = GetComponent<CarSound>();
         IsFinish = false;
     }
 
@@ -39,11 +41,15 @@ public class Car : MonoBehaviour
         }
         else
         {
+            _carSound.Stop();
             IsFree = true;
         }
 
         if (_lane.IsReady == true && IsFree == false && IsFinish == false)
             _movement.Invoke(StartMoveText, Delay);
+
+        if (_movement.IsReady == false && _customer != null)
+            _carSound.PlayIdle();
     }
 
     private void OnTriggerEnter(Collider collision)

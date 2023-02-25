@@ -17,11 +17,17 @@ public class Bag : MonoBehaviour
 
     public int MaxConesCount { get; private set; }
     public int CurrentConesCount => _cones.Count;
+    public float SpeedAnimator => _animator.speed;
 
     private void Start()
     {
         _cones = new Stack<Cone>();
         _animator = GetComponent<Animator>();
+
+        if (SceneData.SpeedAnimatorBag > 0)
+            _animator.speed = SceneData.SpeedAnimatorBag;
+        else
+            _animator.speed = 1f;
 
         if (SceneData.CapacityBag > 0)
             MaxConesCount = SceneData.CapacityBag;
@@ -47,6 +53,7 @@ public class Bag : MonoBehaviour
             }
             );
 
+        cone.PlayAddSound();
         _cones.Push(cone);
     }
 
@@ -75,5 +82,10 @@ public class Bag : MonoBehaviour
     public void IncreaseCapacity()
     {
         MaxConesCount += SurplusFactor;
+    }
+
+    public void IncreaseSpeedAnimation()
+    {
+        _animator.speed += 0.02f;
     }
 }

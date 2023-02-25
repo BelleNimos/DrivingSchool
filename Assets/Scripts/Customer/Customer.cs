@@ -1,14 +1,15 @@
 using UnityEngine;
+using UnityEngine.ProBuilder.Shapes;
 
 [RequireComponent(typeof(CustomerMovement))]
 public class Customer : MonoBehaviour
 {
     private CustomerMovement _movement;
     private CustomerAnimator _animator;
+    private CustomerLastTarget _lastTarget;
+    private CustomerFirstTarget _firstTarget;
     private StackDollars _stackDollars;
     private MoneyPoint _moneyPoint;
-    private Transform _lastTarget;
-    private Transform _firstTarget;
     private Transform _target;
     private Transform _exitTarget;
     private TargetWZ _targetWZ;
@@ -27,10 +28,10 @@ public class Customer : MonoBehaviour
         _animator = GetComponent<CustomerAnimator>();
 
         _moneyPoint = FindObjectOfType<MoneyPoint>();
-        _lastTarget = FindObjectOfType<CustomerLastTarget>().transform;
+        _lastTarget = FindObjectOfType<CustomerLastTarget>();
         _exitTarget = FindObjectOfType<Exit>().transform;
 
-        _target = _firstTarget;
+        _target = _firstTarget.transform;
         _movement.SetTarget(_target);
 
         _targetWZ = null;
@@ -54,15 +55,17 @@ public class Customer : MonoBehaviour
 
         if (IsFinish == true)
         {
-            _target = _lastTarget;
-            _movement.SetTarget(_lastTarget);
+            _target = _lastTarget.transform;
+            _movement.SetTarget(_target);
         }
     }
 
     private void TakeMoney()
     {
+        if (_moneyPoint.CurrentDollarsCount >= _moneyToWithdraw)
+            _moneyPoint.SpendMoney(_moneyToWithdraw);
+
         GoToExit();
-        _moneyPoint.SpendMoney(_moneyToWithdraw);
         _waitingSeconds = 0f;
     }
 
@@ -81,9 +84,9 @@ public class Customer : MonoBehaviour
         _stackDollars = stackDollars;
     }
 
-    public void SetFirstTarget(Transform transform)
+    public void SetFirstTarget(CustomerFirstTarget firstTarget)
     {
-        _firstTarget = transform;
+        _firstTarget = firstTarget;
     }
 
     public void SetTargetWZ(TargetWZ targetWZ)

@@ -16,11 +16,11 @@ TagManager:
   - Player
   - Cone
   - ConeUsed
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Exit
+  - Entrance
+  - Wall
+  - Utilizer
+  - Board
   - 
   - 
   - 

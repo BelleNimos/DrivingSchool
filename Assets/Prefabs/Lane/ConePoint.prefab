@@ -102,6 +102,7 @@ MonoBehaviour:
   _eldenMaterial: {fileID: 2100000, guid: 1fac5bcdf5eb8a441bd4a40b036bdb6b, type: 2}
   _newMaterial: {fileID: 2100000, guid: 386fdde0ed5f54741b6ee182f20d1e47, type: 2}
   _positionSpawnDollar: {fileID: 6266580111497505989}
+  _dollarPrefab: {fileID: 4707887741355687753, guid: ff1c8859fa01170409dcdecb5f1a0f7c, type: 3}
 --- !u!65 &6459232040217722495
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -4,6 +4,7 @@ using TMPro;
 public class MoneyPoint : MonoBehaviour
 {
     [SerializeField] private TMP_Text _dollarsCount;
+    [SerializeField] private AudioSource _spendDollarsSound;
 
     private int _countDollars;
 
@@ -29,7 +30,7 @@ public class MoneyPoint : MonoBehaviour
 
     public void SpendMoney(int price)
     {
-        if (_countDollars >= price)
-            _countDollars -= price;
+        _spendDollarsSound.Play();
+        _countDollars -= price;
     }
 }

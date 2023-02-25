@@ -19,8 +19,11 @@ public class Finish : MonoBehaviour
     {
         if (_isUse == false)
         {
-            _moneyPoint.SpendMoney(_price);
-            _isUse = true;
+            if (_moneyPoint.CurrentDollarsCount >= _price)
+            {
+                _moneyPoint.SpendMoney(_price);
+                _isUse = true;
+            }
         }
     }
 }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5481702284301118257}
   - component: {fileID: 5491803687481036895}
   - component: {fileID: 4281802760310476307}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 3443150298585319966}
   - component: {fileID: 3443150298585319965}
   - component: {fileID: 3443150298585319936}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Entrance
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -197,7 +197,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1527108100587363247}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: StartPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}

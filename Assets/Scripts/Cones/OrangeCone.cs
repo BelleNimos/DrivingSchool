@@ -1,9 +1,7 @@
-using UnityEngine;
-
 public class OrangeCone : Cone
 {
-    public override void CreateDollar(Transform transform)
+    private void Awake()
     {
-        InstantiateDollar(transform);
+        CountDollars = 1;
     }
 }

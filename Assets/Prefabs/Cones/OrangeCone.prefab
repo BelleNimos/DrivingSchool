@@ -58,45 +58,19 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1477788488082954092, guid: 188d0479721b3334fb8c868ae8ca0d32, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 188d0479721b3334fb8c868ae8ca0d32, type: 3}
---- !u!65 &1090053144310190648 stripped
-BoxCollider:
-  m_CorrespondingSourceObject: {fileID: 3841898148466287322, guid: 188d0479721b3334fb8c868ae8ca0d32, type: 3}
+--- !u!82 &2980707788955125295 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1381503911781824205, guid: 188d0479721b3334fb8c868ae8ca0d32, type: 3}
   m_PrefabInstance: {fileID: 4211304966456373474}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1217079736257716917 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3067619985280979543, guid: 188d0479721b3334fb8c868ae8ca0d32, type: 3}
+--- !u!82 &3442804213086891729 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1564653137581268531, guid: 188d0479721b3334fb8c868ae8ca0d32, type: 3}
   m_PrefabInstance: {fileID: 4211304966456373474}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55a9d90f928b903459ec0fb4bc0e0a12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!65 &2851958724245048464 stripped
-BoxCollider:
-  m_CorrespondingSourceObject: {fileID: 2154337816770493554, guid: 188d0479721b3334fb8c868ae8ca0d32, type: 3}
-  m_PrefabInstance: {fileID: 4211304966456373474}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &3733712303566702603 stripped
-BoxCollider:
-  m_CorrespondingSourceObject: {fileID: 693906199990581481, guid: 188d0479721b3334fb8c868ae8ca0d32, type: 3}
-  m_PrefabInstance: {fileID: 4211304966456373474}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &4427532353295847378 stripped
-BoxCollider:
-  m_CorrespondingSourceObject: {fileID: 504489720844648240, guid: 188d0479721b3334fb8c868ae8ca0d32, type: 3}
-  m_PrefabInstance: {fileID: 4211304966456373474}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &8095878426169245518 stripped
-BoxCollider:
-  m_CorrespondingSourceObject: {fileID: 5344603998821846956, guid: 188d0479721b3334fb8c868ae8ca0d32, type: 3}
-  m_PrefabInstance: {fileID: 4211304966456373474}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &8623023889939872857 stripped
-BoxCollider:
-  m_CorrespondingSourceObject: {fileID: 5609986533565844667, guid: 188d0479721b3334fb8c868ae8ca0d32, type: 3}
+--- !u!82 &6970155401893679020 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6542455810262105934, guid: 188d0479721b3334fb8c868ae8ca0d32, type: 3}
   m_PrefabInstance: {fileID: 4211304966456373474}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &8779849382390471552 stripped
@@ -116,12 +90,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed92fdc1656675459d262b6cabee0c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dollarPrefab: {fileID: 4707887741355687753, guid: ff1c8859fa01170409dcdecb5f1a0f7c, type: 3}
-  _warningPoint: {fileID: 1217079736257716917}
-  _colliders:
-  - {fileID: 8623023889939872857}
-  - {fileID: 2851958724245048464}
-  - {fileID: 8095878426169245518}
-  - {fileID: 4427532353295847378}
-  - {fileID: 1090053144310190648}
-  - {fileID: 3733712303566702603}
+  _addSound: {fileID: 6970155401893679020}
+  _fallSound: {fileID: 3442804213086891729}
+  _collisionSound: {fileID: 2980707788955125295}

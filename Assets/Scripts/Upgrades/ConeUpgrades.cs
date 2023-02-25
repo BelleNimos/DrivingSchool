@@ -19,9 +19,12 @@ public class ConeUpgrades : MonoBehaviour
 
     public void Unlock()
     {
-        _spawner.ChangeConePrefab(_conePrefab);
-        _moneyPoint.SpendMoney(_price);
-        _upgradeConesHorizontalUI.StartAnimationClose();
-        gameObject.SetActive(false);
+        if (_moneyPoint.CurrentDollarsCount >= _price)
+        {
+            _moneyPoint.SpendMoney(_price);
+            _spawner.ChangeConePrefab(_conePrefab);
+            _upgradeConesHorizontalUI.StartAnimationClose();
+            gameObject.SetActive(false);
+        }
     }
 }

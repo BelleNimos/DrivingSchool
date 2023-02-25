@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5948283541526392601}
   - component: {fileID: 5948283541526392600}
   - component: {fileID: 5948283541526392607}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Beam 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 5948283542264994013}
   - component: {fileID: 5948283542264994012}
   - component: {fileID: 5948283542264994003}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Beam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -205,7 +205,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5948283542390441997}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Board
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -244,7 +244,7 @@ GameObject:
   - component: {fileID: 5948283542529677174}
   - component: {fileID: 5948283542529677173}
   - component: {fileID: 5948283542529677172}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -341,7 +341,7 @@ GameObject:
   - component: {fileID: 5948283542874023663}
   - component: {fileID: 5948283542874023662}
   - component: {fileID: 5948283542874023661}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Sphere 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -437,7 +437,7 @@ GameObject:
   - component: {fileID: 6126642758508261698}
   - component: {fileID: 7109475950631698151}
   - component: {fileID: 4993676133196450349}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Board
   m_TagString: Untagged
   m_Icon: {fileID: 0}

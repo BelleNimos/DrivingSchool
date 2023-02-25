@@ -3,6 +3,8 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 public class UpgradeConesHorizontalUI : MonoBehaviour
 {
+    [SerializeField] private AudioSource _departure;
+
     private Animator _animator;
 
     private const string Close = "Close";
@@ -15,5 +17,6 @@ public class UpgradeConesHorizontalUI : MonoBehaviour
     public void StartAnimationClose()
     {
         _animator.SetTrigger(Close);
+        _departure.Play();
     }
 }

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1325829966625934566}
   - component: {fileID: 1325829966625934567}
   - component: {fileID: 1325829966625934560}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: WallTwo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 1325829967286613001}
   - component: {fileID: 1325829967286613002}
   - component: {fileID: 1325829967286613003}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: WallThree (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -207,7 +207,7 @@ GameObject:
   - component: {fileID: 1325829967362873102}
   - component: {fileID: 1325829967362873103}
   - component: {fileID: 1325829967362873096}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: WallOne (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -304,7 +304,7 @@ GameObject:
   - component: {fileID: 1325829967935450343}
   - component: {fileID: 1325829967935450336}
   - component: {fileID: 1325829967935450337}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: WallOne
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -400,7 +400,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1325829968489570636}
   - component: {fileID: 1325829968489570643}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -451,7 +451,7 @@ GameObject:
   - component: {fileID: 1325829968512602928}
   - component: {fileID: 1325829968512602929}
   - component: {fileID: 1325829968512602930}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: WallFour
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -549,7 +549,7 @@ GameObject:
   - component: {fileID: 1325829968517836778}
   - component: {fileID: 1325829968517836779}
   - component: {fileID: 1325829968517836772}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: WallTwo (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -646,7 +646,7 @@ GameObject:
   - component: {fileID: 1325829968523626807}
   - component: {fileID: 1325829968523626800}
   - component: {fileID: 1325829968523626801}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: WallThree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -744,7 +744,7 @@ GameObject:
   - component: {fileID: 1325829968662614874}
   - component: {fileID: 1325829968662614875}
   - component: {fileID: 1325829968662614868}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: WallFour (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

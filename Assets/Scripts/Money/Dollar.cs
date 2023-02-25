@@ -6,6 +6,8 @@ using UnityEngine;
 public class Dollar : MonoBehaviour
 {
     [SerializeField] private List<DollarPoint> _points;
+    [SerializeField] private AudioSource _startAddSound;
+    [SerializeField] private AudioSource _endAddSound;
 
     private Animator _animator;
     private MoneyPoint _moneyPoint;
@@ -84,12 +86,14 @@ public class Dollar : MonoBehaviour
 
     public void StartMove()
     {
+        _startAddSound.Play();
         StartMoveHorizontalAnimation();
 
         transform.DOJump(GetTarget(), PowerFall, NumsFalls, DurationFall)
             .SetLink(gameObject)
             .OnKill(() =>
             {
+                _endAddSound.Play();
                 StartMoveVerticalAnimation();
 
                 transform.DOJump(_moneyPoint.transform.position, PowerFlight, NumFlights, DurationFlight)
