@@ -4,4 +4,9 @@ public class GreenCone : Cone
     {
         CountDollars = 4;
     }
+
+    public override int GetIndex()
+    {
+        return 4;
+    }
 }

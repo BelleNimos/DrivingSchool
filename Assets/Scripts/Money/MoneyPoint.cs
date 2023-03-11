@@ -14,23 +14,20 @@ public class MoneyPoint : MonoBehaviour
     {
         _countDollars = 0;
 
-        if (SceneData.MoneyPlayer > 0)
-            _countDollars = SceneData.MoneyPlayer;
-    }
-
-    private void Update()
-    {
-        _dollarsCount.text = CurrentDollarsCount.ToString();
+        if (PlayerPrefs.HasKey(KeysData.PlayerDollarsCount) == true)
+            _countDollars = PlayerPrefs.GetInt(KeysData.PlayerDollarsCount);
     }
 
     public void AddDollar()
     {
         _countDollars++;
+        _dollarsCount.text = _countDollars.ToString();
     }
 
     public void SpendMoney(int price)
     {
         _spendDollarsSound.Play();
         _countDollars -= price;
+        _dollarsCount.text = _countDollars.ToString();
     }
 }

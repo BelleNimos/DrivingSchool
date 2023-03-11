@@ -20,7 +20,7 @@ public abstract class Cone : MonoBehaviour
     private const int ConeUsedLayer = 10;
 
     protected int CountDollars;
-
+    
     public int DollarsCount => CountDollars;
     public bool IsCollision { get; private set; }
 
@@ -38,12 +38,12 @@ public abstract class Cone : MonoBehaviour
     {
         _waitingSeconds += Time.deltaTime;
 
-        if (_rigidbody.velocity.magnitude < MaxSpeedRb && IsCollision == true)
-            BlockPhysics();
-
         if (_waitingSeconds >= _maxWaitingSeconds)
             if (IsCollision == true)
                 TakeMoney();
+
+        if (_rigidbody.velocity.magnitude < MaxSpeedRb && IsCollision == true)
+            BlockPhysics();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -63,6 +63,8 @@ public abstract class Cone : MonoBehaviour
         
         Destroy(gameObject);
     }
+
+    public abstract int GetIndex();
 
     public void UnlockPhysics()
     {

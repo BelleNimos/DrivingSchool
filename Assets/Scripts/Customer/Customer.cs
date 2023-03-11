@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.ProBuilder.Shapes;
 
 [RequireComponent(typeof(CustomerMovement))]
 public class Customer : MonoBehaviour
@@ -96,7 +95,7 @@ public class Customer : MonoBehaviour
 
     public void InstantiateStackDollars()
     {
-        Instantiate(_stackDollars, transform.position, Quaternion.identity);
+        Instantiate(_stackDollars, transform.position, Quaternion.Euler(0f, 20f, 0f));
     }
 
     public void SetTarget(Transform target)

@@ -18,7 +18,7 @@ public class CarSound : MonoBehaviour
 
     public void PlayTurn()
     {
-        _soundTurn.pitch = Random.Range(0.9f, 1.1f);
+        _soundTurn.pitch = 1f;
     }
 
     public void PlayIdle()

@@ -2,13 +2,15 @@ using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 
-[RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(Rigidbody), typeof(BoxCollider), typeof(Animator))]
 public class Dollar : MonoBehaviour
 {
     [SerializeField] private List<DollarPoint> _points;
     [SerializeField] private AudioSource _startAddSound;
     [SerializeField] private AudioSource _endAddSound;
 
+    private Rigidbody _rigidbody;
+    private BoxCollider _boxCollider;
     private Animator _animator;
     private MoneyPoint _moneyPoint;
     private int _index;
@@ -30,8 +32,10 @@ public class Dollar : MonoBehaviour
 
     public bool IsEnd { get; private set; }
 
-    private void OnEnable()
+    private void Awake()
     {
+        _rigidbody = GetComponent<Rigidbody>();
+        _boxCollider = GetComponent<BoxCollider>();
         _animator = GetComponent<Animator>();
         IsEnd = false;
     }
@@ -82,6 +86,26 @@ public class Dollar : MonoBehaviour
     public void SetMoneyPoint(MoneyPoint moneyPoint)
     {
         _moneyPoint = moneyPoint;
+    }
+
+    public void DisableKinematic()
+    {
+        _rigidbody.isKinematic = false;
+    }
+
+    public void EnableKinematic()
+    {
+        _rigidbody.isKinematic = true;
+    }
+
+    public void DisableTrigger()
+    {
+        _boxCollider.isTrigger = false;
+    }
+
+    public void EnableTrigger()
+    {
+        _boxCollider.isTrigger = true;
     }
 
     public void StartMove()

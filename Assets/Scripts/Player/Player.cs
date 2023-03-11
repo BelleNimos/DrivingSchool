@@ -1,21 +1,21 @@
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
+[RequireComponent(typeof(PlayerMovement))]
 public class Player : MonoBehaviour
 {
     [SerializeField] private Bag _bag;
-    [SerializeField] private TMP_Text _maxConesText;
+    [SerializeField] private MoneyPoint _moneyPoint;
 
     private List<Customer> _customers;
-    private MoneyPoint _moneyPoint;
+    private PlayerMovement _characterMovement;
 
     public int CurrentCustomersCount => _customers.Count;
 
     private void Start()
     {
         _customers = new List<Customer>();
-        _moneyPoint = FindObjectOfType<MoneyPoint>();
+        _characterMovement = GetComponent<PlayerMovement>();
     }
 
     private void Update()
@@ -23,15 +23,22 @@ public class Player : MonoBehaviour
         for (int i = 0; i < _customers.Count; i++)
             if (_customers[i].IsReadyExit == true)
                 _customers.RemoveAt(i);
-
-        if (_bag.CurrentConesCount == _bag.MaxConesCount)
-            _maxConesText.gameObject.SetActive(true);
-        else
-            _maxConesText.gameObject.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider collision)
     {
+        if (collision.TryGetComponent<TransitionLevel>(out TransitionLevel transitionLevel))
+        {
+            _characterMovement.SlowDownSpeed();
+            transitionLevel.OpenPanel();
+        }
+
+        if (collision.TryGetComponent<UpgradesStand>(out UpgradesStand upgradesStand))
+        {
+            _characterMovement.SlowDownSpeed();
+            upgradesStand.EnableUpgradesPanel();
+        }
+
         if (collision.TryGetComponent<ConePoint>(out ConePoint conePoint))
             if (_bag.CurrentConesCount > 0 && conePoint.IsFree == true)
                 _bag.GiveAwayCone(conePoint);
@@ -46,23 +53,22 @@ public class Player : MonoBehaviour
                 conesUpgrade.Unlock();
 
         if (collision.TryGetComponent<StackDollars>(out StackDollars stackDollars))
-            if (stackDollars.IsUsed == false)
-                stackDollars.StartMove();
-
-        if (collision.TryGetComponent<TransitionLevel>(out TransitionLevel transitionLevel))
-            transitionLevel.OpenPanel();
-
-        if (collision.TryGetComponent<UpgradesStand>(out UpgradesStand upgradesStand))
-            upgradesStand.EnableUpgradesPanel();
+            stackDollars.StartMove();
     }
 
     private void OnTriggerExit(Collider collision)
     {
         if (collision.TryGetComponent<UpgradesStand>(out UpgradesStand upgradesStand))
+        {
+            _characterMovement.ResetSpeed();
             upgradesStand.DisableUpgradesPanel();
+        }
 
         if (collision.TryGetComponent<TransitionLevel>(out TransitionLevel transitionLevel))
+        {
+            _characterMovement.ResetSpeed();
             transitionLevel.ClosePanel();
+        }
     }
 
     private void OnTriggerStay(Collider collision)

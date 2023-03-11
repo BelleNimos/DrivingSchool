@@ -114,7 +114,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -50, y: -50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3146661692493073683
 CanvasRenderer:
@@ -170,11 +170,11 @@ MonoBehaviour:
   _joystickBackground: {fileID: 3146661692571151104}
   _joystickArea: {fileID: 3146661692493073682}
   _joystick: {fileID: 3146661692310205250}
-  _inActiveJoystick: {r: 0, g: 0, b: 0, a: 0}
-  _activeJoystick: {r: 1, g: 1, b: 1, a: 1}
-  _inActiveBackground: {r: 0, g: 0, b: 0, a: 0}
-  _activeBackground: {r: 1, g: 1, b: 1, a: 0.39215687}
-  _characterMovement: {fileID: 0}
+  _inActiveJoystickColor: {r: 1, g: 1, b: 1, a: 0}
+  _activeJoystickColor: {r: 1, g: 1, b: 1, a: 1}
+  _inActiveBackgroundColor: {r: 1, g: 1, b: 1, a: 0}
+  _activeBackgroundColor: {r: 1, g: 1, b: 1, a: 0.39215687}
+  _playerMovement: {fileID: 0}
 --- !u!1 &3146661692571151117
 GameObject:
   m_ObjectHideFlags: 0

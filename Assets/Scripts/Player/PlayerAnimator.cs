@@ -15,8 +15,8 @@ public class PlayerAnimator : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
 
-        if (SceneData.SpeedAnimatorPlayer > 0f)
-            _animator.speed = SceneData.SpeedAnimatorPlayer;
+        if (PlayerPrefs.HasKey(KeysData.PlayerSpeedAnimator) == true)
+            _animator.speed = PlayerPrefs.GetFloat(KeysData.PlayerSpeedAnimator);
         else
             _animator.speed = 1f;
     }

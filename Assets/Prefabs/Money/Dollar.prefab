@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 589787467089372276}
   - component: {fileID: 1796635949982894756}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Point (10)
   m_TagString: Untagged
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -54,7 +54,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6246459819261568921}
   - component: {fileID: 1142361540404847282}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Point (18)
   m_TagString: Untagged
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -98,7 +98,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6552431578735795128}
   - component: {fileID: 7008525681699430058}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Point (6)
   m_TagString: Untagged
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -142,7 +142,7 @@ GameObject:
   m_Component:
   - component: {fileID: 41901827599660263}
   - component: {fileID: 5953464319432428747}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Point (11)
   m_TagString: Untagged
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -186,7 +186,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5686831078532390677}
   - component: {fileID: 2787707039020459352}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Point (14)
   m_TagString: Untagged
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -230,7 +230,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8974716374417174622}
   - component: {fileID: 1797837616820568637}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Point (15)
   m_TagString: Untagged
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -274,7 +274,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6032571582800518992}
   - component: {fileID: 36418787656227475}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Point (1)
   m_TagString: Untagged
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -318,7 +318,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6995771838147811264}
   - component: {fileID: 7137875371639265282}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Point (7)
   m_TagString: Untagged
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -362,7 +362,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4623637910926771520}
   - component: {fileID: 6262577185247432203}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Point (8)
   m_TagString: Untagged
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -406,7 +406,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1329335472631667365}
   - component: {fileID: 7282033618787730958}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Point (3)
   m_TagString: Untagged
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -450,7 +450,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5380553663524518090}
   - component: {fileID: 2222211928260385389}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Point (17)
   m_TagString: Untagged
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -494,7 +494,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5307442786321234836}
   - component: {fileID: 7597994377333353491}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Point (13)
   m_TagString: Untagged
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -538,7 +538,7 @@ GameObject:
   m_Component:
   - component: {fileID: 648959005178856885}
   - component: {fileID: 4376268259120306860}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Point (12)
   m_TagString: Untagged
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -582,7 +582,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2209763531608597858}
   - component: {fileID: 7224865124469941992}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Point (16)
   m_TagString: Untagged
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -627,7 +627,7 @@ GameObject:
   - component: {fileID: 5947781642693360335}
   - component: {fileID: 5947781642693360330}
   - component: {fileID: 5947781642693360333}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Bundle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -710,10 +710,11 @@ GameObject:
   - component: {fileID: 5947781642992466600}
   - component: {fileID: 5947781642992466603}
   - component: {fileID: 5947781642992466602}
+  - component: {fileID: -5611979043091932421}
   - component: {fileID: -4363881165426824622}
   - component: {fileID: -8073539084359496024}
   - component: {fileID: 4707887741355687753}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Dollar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -810,6 +811,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!54 &-5611979043091932421
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5947781642992466604}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &-4363881165426824622
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -889,7 +906,7 @@ GameObject:
   - component: {fileID: 5947781643534457134}
   - component: {fileID: 5947781643534457133}
   - component: {fileID: 5947781643534457132}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -972,7 +989,7 @@ GameObject:
   - component: {fileID: 5947781643667843677}
   - component: {fileID: 5947781643667843672}
   - component: {fileID: 5947781643667843675}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Center
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1054,7 +1071,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2649607502951477994}
   - component: {fileID: 2264490990417921718}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Point (5)
   m_TagString: Untagged
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -1098,7 +1115,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2626592149911472821}
   - component: {fileID: 7589093076515273839}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Point
   m_TagString: Untagged
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -1142,7 +1159,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4529495118584338025}
   - component: {fileID: 1457226846472889643}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Point (19)
   m_TagString: Untagged
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -1186,7 +1203,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1504314832110548451}
   - component: {fileID: 2499422588012435815}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Point (2)
   m_TagString: Untagged
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -1230,7 +1247,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6203324123129021111}
   - component: {fileID: 9057521485679706643}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Point (4)
   m_TagString: Untagged
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -1274,7 +1291,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2823656967954294777}
   - component: {fileID: 3897865324505140436}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Point (9)
   m_TagString: Untagged
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -1363,6 +1380,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EndAddDollar
       objectReference: {fileID: 0}
+    - target: {fileID: 3850301493980872838, guid: 660f1947a3d6a574ebfd8a73eaaec44b, type: 3}
+      propertyPath: m_Layer
+      value: 18
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 660f1947a3d6a574ebfd8a73eaaec44b, type: 3}
 --- !u!4 &2692443842813496048 stripped
@@ -1429,6 +1450,10 @@ PrefabInstance:
     - target: {fileID: 3850301493980872838, guid: aaff8d926b373ab4089c6ffad22d7f62, type: 3}
       propertyPath: m_Name
       value: StartAddDollar
+      objectReference: {fileID: 0}
+    - target: {fileID: 3850301493980872838, guid: aaff8d926b373ab4089c6ffad22d7f62, type: 3}
+      propertyPath: m_Layer
+      value: 18
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aaff8d926b373ab4089c6ffad22d7f62, type: 3}

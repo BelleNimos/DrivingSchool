@@ -1,54 +1,52 @@
 using TMPro;
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class TransitionLevel : MonoBehaviour
 {
+    [Header("Using")]
+    [SerializeField] private NextLevelUI _nextLevelUI;
     [SerializeField] private AudioSource _yesSound;
     [SerializeField] private AudioSource _noSound;
     [SerializeField] private AudioSource _crashSound;
-    [SerializeField] private NextLevelUI _nextLevelUI;
-    [SerializeField] private MoneyPoint _moneyPoint;
-    [SerializeField] private Spawner _spawner;
-    [SerializeField] private CharacterMovement _characterMovement;
-    [SerializeField] private PlayerAnimator _playerAnimator;
-    [SerializeField] private Bag _bag;
-    [SerializeField] private Upgrades _upgrades;
     [SerializeField] private TMP_Text _priceText;
     [SerializeField] private int _price;
     [SerializeField] private int _idNextLevel;
 
-    private bool _isEmpty;
+    [Header("Transitions")]
+    [SerializeField] private PlayerMovement _playerMovement;
+    [SerializeField] private PlayerAnimator _playerAnimator;
+    [SerializeField] private MoneyPoint _moneyPoint;
+    [SerializeField] private Spawner _spawner;
+    [SerializeField] private Bag _bag;
+    [SerializeField] private Upgrades _upgrades;
+    [SerializeField] private Sound _sound;
 
     private void Start()
     {
-        _idNextLevel -= 1;
         _priceText.text = _price.ToString();
-        _isEmpty = false;
-    }
-
-    private void Update()
-    {
-        if (_isEmpty == true)
-        {
-            ChangeOptionsNextLevel();
-            SceneManager.LoadScene(_idNextLevel);
-            Time.timeScale = 1;
-        }
+        _idNextLevel += 1;
     }
 
     private void ChangeOptionsNextLevel()
     {
-        SceneData.ChangeCapacityBag(_bag.MaxConesCount);
-        SceneData.ChangeCountWaveSpawner(_spawner.CountWave);
-        SceneData.ChangeMoveSpeedPlayer(_characterMovement.MoveSpeed);
-        SceneData.ChangeMoneyPlayer(_moneyPoint.CurrentDollarsCount);
-        SceneData.ChangeSpawnerUpgradePrice(_upgrades.SpawnerPrice);
-        SceneData.ChangeSpeedUpgradePrice(_upgrades.SpeedPrice);
-        SceneData.ChangeBagUpgradePrice(_upgrades.BagPrice);
-        SceneData.ChangeSpeedAnimatorBag(_bag.SpeedAnimator);
-        SceneData.ChangeSpeedAnimatorPlayer(_playerAnimator.SpeedAnimator);
-        SceneData.ChangeRadiusPlayer(_characterMovement.Radius);
+        PlayerPrefs.SetInt(KeysData.BagConesMaxCount, _bag.MaxConesCount);
+        PlayerPrefs.SetInt(KeysData.SpawnerCountWaves, _spawner.CountWaves);
+        PlayerPrefs.SetInt(KeysData.PlayerDollarsCount, _moneyPoint.CurrentDollarsCount);
+        PlayerPrefs.SetInt(KeysData.UpgradesSpawnerPrice, _upgrades.SpawnerPrice);
+        PlayerPrefs.SetInt(KeysData.UpgradesSpeedPrice, _upgrades.SpeedPrice);
+        PlayerPrefs.SetInt(KeysData.UpgradesBagPrice, _upgrades.BagPrice);
+        PlayerPrefs.SetInt(KeysData.IndexScene, _idNextLevel);
+        PlayerPrefs.SetInt(KeysData.SoundVolumeValue, Convert.ToInt32(_sound.IsActive));
+        PlayerPrefs.SetInt(KeysData.IndexCone, _spawner.IndexCone);
+        PlayerPrefs.SetFloat(KeysData.PlayerMoveSpeed, _playerMovement.MoveSpeed);
+        PlayerPrefs.SetFloat(KeysData.BagSpeedAnimator, _bag.SpeedAnimator);
+        PlayerPrefs.SetFloat(KeysData.PlayerSpeedAnimator, _playerAnimator.SpeedAnimator);
+        PlayerPrefs.SetFloat(KeysData.PlayerRadiusX, _playerMovement.Radius.x);
+        PlayerPrefs.SetFloat(KeysData.PlayerRadiusY, _playerMovement.Radius.y);
+        PlayerPrefs.SetFloat(KeysData.PlayerRadiusZ, _playerMovement.Radius.z);
+        PlayerPrefs.Save();
     }
 
     public void OpenPanel()
@@ -72,12 +70,13 @@ public class TransitionLevel : MonoBehaviour
         {
             _yesSound.Play();
             _moneyPoint.SpendMoney(_price);
-            _isEmpty = true;
+            ChangeOptionsNextLevel();
+            SceneManager.LoadScene(1);
+            Time.timeScale = 1;
         }
         else
         {
             _crashSound.Play();
-            _isEmpty = false;
         }
     }
 }

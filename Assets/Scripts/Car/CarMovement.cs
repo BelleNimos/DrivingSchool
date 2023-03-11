@@ -69,8 +69,8 @@ public class CarMovement : MonoBehaviour
 
     private void SetValueTraces(bool flag)
     {
-        //if (flag == true)
-        //    _carSound.PlayTurn();
+        if (flag == true)
+            _carSound.PlayTurn();
 
         for (int i = 0; i < _wheels.Count; i++)
             _wheels[i].SetFlag(flag);

@@ -5,6 +5,8 @@ using DG.Tweening;
 [RequireComponent(typeof(Animator))]
 public class Bag : MonoBehaviour
 {
+    [SerializeField] private Max _maxConesText;
+
     private Stack<Cone> _cones;
     private Animator _animator;
 
@@ -24,13 +26,13 @@ public class Bag : MonoBehaviour
         _cones = new Stack<Cone>();
         _animator = GetComponent<Animator>();
 
-        if (SceneData.SpeedAnimatorBag > 0)
-            _animator.speed = SceneData.SpeedAnimatorBag;
+        if (PlayerPrefs.HasKey(KeysData.BagSpeedAnimator) == true)
+            _animator.speed = PlayerPrefs.GetFloat(KeysData.BagSpeedAnimator);
         else
             _animator.speed = 1f;
 
-        if (SceneData.CapacityBag > 0)
-            MaxConesCount = SceneData.CapacityBag;
+        if (PlayerPrefs.HasKey(KeysData.BagConesMaxCount) == true)
+            MaxConesCount = PlayerPrefs.GetInt(KeysData.BagConesMaxCount);
         else
             MaxConesCount = 12;
     }
@@ -55,18 +57,27 @@ public class Bag : MonoBehaviour
 
         cone.PlayAddSound();
         _cones.Push(cone);
+
+        if (CurrentConesCount == MaxConesCount)
+            _maxConesText.Enable();
     }
 
     public void GiveAwayCone(ConePoint conePoint)
     {
         if (_cones.Count > 0)
             conePoint.AddCone(_cones.Pop());
+
+        if (CurrentConesCount < MaxConesCount)
+            _maxConesText.Disable();
     }
 
     public void GiveAwayCone(Utilizer utilizer)
     {
-        if (_cones.Count > 0)
+        if (_cones.Count > 0 && utilizer.Timer >= utilizer.MinTime)
             utilizer.DestroyCone(_cones.Pop());
+
+        if (CurrentConesCount < MaxConesCount)
+            _maxConesText.Disable();
     }
 
     public void StartAnimationRocking()
@@ -82,6 +93,9 @@ public class Bag : MonoBehaviour
     public void IncreaseCapacity()
     {
         MaxConesCount += SurplusFactor;
+
+        if (CurrentConesCount < MaxConesCount)
+            _maxConesText.Disable();
     }
 
     public void IncreaseSpeedAnimation()

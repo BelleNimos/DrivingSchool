@@ -9,13 +9,17 @@ public class StackDollars : MonoBehaviour
     private MoneyPoint _moneyPoint;
     private WaitForSeconds _waitForSeconds;
 
-    public bool IsUsed { get; private set; }
-
     private void Start()
     {
         _moneyPoint = FindObjectOfType<MoneyPoint>();
-        _waitForSeconds = new WaitForSeconds(0.01f);
-        IsUsed = false;
+        _waitForSeconds = new WaitForSeconds(0.005f);
+
+        for (int i = 0; i < _dollars.Count; i++)
+        {
+            _dollars[i].DisableKinematic();
+            _dollars[i].DisableTrigger();
+        }
+            
     }
 
     private void Update()
@@ -32,6 +36,8 @@ public class StackDollars : MonoBehaviour
     {
         for (int i = 0; i < _dollars.Count; i++)
         {
+            _dollars[i].EnableTrigger();
+            _dollars[i].EnableKinematic();
             _dollars[i].SetMoneyPoint(_moneyPoint);
             _dollars[i].StartMove();
 
@@ -41,7 +47,6 @@ public class StackDollars : MonoBehaviour
 
     public void StartMove()
     {
-        IsUsed = true;
         StartCoroutine(StartMovement());
     }
 }

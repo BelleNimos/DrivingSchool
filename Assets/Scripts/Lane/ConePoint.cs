@@ -24,7 +24,7 @@ public class ConePoint : MonoBehaviour
     private void Start()
     {
         _renderer = GetComponent<Renderer>();
-        _waitForSeconds = new WaitForSeconds(0.6f);
+        _waitForSeconds = new WaitForSeconds(0.2f);
     }
 
     private void Update()

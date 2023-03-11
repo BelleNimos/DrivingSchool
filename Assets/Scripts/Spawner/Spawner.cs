@@ -12,30 +12,41 @@ public class Spawner : MonoBehaviour
     private Stack<Cone> _cones;
     private WaitForSeconds _waitForSeconds;
     private Cone _conePrefab;
-    private int _countWave;
+    private int _countWaves;
+    private float _timer;
 
     private const int ConesInWaveCount = 4;
+    private const float MinTime = 0.05f;
 
     public bool IsReady { get; private set; }
+    public int IndexCone => _conePrefab.GetIndex();
     public int CurrentConesCount => _cones.Count;
-    public int CountWave => _countWave;
+    public int CountWaves => _countWaves;
 
     private void Start()
     {
         _cones = new Stack<Cone>();
         _waitForSeconds = new WaitForSeconds(0.1f);
-        _conePrefab = _startConePrefab;
+        
+        _timer = 0f;
         IsReady = false;
 
-        if (SceneData.CountWaveSpawner > 0)
-            _countWave = SceneData.CountWaveSpawner;
+        if (PlayerPrefs.HasKey(KeysData.IndexCone) == true)
+            SpawnerPrefabs.SpawnerPrefabsInstance.GiveAwayPrefab(this);
         else
-            _countWave = 5;
+            _conePrefab = _startConePrefab;
+
+        if (PlayerPrefs.HasKey(KeysData.SpawnerCountWaves) == true)
+            _countWaves = PlayerPrefs.GetInt(KeysData.SpawnerCountWaves);
+        else
+            _countWaves = 5;
     }
 
     private void Update()
     {
-        if (CurrentConesCount == ConesInWaveCount * _countWave)
+        _timer += Time.deltaTime;
+
+        if (CurrentConesCount == ConesInWaveCount * _countWaves)
             IsReady = true;
         else if (IsReady == true && CurrentConesCount > 0)
             IsReady = true;
@@ -53,9 +64,10 @@ public class Spawner : MonoBehaviour
     {
         float distanceCoefficient = 0.25f;
 
-        for (int i = 0; i < _countWave; i++)
+        for (int i = 0; i < _countWaves; i++)
         {
             Cone cone;
+
             float positionX;
             float positionY;
             float positionZ;
@@ -65,9 +77,10 @@ public class Spawner : MonoBehaviour
                 positionX = _points[j].position.x;
                 positionY = _points[j].position.y;
                 positionZ = _points[j].position.z;
+
                 positionY = (positionY + i) * distanceCoefficient;
                 Vector3 position = new Vector3(positionX, positionY, positionZ);
-                cone = Instantiate(_conePrefab, position, Quaternion.identity);
+                cone = Instantiate(_conePrefab, position, Quaternion.Euler(0f, 20f, 0f));
                 cone.SetMoneyPoint(_moneyPoint);
                 _cones.Push(cone);
 
@@ -78,13 +91,16 @@ public class Spawner : MonoBehaviour
 
     public void GiveAwayCone(Bag bag)
     {
-        if (CurrentConesCount > 0)
+        if (CurrentConesCount > 0 && _timer >= MinTime)
+        {
             bag.AddCone(_cones.Pop());
+            _timer = 0f;
+        }
     }
 
     public void IncreaseCountWaves()
     {
-        _countWave++;
+        _countWaves++;
     }
 
     public void ChangeConePrefab(Cone cone)

@@ -12,7 +12,7 @@ public class Upgrades : MonoBehaviour
     [SerializeField] private TMP_Text _bagPriceText;
     [SerializeField] private MoneyPoint _moneyPoint;
     [SerializeField] private Spawner _spawner;
-    [SerializeField] private CharacterMovement _characterMovement;
+    [SerializeField] private PlayerMovement _playerMovement;
     [SerializeField] private Bag _bag;
 
     private Animator _animator;
@@ -35,18 +35,20 @@ public class Upgrades : MonoBehaviour
 
     private void Start()
     {
-        if (SceneData.SpawnerUpgradePrice > 0 && SceneData.SpeedUpgradePrice > 0 && SceneData.BagUpgradePrice > 0)
-        {
-            _spawnerPrice = SceneData.SpawnerUpgradePrice;
-            _speedPrice = SceneData.SpeedUpgradePrice;
-            _bagPrice = SceneData.BagUpgradePrice;
-        }
+        if (PlayerPrefs.HasKey(KeysData.UpgradesSpawnerPrice) == true)
+            _spawnerPrice = PlayerPrefs.GetInt(KeysData.UpgradesSpawnerPrice);
         else
-        {
             _spawnerPrice = 20;
+
+        if (PlayerPrefs.HasKey(KeysData.UpgradesSpeedPrice) == true)
+            _speedPrice = PlayerPrefs.GetInt(KeysData.UpgradesSpeedPrice);
+        else
             _speedPrice = 20;
+
+        if (PlayerPrefs.HasKey(KeysData.UpgradesBagPrice) == true)
+            _bagPrice = PlayerPrefs.GetInt(KeysData.UpgradesBagPrice);
+        else
             _bagPrice = 20;
-        }
     }
 
     private void Update()
@@ -83,7 +85,7 @@ public class Upgrades : MonoBehaviour
         Upgrade(ref _speedPrice);
 
         if (_moneyPoint.CurrentDollarsCount >= _speedPrice)
-            _characterMovement.IncreaseSpeed();
+            _playerMovement.IncreaseSpeed();
     }
 
     public void UpgradeBag()

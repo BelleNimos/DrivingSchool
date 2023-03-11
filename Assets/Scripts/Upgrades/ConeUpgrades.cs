@@ -1,20 +1,38 @@
 using TMPro;
 using UnityEngine;
 
+[RequireComponent(typeof(Animator), typeof(BoxCollider))]
 public class ConeUpgrades : MonoBehaviour
 {
+    [SerializeField] private AudioSource _departure;
     [SerializeField] private Spawner _spawner;
     [SerializeField] private Cone _conePrefab;
     [SerializeField] private MoneyPoint _moneyPoint;
     [SerializeField] private TMP_Text _priceText;
-    [SerializeField] private UpgradeConesHorizontalUI _upgradeConesHorizontalUI;
     [SerializeField] private int _price;
 
+    private Animator _animator;
+    private BoxCollider _boxCollider;
+
+    private const string Close = "Close";
+
     public int Price => _price;
+
+    private void Start()
+    {
+        _animator = GetComponent<Animator>();
+        _boxCollider = GetComponent<BoxCollider>();
+    }
 
     private void Update()
     {
         _priceText.text = _price.ToString();
+    }
+
+    private void StartAnimationClose()
+    {
+        _animator.SetTrigger(Close);
+        _departure.Play();
     }
 
     public void Unlock()
@@ -23,8 +41,8 @@ public class ConeUpgrades : MonoBehaviour
         {
             _moneyPoint.SpendMoney(_price);
             _spawner.ChangeConePrefab(_conePrefab);
-            _upgradeConesHorizontalUI.StartAnimationClose();
-            gameObject.SetActive(false);
+            StartAnimationClose();
+            _boxCollider.enabled = false;
         }
     }
 }

@@ -26,12 +26,6 @@ public class Car : MonoBehaviour
 
     private void Update()
     {
-        if (_movement.IsReady == false)
-        {
-            transform.position = _firstPosition.transform.position;
-            transform.rotation = _firstPosition.transform.rotation;
-        }
-
         if (_customer != null)
         {
             IsFree = false;
@@ -69,6 +63,18 @@ public class Car : MonoBehaviour
                 IsFinish = false;
                 _customer.Finished();
                 _customer = null;
+            }
+        }
+    }
+
+    private void OnTriggerStay(Collider collision)
+    {
+        if (collision.TryGetComponent<CarFirstPosition>(out CarFirstPosition firstPosition))
+        {
+            if (_movement.IsReady == false)
+            {
+                transform.position = _firstPosition.transform.position;
+                transform.rotation = _firstPosition.transform.rotation;
             }
         }
     }
