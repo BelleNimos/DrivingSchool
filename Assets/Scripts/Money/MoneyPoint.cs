@@ -16,12 +16,20 @@ public class MoneyPoint : MonoBehaviour
 
         if (PlayerPrefs.HasKey(KeysData.PlayerDollarsCount) == true)
             _countDollars = PlayerPrefs.GetInt(KeysData.PlayerDollarsCount);
+
+        _dollarsCount.text = _countDollars.ToString();
     }
 
     public void AddDollar()
     {
         _countDollars++;
         _dollarsCount.text = _countDollars.ToString();
+    }
+
+    public void AddDollars(int count)
+    {
+        for (int i = 0; i < count; i++)
+            AddDollar();
     }
 
     public void SpendMoney(int price)

@@ -19,40 +19,19 @@ public class Dollar : MonoBehaviour
     private const string MoveVertical = "MoveVertical";
     private const string Idle = "Idle";
 
-    private const float PowerFall = 1f;
+    private const float PowerJumpFall = 2f;
     private const float DurationFall = 0.6f;
     private const int NumsFalls = 1;
 
-    private const float PowerFlight = 1f;
+    private const float PowerJumpFlight = 1f;
     private const float DurationFlight = 1f;
     private const int NumFlights = 1;
-
-    private const string DeleteText = "Delete";
-    private const float Delay = 5f;
-
-    public bool IsEnd { get; private set; }
 
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
         _boxCollider = GetComponent<BoxCollider>();
         _animator = GetComponent<Animator>();
-        IsEnd = false;
-    }
-
-    private void OnTriggerEnter(Collider collision)
-    {
-        if (collision.TryGetComponent<MoneyPoint>(out MoneyPoint moneyPoint))
-        {
-            transform.SetParent(moneyPoint.transform, true);
-            IsEnd = true;
-            Invoke(DeleteText, Delay);
-        }
-    }
-
-    private void Delete()
-    {
-        Destroy(gameObject);
     }
 
     private Vector3 GetTarget()
@@ -113,19 +92,22 @@ public class Dollar : MonoBehaviour
         _startAddSound.Play();
         StartMoveHorizontalAnimation();
 
-        transform.DOJump(GetTarget(), PowerFall, NumsFalls, DurationFall)
+        transform.DOJump(GetTarget(), PowerJumpFall, NumsFalls, DurationFall)
+            .SetUpdate(UpdateType.Normal, false)
             .SetLink(gameObject)
             .OnKill(() =>
             {
                 _endAddSound.Play();
                 StartMoveVerticalAnimation();
 
-                transform.DOJump(_moneyPoint.transform.position, PowerFlight, NumFlights, DurationFlight)
+                transform.DOJump(_moneyPoint.transform.position, PowerJumpFlight, NumFlights, DurationFlight)
+                    .SetUpdate(UpdateType.Normal, false)
                     .SetLink(gameObject)
                     .OnKill(() =>
                     {
                         StopMoveAnimation();
                         _moneyPoint.AddDollar();
+                        Destroy(gameObject);
                     }
                     );
             }
