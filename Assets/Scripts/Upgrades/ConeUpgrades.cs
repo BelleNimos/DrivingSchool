@@ -4,6 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(Animator), typeof(BoxCollider))]
 public class ConeUpgrades : MonoBehaviour
 {
+    [SerializeField] private AdvertisingOperator _advertisingOperator;
     [SerializeField] private AudioSource _departure;
     [SerializeField] private Spawner _spawner;
     [SerializeField] private Cone _conePrefab;
@@ -22,10 +23,6 @@ public class ConeUpgrades : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
         _boxCollider = GetComponent<BoxCollider>();
-    }
-
-    private void Update()
-    {
         _priceText.text = _price.ToString();
     }
 
@@ -39,6 +36,7 @@ public class ConeUpgrades : MonoBehaviour
     {
         if (_moneyPoint.CurrentDollarsCount >= _price)
         {
+            _advertisingOperator.ShowInterstitial();
             _moneyPoint.SpendMoney(_price);
             _spawner.ChangeConePrefab(_conePrefab);
             StartAnimationClose();
