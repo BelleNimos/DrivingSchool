@@ -6,8 +6,11 @@ public class CustomerArea : MonoBehaviour
 {
     [SerializeField] private List<CustomerFirstTarget> _customerFirstTargets;
     [SerializeField] private StackDollars _stackDollarsPrefab;
-    [SerializeField] private Entrance _entrance;
     [SerializeField] private Scale _sliderCustomer;
+    [SerializeField] private Entrance _entrance;
+    [SerializeField] private CustomerLastTarget _customerLastTarget;
+    [SerializeField] private MoneyPoint _moneyPoint;
+    [SerializeField] private Exit _exit;
     [SerializeField] private Player _player;
     [SerializeField] private int _minDelay;
     [SerializeField] private int _maxDelay;
@@ -15,7 +18,6 @@ public class CustomerArea : MonoBehaviour
     [SerializeField] private float _maxWaitingSeconds;
 
     private List<Customer> _customers;
-    private WaitForSeconds _waitForSeconds;
     private int _index;
 
     private const float MinDistance = 2f;
@@ -59,16 +61,19 @@ public class CustomerArea : MonoBehaviour
         while (true)
         {
             int delay = Random.Range(_minDelay, _maxDelay);
-            _waitForSeconds = new WaitForSeconds(delay);
+            WaitForSeconds waitForSeconds = new(delay);
 
             int index = Random.Range(0, _customerFirstTargets.Count);
             _customers.Add(_entrance.InstantiateCustomer());
-            _customers[_customers.Count - 1].SetFirstTarget(_customerFirstTargets[index]);
+            _customers[_customers.Count - 1].SetMoneyPoint(_moneyPoint);
             _customers[_customers.Count - 1].SetStackDollars(_stackDollarsPrefab);
+            _customers[_customers.Count - 1].SetFirstTarget(_customerFirstTargets[index]);
+            _customers[_customers.Count - 1].SetLastTarget(_customerLastTarget);
+            _customers[_customers.Count - 1].SetExitTarget(_exit);
             _customers[_customers.Count - 1].SetMoneyToWithdraw(_moneyToWithdraw);
             _customers[_customers.Count - 1].SetMaxWaitingSeconds(_maxWaitingSeconds);
 
-            yield return _waitForSeconds;
+            yield return waitForSeconds;
         }
     }
 

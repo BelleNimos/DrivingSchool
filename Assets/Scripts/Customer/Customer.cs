@@ -3,19 +3,20 @@ using UnityEngine;
 [RequireComponent(typeof(CustomerMovement))]
 public class Customer : MonoBehaviour
 {
+    private Transform _target;
+    private CustomerFirstTarget _firstTarget;
+    private CustomerLastTarget _lastTarget;
+    private TargetWZ _targetWZ;
+    private Exit _exitTarget;
+
     private CustomerMovement _movement;
     private CustomerAnimator _animator;
-    private CustomerLastTarget _lastTarget;
-    private CustomerFirstTarget _firstTarget;
     private StackDollars _stackDollars;
     private MoneyPoint _moneyPoint;
-    private Transform _target;
-    private Transform _exitTarget;
-    private TargetWZ _targetWZ;
-    private bool _isRunningTime;
     private int _moneyToWithdraw;
     private float _maxWaitingSeconds;
     private float _waitingSeconds;
+    private bool _isRunningTime;
 
     public bool IsReadyDrive { get; private set; }
     public bool IsReadyExit { get; private set; }
@@ -25,10 +26,6 @@ public class Customer : MonoBehaviour
     {
         _movement = GetComponent<CustomerMovement>();
         _animator = GetComponent<CustomerAnimator>();
-
-        _moneyPoint = FindObjectOfType<MoneyPoint>();
-        _lastTarget = FindObjectOfType<CustomerLastTarget>();
-        _exitTarget = FindObjectOfType<Exit>().transform;
 
         _target = _firstTarget.transform;
         _movement.SetTarget(_target);
@@ -83,6 +80,16 @@ public class Customer : MonoBehaviour
         _stackDollars = stackDollars;
     }
 
+    public void SetMoneyPoint(MoneyPoint moneyPoint)
+    {
+        _moneyPoint = moneyPoint;
+    }
+
+    public void SetLastTarget(CustomerLastTarget lastTarget)
+    {
+        _lastTarget = lastTarget;
+    }
+
     public void SetFirstTarget(CustomerFirstTarget firstTarget)
     {
         _firstTarget = firstTarget;
@@ -93,9 +100,15 @@ public class Customer : MonoBehaviour
         _targetWZ = targetWZ;
     }
 
+    public void SetExitTarget(Exit exitTarget)
+    {
+        _exitTarget = exitTarget;
+    }
+
     public void InstantiateStackDollars()
     {
-        Instantiate(_stackDollars, transform.position, Quaternion.Euler(0f, 20f, 0f));
+        StackDollars stackDollars = Instantiate(_stackDollars, transform.position, Quaternion.Euler(0f, 20f, 0f));
+        stackDollars.SetMoneyPoint(_moneyPoint);
     }
 
     public void SetTarget(Transform target)
@@ -121,7 +134,7 @@ public class Customer : MonoBehaviour
 
     public void GoToExit()
     {
-        SetTarget(_exitTarget);
+        SetTarget(_exitTarget.transform);
         IsReadyExit = true;
         IsFinish = false;
     }

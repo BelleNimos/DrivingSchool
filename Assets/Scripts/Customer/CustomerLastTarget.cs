@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class CustomerLastTarget : MonoBehaviour
 {
-    [SerializeField] private Exit _exit;
-
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.TryGetComponent<Customer>(out Customer customer))
