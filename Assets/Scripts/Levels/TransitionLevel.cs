@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class TransitionLevel : MonoBehaviour
 {
+    [SerializeField] private AdvertisingOperator _advertisingOperator;
+
     [Header("Using")]
     [SerializeField] private NextLevelUI _nextLevelUI;
     [SerializeField] private AudioSource _yesSound;
@@ -21,7 +23,8 @@ public class TransitionLevel : MonoBehaviour
     [SerializeField] private Spawner _spawner;
     [SerializeField] private Bag _bag;
     [SerializeField] private Upgrades _upgrades;
-    [SerializeField] private Sound _sound;
+    [SerializeField] private SoundEffects _soundEffects;
+    [SerializeField] private SoundMusic _soundMusic;
 
     private void Start()
     {
@@ -38,7 +41,8 @@ public class TransitionLevel : MonoBehaviour
         PlayerPrefs.SetInt(KeysData.UpgradesSpeedPrice, _upgrades.SpeedPrice);
         PlayerPrefs.SetInt(KeysData.UpgradesBagPrice, _upgrades.BagPrice);
         PlayerPrefs.SetInt(KeysData.IndexScene, _idNextLevel);
-        PlayerPrefs.SetInt(KeysData.SoundVolumeValue, Convert.ToInt32(_sound.IsActive));
+        PlayerPrefs.SetInt(KeysData.EffectsVolumeValue, Convert.ToInt32(_soundEffects.IsActive));
+        PlayerPrefs.SetInt(KeysData.MusicVolumeValue, Convert.ToInt32(_soundMusic.IsActive));
         PlayerPrefs.SetInt(KeysData.IndexCone, _spawner.IndexCone);
         PlayerPrefs.SetFloat(KeysData.PlayerMoveSpeed, _playerMovement.MoveSpeed);
         PlayerPrefs.SetFloat(KeysData.BagSpeedAnimator, _bag.SpeedAnimator);
@@ -69,6 +73,7 @@ public class TransitionLevel : MonoBehaviour
         if (_moneyPoint.CurrentDollarsCount >= _price)
         {
             _yesSound.Play();
+            _advertisingOperator.ShowInterstitial();
             _moneyPoint.SpendMoney(_price);
             ChangeOptionsNextLevel();
             SceneManager.LoadScene(1);
