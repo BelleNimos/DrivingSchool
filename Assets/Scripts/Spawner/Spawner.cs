@@ -19,15 +19,18 @@ public class Spawner : MonoBehaviour
     private const float MinTime = 0.05f;
 
     public bool IsReady { get; private set; }
-    public int IndexCone => _conePrefab.GetIndex();
+    public int IndexCone => _conePrefab.Index;
     public int CurrentConesCount => _cones.Count;
     public int CountWaves => _countWaves;
 
-    private void Start()
+    private void Awake()
     {
         _cones = new Stack<Cone>();
         _waitForSeconds = new WaitForSeconds(0.1f);
-        
+    }
+
+    private void Start()
+    {
         _timer = 0f;
         IsReady = false;
 

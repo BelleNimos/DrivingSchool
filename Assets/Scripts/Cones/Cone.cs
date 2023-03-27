@@ -11,17 +11,16 @@ public abstract class Cone : MonoBehaviour
     private Rigidbody _rigidbody;
     private MeshCollider _collider;
     private MoneyPoint _moneyPoint;
-    private float _maxWaitingSeconds;
     private float _waitingSeconds;
 
     private const string Fall = "Fall";
+    private const float MaxWaitingSeconds = 50f;
     private const float MaxSpeedRb = 0.1f;
     private const int ConeLayer = 9;
     private const int ConeUsedLayer = 10;
 
-    protected int CountDollars;
-    
-    public int DollarsCount => CountDollars;
+    public abstract int CountDollars { get; }
+    public abstract int Index { get; }
     public bool IsCollision { get; private set; }
 
     private void Start()
@@ -29,7 +28,6 @@ public abstract class Cone : MonoBehaviour
         _animator = GetComponent<Animator>();
         _rigidbody = GetComponent<Rigidbody>();
         _collider = GetComponent<MeshCollider>();
-        _maxWaitingSeconds = 50f;
         _waitingSeconds = 0f;
         IsCollision = false;
     }
@@ -38,7 +36,7 @@ public abstract class Cone : MonoBehaviour
     {
         _waitingSeconds += Time.deltaTime;
 
-        if (_waitingSeconds >= _maxWaitingSeconds)
+        if (_waitingSeconds >= MaxWaitingSeconds)
             if (IsCollision == true)
                 TakeMoney();
 
@@ -63,8 +61,6 @@ public abstract class Cone : MonoBehaviour
         
         Destroy(gameObject);
     }
-
-    public abstract int GetIndex();
 
     public void UnlockPhysics()
     {

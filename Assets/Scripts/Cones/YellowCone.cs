@@ -1,12 +1,5 @@
 public class YellowCone : Cone
 {
-    private void Awake()
-    {
-        CountDollars = 5;
-    }
-
-    public override int GetIndex()
-    {
-        return 5;
-    }
+    public override int CountDollars { get; } = 5;
+    public override int Index { get; } = 5;
 }

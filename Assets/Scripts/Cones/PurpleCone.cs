@@ -1,12 +1,5 @@
 public class PurpleCone : Cone
 {
-    private void Awake()
-    {
-        CountDollars = 6;
-    }
-
-    public override int GetIndex()
-    {
-        return 6;
-    }
+    public override int CountDollars { get; } = 6;
+    public override int Index { get; } = 6;
 }

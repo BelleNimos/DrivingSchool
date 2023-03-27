@@ -23,7 +23,7 @@ public class SpawnerPrefabs : MonoBehaviour
     public void GiveAwayPrefab(Spawner spawner)
     {
         foreach (var cone in _conePrefabs)
-            if (cone.GetIndex() == PlayerPrefs.GetInt(KeysData.IndexCone))
+            if (cone.Index == PlayerPrefs.GetInt(KeysData.IndexCone))
                 spawner.ChangeConePrefab(cone);
     }
 }
