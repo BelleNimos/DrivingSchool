@@ -62,7 +62,7 @@ public class ConePoint : MonoBehaviour
         StartCoroutine(InstantiateDollars(transform, count));
     }
 
-    private void InstantiateDollar(Transform transform, int count)
+    private void InstantiateDollar(Transform transform)
     {
         Dollar dollar = Instantiate(_dollarPrefab, transform.position, Quaternion.identity);
         dollar.SetMoneyPoint(_moneyPoint);
@@ -73,22 +73,23 @@ public class ConePoint : MonoBehaviour
     {
         for (int i = 0; i < count; i++)
         {
-            InstantiateDollar(transform, count);
+            InstantiateDollar(transform);
             yield return _waitForSeconds;
         }
     }
 
     public void AddCone(Cone cone)
     {
-        Vector3 nextRotation = new Vector3(0, -90, 0);
+        Vector3 nextRotation = new(0, -90, 0);
 
         cone.transform.DOJump(transform.position, PowerJumpCone, NumJumpsCone, DurationJumpCone)
+            .SetUpdate(UpdateType.Normal, false)
             .SetLink(cone.gameObject)
             .OnKill(() =>
             {
                 cone.transform.SetParent(transform, true);
                 cone.transform.localRotation = Quaternion.LookRotation(nextRotation);
-                CreateDollar(_positionSpawnDollar, cone.DollarsCount);
+                CreateDollar(_positionSpawnDollar, cone.CountDollars);
                 cone.StartFallAnimation();
                 cone.PlayFallSound();
             }

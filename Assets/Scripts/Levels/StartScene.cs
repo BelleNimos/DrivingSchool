@@ -1,6 +1,6 @@
+using Agava.YandexGames;
 using System.Collections;
 using UnityEngine;
-using Agava.YandexGames;
 using UnityEngine.SceneManagement;
 
 public class StartScene : MonoBehaviour
@@ -13,11 +13,13 @@ public class StartScene : MonoBehaviour
     private IEnumerator Start()
     {
         yield return YandexGamesSdk.Initialize();
-    }
 
-    private void Update()
-    {
-        if (YandexGamesSdk.IsInitialized == true)
-            SceneManager.LoadScene(1);
+        while (true)
+        {
+            if (YandexGamesSdk.IsInitialized == true)
+                SceneManager.LoadScene(1);
+
+            yield return new WaitForSecondsRealtime(0.25f);
+        }
     }
 }

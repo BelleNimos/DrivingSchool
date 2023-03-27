@@ -53,7 +53,8 @@ public class Player : MonoBehaviour
                 conesUpgrade.Unlock();
 
         if (collision.TryGetComponent<StackDollars>(out StackDollars stackDollars))
-            stackDollars.StartMove();
+            if (stackDollars.IsReady == true)
+                stackDollars.StartMove();
     }
 
     private void OnTriggerExit(Collider collision)

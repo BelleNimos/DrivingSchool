@@ -70,7 +70,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void IncreaseRadius()
     {
-        Vector3 newSize = new Vector3(_boxCollider.size.x + SurplusFactorRadius, _boxCollider.size.y, _boxCollider.size.z + SurplusFactorRadius);
+        Vector3 newSize = new(_boxCollider.size.x + SurplusFactorRadius, _boxCollider.size.y, _boxCollider.size.z + SurplusFactorRadius);
         _boxCollider.size = newSize;
     }
 

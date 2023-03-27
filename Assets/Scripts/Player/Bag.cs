@@ -5,7 +5,7 @@ using DG.Tweening;
 [RequireComponent(typeof(Animator))]
 public class Bag : MonoBehaviour
 {
-    [SerializeField] private Max _maxConesText;
+    [SerializeField] private MaxText _maxConesText;
 
     private Stack<Cone> _cones;
     private Animator _animator;
@@ -46,6 +46,7 @@ public class Bag : MonoBehaviour
         Vector3 nextRotation = new Vector3(0, 0, 0);
 
         cone.transform.DOJump((transform.position + nextPosition), JumpPower, NumJumps, Duration)
+            .SetUpdate(UpdateType.Normal, false)
             .SetLink(cone.gameObject)
             .OnKill(() =>
             {
