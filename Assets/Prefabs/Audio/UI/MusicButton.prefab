@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3850301493980872837}
   - component: {fileID: 3850301493980872836}
   m_Layer: 0
-  m_Name: UpgradeConeSound
+  m_Name: MusicButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42,9 +42,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 655291915029764376, guid: 96603bdbb1ea0084aa7f2becfc0db6f1, type: 2}
-  m_audioClip: {fileID: 8300000, guid: c70abd9dd6b91fd49b651fe8ab2cf639, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 6827d3a829beb484980c106bcae7f0a5, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.6
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 0
   Mute: 0

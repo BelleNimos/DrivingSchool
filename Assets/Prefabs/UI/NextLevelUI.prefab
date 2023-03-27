@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 3262028340265544707}
   - component: {fileID: 7177529510383679791}
   - component: {fileID: 4244287804657231598}
-  - component: {fileID: 6273537437297842883}
   - component: {fileID: 2416556127842819914}
+  - component: {fileID: 6273537437297842883}
   - component: {fileID: 5445892788112799386}
   m_Layer: 5
   m_Name: NextLevelUI
@@ -85,19 +85,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &6273537437297842883
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 783537732337668617}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80152d4c30ba33f43a1583c2d1d1dcbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _departure: {fileID: 6101887000932171617}
 --- !u!95 &2416556127842819914
 Animator:
   serializedVersion: 4
@@ -118,6 +105,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6273537437297842883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 783537732337668617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80152d4c30ba33f43a1583c2d1d1dcbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _departure: {fileID: 6101887000932171617}
 --- !u!114 &5445892788112799386
 MonoBehaviour:
   m_ObjectHideFlags: 0
