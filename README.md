@@ -1,3 +1,11 @@
+![Безымянный](https://user-images.githubusercontent.com/86070050/229615767-cbd18ad3-5906-4b5d-8ebf-bb508146eabf.png)
+![Безымянный1](https://user-images.githubusercontent.com/86070050/229615784-725b3400-620f-4dce-ae16-0b754a463075.png)
+![Безымянный3](https://user-images.githubusercontent.com/86070050/229615797-9976979d-dcd0-420f-9cc5-45d3cf4962d9.png)
+![Безымянный4](https://user-images.githubusercontent.com/86070050/229615848-5a7f748e-3641-4088-a490-7ef839386460.png)
+![Безымянный5](https://user-images.githubusercontent.com/86070050/229615859-80b782da-c65d-44cf-9a96-c16468b81a6b.png)
+![Безымянный6](https://user-images.githubusercontent.com/86070050/229615888-d7f3f494-3c82-457e-a900-7cac31e7730d.png)
+![Безымянный7](https://user-images.githubusercontent.com/86070050/229615910-d7ec77db-ae0e-4247-9cbb-90018534a5d2.png)
+![Безымянный8](https://user-images.githubusercontent.com/86070050/229615927-8d0f86ee-6a28-4c38-b300-b34426a434b8.png)
 # DrivingSchool
 Сссылка на билд:  https://yandex.ru/games/app/213683?draft=true&lang=ru
 
