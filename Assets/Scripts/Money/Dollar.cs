@@ -12,7 +12,8 @@ public class Dollar : MonoBehaviour
     private Rigidbody _rigidbody;
     private BoxCollider _boxCollider;
     private Animator _animator;
-    private MoneyPoint _moneyPoint;
+    private MoneyTarget _moneyTarget;
+    private CashCounter _cashCounter;
     private int _index;
 
     private const string MoveHorizontal = "MoveHorizontal";
@@ -62,9 +63,14 @@ public class Dollar : MonoBehaviour
         _animator.SetBool(MoveVertical, false);
     }
 
-    public void SetMoneyPoint(MoneyPoint moneyPoint)
+    public void SetMoneyPoint(MoneyTarget moneyPoint)
     {
-        _moneyPoint = moneyPoint;
+        _moneyTarget = moneyPoint;
+    }
+
+    public void SetCashCounter(CashCounter cashCounter)
+    {
+        _cashCounter = cashCounter;
     }
 
     public void DisableKinematic()
@@ -100,13 +106,13 @@ public class Dollar : MonoBehaviour
                 _endAddSound.Play();
                 StartMoveVerticalAnimation();
 
-                transform.DOJump(_moneyPoint.transform.position, PowerJumpFlight, NumFlights, DurationFlight)
+                transform.DOJump(_moneyTarget.transform.position, PowerJumpFlight, NumFlights, DurationFlight)
                     .SetUpdate(UpdateType.Normal, false)
                     .SetLink(gameObject)
                     .OnKill(() =>
                     {
                         StopMoveAnimation();
-                        _moneyPoint.AddDollar();
+                        _cashCounter.AddDollar();
                         Destroy(gameObject);
                     }
                     );

@@ -6,7 +6,8 @@ public class StackDollars : MonoBehaviour
 {
     [SerializeField] private List<Dollar> _dollars;
 
-    private MoneyPoint _moneyPoint;
+    private MoneyTarget _moneyTarget;
+    private CashCounter _cashCounter;
 
     public bool IsReady { get; private set; }
 
@@ -39,7 +40,8 @@ public class StackDollars : MonoBehaviour
     {
         for (int i = 0; i < _dollars.Count; i++)
         {
-            _dollars[i].SetMoneyPoint(_moneyPoint);
+            _dollars[i].SetMoneyPoint(_moneyTarget);
+            _dollars[i].SetCashCounter(_cashCounter);
             _dollars[i].EnableTrigger();
             _dollars[i].EnableKinematic();
             _dollars[i].StartMove();
@@ -50,9 +52,14 @@ public class StackDollars : MonoBehaviour
         StartCoroutine(DestroyThis());
     }
 
-    public void SetMoneyPoint(MoneyPoint moneyPoint)
+    public void SetMoneyPoint(MoneyTarget moneyPoint)
     {
-        _moneyPoint = moneyPoint;
+        _moneyTarget = moneyPoint;
+    }
+
+    public void SetCashCounter(CashCounter cashCounter)
+    {
+        _cashCounter = cashCounter;
     }
 
     public void StartMove()
