@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -211,6 +215,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -308,7 +316,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &39662643
 MonoBehaviour:
@@ -489,6 +497,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -632,59 +644,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1808821290040167733, guid: dbfcf777a56258d4a8499dcf4006237a, type: 3}
   m_PrefabInstance: {fileID: 83840093}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &109849742
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 2063664242}
-    m_Modifications:
-    - target: {fileID: 734518869272194492, guid: 2e60586e164c7d845a8e1f52439927fc, type: 3}
-      propertyPath: m_Name
-      value: DollarsCountPanel
-      objectReference: {fileID: 0}
-    - target: {fileID: 734518869272194493, guid: 2e60586e164c7d845a8e1f52439927fc, type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 734518869272194493, guid: 2e60586e164c7d845a8e1f52439927fc, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 734518869272194493, guid: 2e60586e164c7d845a8e1f52439927fc, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 734518869272194493, guid: 2e60586e164c7d845a8e1f52439927fc, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 734518869272194493, guid: 2e60586e164c7d845a8e1f52439927fc, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 734518869272194493, guid: 2e60586e164c7d845a8e1f52439927fc, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 2e60586e164c7d845a8e1f52439927fc, type: 3}
---- !u!114 &109849743 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 734518869747439043, guid: 2e60586e164c7d845a8e1f52439927fc, type: 3}
-  m_PrefabInstance: {fileID: 109849742}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!224 &109849744 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 734518869272194493, guid: 2e60586e164c7d845a8e1f52439927fc, type: 3}
-  m_PrefabInstance: {fileID: 109849742}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &110233836 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8552595174905718428, guid: 55b4c81f12ef04749a98c91fc657cd0d, type: 3}
@@ -701,6 +660,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -855,6 +818,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -943,6 +910,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -1020,6 +991,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7fa1e8649508d74cbbd5f919c361215, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &176197748 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 701291944400355348, guid: ebd2c6ab15ef6b14682d38c712421a7e, type: 3}
+  m_PrefabInstance: {fileID: 337896578}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a06e6efd2efbfab4b8e6ceb363f14448, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &176197749 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5599276068955895568, guid: ebd2c6ab15ef6b14682d38c712421a7e, type: 3}
+  m_PrefabInstance: {fileID: 337896578}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3676d3d29e5242a4896f3bf8f1cf95bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &196929339
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1031,6 +1024,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -1108,6 +1105,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -1185,6 +1186,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -1262,6 +1267,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -1416,6 +1425,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2063664242}
     m_Modifications:
+    - target: {fileID: 1026886022669066530, guid: 611be941c34ef3142b0722371699bdc9, type: 3}
+      propertyPath: _bag
+      value: 
+      objectReference: {fileID: 337896581}
+    - target: {fileID: 1026886022669066530, guid: 611be941c34ef3142b0722371699bdc9, type: 3}
+      propertyPath: CashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
+    - target: {fileID: 3372592515883720784, guid: 611be941c34ef3142b0722371699bdc9, type: 3}
+      propertyPath: CashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
+    - target: {fileID: 3372592515883720784, guid: 611be941c34ef3142b0722371699bdc9, type: 3}
+      propertyPath: _playerMovement
+      value: 
+      objectReference: {fileID: 337896582}
     - target: {fileID: 5045422572600528004, guid: 611be941c34ef3142b0722371699bdc9, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1548,6 +1573,14 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9168216311133600207, guid: 611be941c34ef3142b0722371699bdc9, type: 3}
+      propertyPath: _spawner
+      value: 
+      objectReference: {fileID: 1710599556}
+    - target: {fileID: 9168216311133600207, guid: 611be941c34ef3142b0722371699bdc9, type: 3}
+      propertyPath: CashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 611be941c34ef3142b0722371699bdc9, type: 3}
 --- !u!224 &228126635 stripped
@@ -1555,6 +1588,39 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5134183518898249787, guid: 611be941c34ef3142b0722371699bdc9, type: 3}
   m_PrefabInstance: {fileID: 228126634}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &228126636 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1026886022669066530, guid: 611be941c34ef3142b0722371699bdc9, type: 3}
+  m_PrefabInstance: {fileID: 228126634}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f7f493f3b499164d8b364f7f4b9347c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &228126637 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3372592515883720784, guid: 611be941c34ef3142b0722371699bdc9, type: 3}
+  m_PrefabInstance: {fileID: 228126634}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd884a4bd65cb14478a5fa09867d2f1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &228126638 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9168216311133600207, guid: 611be941c34ef3142b0722371699bdc9, type: 3}
+  m_PrefabInstance: {fileID: 228126634}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9800a61a073bb34fa4c3c9cbbfd99f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &281906752
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1566,6 +1632,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -1643,6 +1713,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -1801,6 +1875,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -2090,6 +2168,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -2167,6 +2249,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -2244,6 +2330,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -2321,6 +2411,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -2398,6 +2492,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -2475,6 +2573,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -2552,6 +2654,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -2732,7 +2838,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: 328.7, z: 0}
 --- !u!1001 &562924424
 PrefabInstance:
@@ -2745,6 +2851,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -2822,6 +2932,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -2899,6 +3013,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -2976,6 +3094,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -3053,6 +3175,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -3207,6 +3333,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1710599556}
     - target: {fileID: 7830072759102861972, guid: c74276543d6b8f64bafa3e2c3c47f655, type: 3}
+      propertyPath: _saveData
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7830072759102861972, guid: c74276543d6b8f64bafa3e2c3c47f655, type: 3}
       propertyPath: _upgrades
       value: 
       objectReference: {fileID: 1677980189}
@@ -3215,9 +3345,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 489420137}
     - target: {fileID: 7830072759102861972, guid: c74276543d6b8f64bafa3e2c3c47f655, type: 3}
+      propertyPath: _saveLoader
+      value: 
+      objectReference: {fileID: 1080297000}
+    - target: {fileID: 7830072759102861972, guid: c74276543d6b8f64bafa3e2c3c47f655, type: 3}
       propertyPath: _soundMusic
       value: 
       objectReference: {fileID: 2068028316}
+    - target: {fileID: 7830072759102861972, guid: c74276543d6b8f64bafa3e2c3c47f655, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 7830072759102861972, guid: c74276543d6b8f64bafa3e2c3c47f655, type: 3}
       propertyPath: _idNextLevel
       value: 6
@@ -3239,9 +3377,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 337896582}
     - target: {fileID: 7830072759102861972, guid: c74276543d6b8f64bafa3e2c3c47f655, type: 3}
+      propertyPath: _yandexJsonLoader
+      value: 
+      objectReference: {fileID: 1080297000}
+    - target: {fileID: 7830072759102861972, guid: c74276543d6b8f64bafa3e2c3c47f655, type: 3}
       propertyPath: _characterMovement
       value: 
       objectReference: {fileID: 337896582}
+    - target: {fileID: 7830072759102861972, guid: c74276543d6b8f64bafa3e2c3c47f655, type: 3}
+      propertyPath: _playerPrefsLoader
+      value: 
+      objectReference: {fileID: 1784963302}
+    - target: {fileID: 7830072759102861972, guid: c74276543d6b8f64bafa3e2c3c47f655, type: 3}
+      propertyPath: _yandexLeaderboard
+      value: 
+      objectReference: {fileID: 635190817}
     - target: {fileID: 7830072759102861972, guid: c74276543d6b8f64bafa3e2c3c47f655, type: 3}
       propertyPath: _advertisingOperator
       value: 
@@ -3290,6 +3440,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -3356,6 +3510,89 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dc49ac4f2ddadb46941018c07851793, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &635190813
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2063664242}
+    m_Modifications:
+    - target: {fileID: 862546291804120370, guid: 9860df88eb8ab6b4bb73a8644fc909c4, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 862546291804120370, guid: 9860df88eb8ab6b4bb73a8644fc909c4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 862546291804120370, guid: 9860df88eb8ab6b4bb73a8644fc909c4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 862546291804120370, guid: 9860df88eb8ab6b4bb73a8644fc909c4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 862546291804120370, guid: 9860df88eb8ab6b4bb73a8644fc909c4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 862546291804120370, guid: 9860df88eb8ab6b4bb73a8644fc909c4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 862546291804120371, guid: 9860df88eb8ab6b4bb73a8644fc909c4, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
+    - target: {fileID: 862546291804120381, guid: 9860df88eb8ab6b4bb73a8644fc909c4, type: 3}
+      propertyPath: m_Name
+      value: LeaderboardSwitcher
+      objectReference: {fileID: 0}
+    - target: {fileID: 6386148443352328913, guid: 9860df88eb8ab6b4bb73a8644fc909c4, type: 3}
+      propertyPath: _moneyPoint
+      value: 
+      objectReference: {fileID: 489420137}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9860df88eb8ab6b4bb73a8644fc909c4, type: 3}
+--- !u!224 &635190814 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 862546291804120370, guid: 9860df88eb8ab6b4bb73a8644fc909c4, type: 3}
+  m_PrefabInstance: {fileID: 635190813}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &635190815 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 862546291804120371, guid: 9860df88eb8ab6b4bb73a8644fc909c4, type: 3}
+  m_PrefabInstance: {fileID: 635190813}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a660b3e32e0631247808b4253f5ff372, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &635190816 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 103862755734497938, guid: 9860df88eb8ab6b4bb73a8644fc909c4, type: 3}
+  m_PrefabInstance: {fileID: 635190813}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7fa1e8649508d74cbbd5f919c361215, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &635190817 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6386148443352328913, guid: 9860df88eb8ab6b4bb73a8644fc909c4, type: 3}
+  m_PrefabInstance: {fileID: 635190813}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41a78df8a028ce349a371bfb260abf90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &641671121
 GameObject:
   m_ObjectHideFlags: 0
@@ -3400,6 +3637,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -3501,8 +3742,27 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1328827446784164624, guid: 6b7f55f366e817741a6541f9de9b08dc, type: 3}
+      propertyPath: _audioListener
+      value: 
+      objectReference: {fileID: 963194226}
+    - target: {fileID: 8121885238407588935, guid: 6b7f55f366e817741a6541f9de9b08dc, type: 3}
+      propertyPath: _audioListener
+      value: 
+      objectReference: {fileID: 963194226}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b7f55f366e817741a6541f9de9b08dc, type: 3}
+--- !u!114 &657802767 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1328827446767851773, guid: 6b7f55f366e817741a6541f9de9b08dc, type: 3}
+  m_PrefabInstance: {fileID: 657802766}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b929bea62aac6334986b42179ffc8819, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &681443813
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3514,6 +3774,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -3591,6 +3855,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -3668,6 +3936,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -3745,6 +4017,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -3822,6 +4098,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -3899,6 +4179,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -3981,6 +4265,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -4063,6 +4351,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 489420137}
     - target: {fileID: 2020365672115105467, guid: 4c988ac57882c214287df154ca6d9adc, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
+    - target: {fileID: 2020365672115105467, guid: 4c988ac57882c214287df154ca6d9adc, type: 3}
       propertyPath: _advertisingOperator
       value: 
       objectReference: {fileID: 1107521813}
@@ -4072,7 +4364,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8219903555859939771, guid: 4c988ac57882c214287df154ca6d9adc, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8219903555859939771, guid: 4c988ac57882c214287df154ca6d9adc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4223,6 +4515,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -4300,6 +4596,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -4377,6 +4677,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -4454,6 +4758,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -4531,13 +4839,29 @@ PrefabInstance:
       propertyPath: _switcher
       value: 
       objectReference: {fileID: 1755396275}
+    - target: {fileID: 73170047804836371, guid: 137ffde46463c304d85a3d9eacc01f58, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 635190815}
+    - target: {fileID: 73170047804836371, guid: 137ffde46463c304d85a3d9eacc01f58, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Show
+      objectReference: {fileID: 0}
+    - target: {fileID: 73170047804836371, guid: 137ffde46463c304d85a3d9eacc01f58, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: LeaderboardSwitcher, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 73170047804836371, guid: 137ffde46463c304d85a3d9eacc01f58, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 73170047867491813, guid: 137ffde46463c304d85a3d9eacc01f58, type: 3}
       propertyPath: m_Name
       value: SouthButtonsPanel
       objectReference: {fileID: 0}
     - target: {fileID: 73170047867491814, guid: 137ffde46463c304d85a3d9eacc01f58, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 73170047867491814, guid: 137ffde46463c304d85a3d9eacc01f58, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4649,14 +4973,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.38086432, y: 0.00072014617, z: -0.00029663517, w: 0.92463064}
+  m_LocalRotation: {x: 0.38086432, y: 0.00072007504, z: -0.00029660587, w: 0.92463064}
   m_LocalPosition: {x: -3.48, y: 20.14, z: 38.03}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 110233836}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 48.643, y: -16.1, z: 0}
 --- !u!114 &963194230
 MonoBehaviour:
@@ -4703,6 +5027,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -4780,6 +5108,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -4963,6 +5295,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -5051,6 +5387,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -5128,6 +5468,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -5194,6 +5538,130 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dc49ac4f2ddadb46941018c07851793, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &1080296999
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1572814148214609650, guid: 6a9f3e78325714245a79972112af8cff, type: 3}
+      propertyPath: m_Name
+      value: YandexJson
+      objectReference: {fileID: 0}
+    - target: {fileID: 1572814148214609652, guid: 6a9f3e78325714245a79972112af8cff, type: 3}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1572814148214609652, guid: 6a9f3e78325714245a79972112af8cff, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1572814148214609652, guid: 6a9f3e78325714245a79972112af8cff, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1572814148214609652, guid: 6a9f3e78325714245a79972112af8cff, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1572814148214609652, guid: 6a9f3e78325714245a79972112af8cff, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1572814148214609652, guid: 6a9f3e78325714245a79972112af8cff, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1572814148214609652, guid: 6a9f3e78325714245a79972112af8cff, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1572814148214609652, guid: 6a9f3e78325714245a79972112af8cff, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1572814148214609652, guid: 6a9f3e78325714245a79972112af8cff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1572814148214609652, guid: 6a9f3e78325714245a79972112af8cff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1572814148214609652, guid: 6a9f3e78325714245a79972112af8cff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1572814148214609653, guid: 6a9f3e78325714245a79972112af8cff, type: 3}
+      propertyPath: _bag
+      value: 
+      objectReference: {fileID: 337896581}
+    - target: {fileID: 1572814148214609653, guid: 6a9f3e78325714245a79972112af8cff, type: 3}
+      propertyPath: _spawner
+      value: 
+      objectReference: {fileID: 1710599556}
+    - target: {fileID: 1572814148214609653, guid: 6a9f3e78325714245a79972112af8cff, type: 3}
+      propertyPath: _soundMusic
+      value: 
+      objectReference: {fileID: 2068028316}
+    - target: {fileID: 1572814148214609653, guid: 6a9f3e78325714245a79972112af8cff, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
+    - target: {fileID: 1572814148214609653, guid: 6a9f3e78325714245a79972112af8cff, type: 3}
+      propertyPath: _idNextLevel
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1572814148214609653, guid: 6a9f3e78325714245a79972112af8cff, type: 3}
+      propertyPath: _soundEffects
+      value: 
+      objectReference: {fileID: 498782077}
+    - target: {fileID: 1572814148214609653, guid: 6a9f3e78325714245a79972112af8cff, type: 3}
+      propertyPath: _indexNextScene
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1572814148214609653, guid: 6a9f3e78325714245a79972112af8cff, type: 3}
+      propertyPath: _playerAnimator
+      value: 
+      objectReference: {fileID: 1086859509}
+    - target: {fileID: 1572814148214609653, guid: 6a9f3e78325714245a79972112af8cff, type: 3}
+      propertyPath: _playerMovement
+      value: 
+      objectReference: {fileID: 337896582}
+    - target: {fileID: 1572814148214609653, guid: 6a9f3e78325714245a79972112af8cff, type: 3}
+      propertyPath: _upgradeCardBag
+      value: 
+      objectReference: {fileID: 228126636}
+    - target: {fileID: 1572814148214609653, guid: 6a9f3e78325714245a79972112af8cff, type: 3}
+      propertyPath: _savePlayerPrefs
+      value: 
+      objectReference: {fileID: 1784963302}
+    - target: {fileID: 1572814148214609653, guid: 6a9f3e78325714245a79972112af8cff, type: 3}
+      propertyPath: _languageSwitcher
+      value: 
+      objectReference: {fileID: 1755396275}
+    - target: {fileID: 1572814148214609653, guid: 6a9f3e78325714245a79972112af8cff, type: 3}
+      propertyPath: _upgradeCardPlayer
+      value: 
+      objectReference: {fileID: 228126637}
+    - target: {fileID: 1572814148214609653, guid: 6a9f3e78325714245a79972112af8cff, type: 3}
+      propertyPath: _upgradeCardSpawner
+      value: 
+      objectReference: {fileID: 228126638}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6a9f3e78325714245a79972112af8cff, type: 3}
+--- !u!114 &1080297000 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1572814148214609653, guid: 6a9f3e78325714245a79972112af8cff, type: 3}
+  m_PrefabInstance: {fileID: 1080296999}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a05e1e6ae456d94f8f0312073275939, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1086859509 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2677020644365698296, guid: ebd2c6ab15ef6b14682d38c712421a7e, type: 3}
@@ -5217,16 +5685,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2068028316}
     - target: {fileID: 2231285973129789060, guid: 48ddeddc599e6e94dac5224063c8d36e, type: 3}
+      propertyPath: _pauseAndPlay
+      value: 
+      objectReference: {fileID: 657802767}
+    - target: {fileID: 2231285973129789060, guid: 48ddeddc599e6e94dac5224063c8d36e, type: 3}
       propertyPath: _soundEffects
       value: 
       objectReference: {fileID: 498782077}
+    - target: {fileID: 2231285973129789060, guid: 48ddeddc599e6e94dac5224063c8d36e, type: 3}
+      propertyPath: _playAndPauseButtonsSwitcher
+      value: 
+      objectReference: {fileID: 657802767}
     - target: {fileID: 2231285973129789061, guid: 48ddeddc599e6e94dac5224063c8d36e, type: 3}
       propertyPath: m_Name
       value: AdvertisingOperator
       objectReference: {fileID: 0}
     - target: {fileID: 2231285973129789063, guid: 48ddeddc599e6e94dac5224063c8d36e, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 2231285973129789063, guid: 48ddeddc599e6e94dac5224063c8d36e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5326,6 +5802,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -5403,6 +5883,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -5480,6 +5964,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -5638,6 +6126,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -5715,6 +6207,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -5903,6 +6399,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -5991,6 +6491,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -6068,6 +6572,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -6145,6 +6653,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -6222,6 +6734,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -6299,6 +6815,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -6376,6 +6896,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -6453,6 +6977,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -6530,6 +7058,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -6771,6 +7303,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -6999,6 +7535,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -7199,6 +7739,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 489420137}
     - target: {fileID: 9132335299024621042, guid: cbff3410ba076214f98d8ece7e895046, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
+    - target: {fileID: 9132335299024621042, guid: cbff3410ba076214f98d8ece7e895046, type: 3}
       propertyPath: _advertisingOperator
       value: 
       objectReference: {fileID: 1107521813}
@@ -7375,6 +7919,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 489420137}
     - target: {fileID: 5474729513394089107, guid: d98b75da02aad284ea5eb4fde68ff910, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
+    - target: {fileID: 5474729513394089107, guid: d98b75da02aad284ea5eb4fde68ff910, type: 3}
+      propertyPath: _moneyTarget
+      value: 
+      objectReference: {fileID: 489420137}
+    - target: {fileID: 5474729513394089107, guid: d98b75da02aad284ea5eb4fde68ff910, type: 3}
       propertyPath: _moneyToWithdraw
       value: 30
       objectReference: {fileID: 0}
@@ -7504,6 +8056,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -7581,6 +8137,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -7658,6 +8218,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -7735,6 +8299,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -7812,6 +8380,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -7878,6 +8450,82 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dc49ac4f2ddadb46941018c07851793, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &1638736163
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1489905203256435287, guid: 01db8f9ad2307004c8a5cce91a3a5ff2, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1489905203256435287, guid: 01db8f9ad2307004c8a5cce91a3a5ff2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1489905203256435287, guid: 01db8f9ad2307004c8a5cce91a3a5ff2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1489905203256435287, guid: 01db8f9ad2307004c8a5cce91a3a5ff2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1489905203256435287, guid: 01db8f9ad2307004c8a5cce91a3a5ff2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1489905203256435287, guid: 01db8f9ad2307004c8a5cce91a3a5ff2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1489905203256435287, guid: 01db8f9ad2307004c8a5cce91a3a5ff2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1489905203256435287, guid: 01db8f9ad2307004c8a5cce91a3a5ff2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1489905203256435287, guid: 01db8f9ad2307004c8a5cce91a3a5ff2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1489905203256435287, guid: 01db8f9ad2307004c8a5cce91a3a5ff2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1489905203256435287, guid: 01db8f9ad2307004c8a5cce91a3a5ff2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3003554942935097089, guid: 01db8f9ad2307004c8a5cce91a3a5ff2, type: 3}
+      propertyPath: m_Name
+      value: CashCounter
+      objectReference: {fileID: 0}
+    - target: {fileID: 3044465299055715473, guid: 01db8f9ad2307004c8a5cce91a3a5ff2, type: 3}
+      propertyPath: _wallet
+      value: 
+      objectReference: {fileID: 176197749}
+    - target: {fileID: 3044465299055715473, guid: 01db8f9ad2307004c8a5cce91a3a5ff2, type: 3}
+      propertyPath: _dollarsCountPanel
+      value: 
+      objectReference: {fileID: 176197748}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 01db8f9ad2307004c8a5cce91a3a5ff2, type: 3}
+--- !u!114 &1638736164 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3044465299055715473, guid: 01db8f9ad2307004c8a5cce91a3a5ff2, type: 3}
+  m_PrefabInstance: {fileID: 1638736163}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52744891acc30714a9b347ddb558cf62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1643891696
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7889,6 +8537,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -7986,6 +8638,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 489420137}
     - target: {fileID: 8904678461182270246, guid: 19ef1dc1d35c39e4ba3004c91eb467aa, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
+    - target: {fileID: 8904678461182270246, guid: 19ef1dc1d35c39e4ba3004c91eb467aa, type: 3}
       propertyPath: _startConePrefab
       value: 
       objectReference: {fileID: 7244947076298484157, guid: 290ec27ce0badb040a03cf112a6d90bc, type: 3}
@@ -8062,6 +8718,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -8139,6 +8799,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -8489,6 +9153,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1246979172}
     - target: {fileID: 1687661904714636946, guid: 49cf94939ff555649919457616843c6d, type: 3}
+      propertyPath: _leaderboardText
+      value: 
+      objectReference: {fileID: 635190816}
+    - target: {fileID: 1687661904714636946, guid: 49cf94939ff555649919457616843c6d, type: 3}
       propertyPath: _transitionLevel
       value: 
       objectReference: {fileID: 621050564}
@@ -8528,6 +9196,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -8722,7 +9394,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2627434298933650895, guid: 2243902b6ba910c4f83e710e827152e2, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2627434298933650895, guid: 2243902b6ba910c4f83e710e827152e2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8746,11 +9418,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2627434298933650895, guid: 2243902b6ba910c4f83e710e827152e2, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.00072014617
+      value: 0.00072007504
       objectReference: {fileID: 0}
     - target: {fileID: 2627434298933650895, guid: 2243902b6ba910c4f83e710e827152e2, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.00029663517
+      value: -0.00029660587
       objectReference: {fileID: 0}
     - target: {fileID: 2627434298933650895, guid: 2243902b6ba910c4f83e710e827152e2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -8766,6 +9438,122 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2243902b6ba910c4f83e710e827152e2, type: 3}
+--- !u!1001 &1784963301
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 11401623880479614, guid: 0f782f666492499419e06b08fb90e679, type: 3}
+      propertyPath: _bag
+      value: 
+      objectReference: {fileID: 337896581}
+    - target: {fileID: 11401623880479614, guid: 0f782f666492499419e06b08fb90e679, type: 3}
+      propertyPath: _spawner
+      value: 
+      objectReference: {fileID: 1710599556}
+    - target: {fileID: 11401623880479614, guid: 0f782f666492499419e06b08fb90e679, type: 3}
+      propertyPath: _soundMusic
+      value: 
+      objectReference: {fileID: 2068028316}
+    - target: {fileID: 11401623880479614, guid: 0f782f666492499419e06b08fb90e679, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
+    - target: {fileID: 11401623880479614, guid: 0f782f666492499419e06b08fb90e679, type: 3}
+      propertyPath: _idNextLevel
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 11401623880479614, guid: 0f782f666492499419e06b08fb90e679, type: 3}
+      propertyPath: _soundEffects
+      value: 
+      objectReference: {fileID: 498782077}
+    - target: {fileID: 11401623880479614, guid: 0f782f666492499419e06b08fb90e679, type: 3}
+      propertyPath: _playerAnimator
+      value: 
+      objectReference: {fileID: 1086859509}
+    - target: {fileID: 11401623880479614, guid: 0f782f666492499419e06b08fb90e679, type: 3}
+      propertyPath: _playerMovement
+      value: 
+      objectReference: {fileID: 337896582}
+    - target: {fileID: 11401623880479614, guid: 0f782f666492499419e06b08fb90e679, type: 3}
+      propertyPath: _upgradeCardBag
+      value: 
+      objectReference: {fileID: 228126636}
+    - target: {fileID: 11401623880479614, guid: 0f782f666492499419e06b08fb90e679, type: 3}
+      propertyPath: _languageSwitcher
+      value: 
+      objectReference: {fileID: 1755396275}
+    - target: {fileID: 11401623880479614, guid: 0f782f666492499419e06b08fb90e679, type: 3}
+      propertyPath: _upgradeCardPlayer
+      value: 
+      objectReference: {fileID: 228126637}
+    - target: {fileID: 11401623880479614, guid: 0f782f666492499419e06b08fb90e679, type: 3}
+      propertyPath: _upgradeCardSpawner
+      value: 
+      objectReference: {fileID: 228126638}
+    - target: {fileID: 3993300462172956277, guid: 0f782f666492499419e06b08fb90e679, type: 3}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 3993300462172956277, guid: 0f782f666492499419e06b08fb90e679, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3993300462172956277, guid: 0f782f666492499419e06b08fb90e679, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3993300462172956277, guid: 0f782f666492499419e06b08fb90e679, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3993300462172956277, guid: 0f782f666492499419e06b08fb90e679, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3993300462172956277, guid: 0f782f666492499419e06b08fb90e679, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3993300462172956277, guid: 0f782f666492499419e06b08fb90e679, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3993300462172956277, guid: 0f782f666492499419e06b08fb90e679, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3993300462172956277, guid: 0f782f666492499419e06b08fb90e679, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3993300462172956277, guid: 0f782f666492499419e06b08fb90e679, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3993300462172956277, guid: 0f782f666492499419e06b08fb90e679, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8962923459339124089, guid: 0f782f666492499419e06b08fb90e679, type: 3}
+      propertyPath: m_Name
+      value: PlayerPrefs
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0f782f666492499419e06b08fb90e679, type: 3}
+--- !u!114 &1784963302 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 11401623880479614, guid: 0f782f666492499419e06b08fb90e679, type: 3}
+  m_PrefabInstance: {fileID: 1784963301}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fb575f08056ac048b87e86dedb78ca4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1798586361
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8777,6 +9565,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -8854,6 +9646,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -8960,6 +9756,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -9037,6 +9837,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -9119,6 +9923,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -9196,6 +10004,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -9273,6 +10085,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -9350,6 +10166,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -9427,6 +10247,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -9504,6 +10328,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -9592,6 +10420,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -9669,6 +10501,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -9746,6 +10582,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -9943,6 +10783,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -10020,6 +10864,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -10097,6 +10945,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -10174,6 +11026,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -10251,6 +11107,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -10449,6 +11309,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -10526,6 +11390,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -10603,6 +11471,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -10680,6 +11552,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -10841,12 +11717,12 @@ RectTransform:
   - {fileID: 1003342098}
   - {fileID: 228126635}
   - {fileID: 1962027250}
-  - {fileID: 109849744}
   - {fileID: 1851550216}
   - {fileID: 798548818}
+  - {fileID: 635190814}
   - {fileID: 1493437980}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -10875,6 +11751,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -11052,6 +11932,10 @@ PrefabInstance:
       propertyPath: _moneyPoint
       value: 
       objectReference: {fileID: 489420137}
+    - target: {fileID: -2456556956343556171, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
+      propertyPath: _cashCounter
+      value: 
+      objectReference: {fileID: 1638736164}
     - target: {fileID: 2850282230545801920, guid: 663c97b6b2ec7054193f0724644c23ec, type: 3}
       propertyPath: m_Name
       value: ConePoint
@@ -11437,42 +12321,26 @@ PrefabInstance:
     - target: {fileID: 8290627303843334979, guid: 55b4c81f12ef04749a98c91fc657cd0d, type: 3}
       propertyPath: _dollarsCount
       value: 
-      objectReference: {fileID: 109849743}
+      objectReference: {fileID: 0}
+    - target: {fileID: 8290627303843334979, guid: 55b4c81f12ef04749a98c91fc657cd0d, type: 3}
+      propertyPath: _countDollarsText
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8290627303843334979, guid: 55b4c81f12ef04749a98c91fc657cd0d, type: 3}
+      propertyPath: _dollarsCountAnimator
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8290627303843334979, guid: 55b4c81f12ef04749a98c91fc657cd0d, type: 3}
+      propertyPath: _dollarsCountPanelAnimator
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8552595174905718427, guid: 55b4c81f12ef04749a98c91fc657cd0d, type: 3}
       propertyPath: m_Name
-      value: MoneyPoint
+      value: MoneyTarget
       objectReference: {fileID: 0}
     - target: {fileID: 8552595174905718428, guid: 55b4c81f12ef04749a98c91fc657cd0d, type: 3}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8552595174905718428, guid: 55b4c81f12ef04749a98c91fc657cd0d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -24.149992
-      objectReference: {fileID: 0}
-    - target: {fileID: 8552595174905718428, guid: 55b4c81f12ef04749a98c91fc657cd0d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 8552595174905718428, guid: 55b4c81f12ef04749a98c91fc657cd0d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 19.029982
-      objectReference: {fileID: 0}
-    - target: {fileID: 8552595174905718428, guid: 55b4c81f12ef04749a98c91fc657cd0d, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.90962625
-      objectReference: {fileID: 0}
-    - target: {fileID: 8552595174905718428, guid: 55b4c81f12ef04749a98c91fc657cd0d, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.38140967
-      objectReference: {fileID: 0}
-    - target: {fileID: 8552595174905718428, guid: 55b4c81f12ef04749a98c91fc657cd0d, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.15183412
-      objectReference: {fileID: 0}
-    - target: {fileID: 8552595174905718428, guid: 55b4c81f12ef04749a98c91fc657cd0d, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.06366461
       objectReference: {fileID: 0}
     - target: {fileID: 8552595174905718428, guid: 55b4c81f12ef04749a98c91fc657cd0d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
