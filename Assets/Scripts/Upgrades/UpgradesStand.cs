@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class UpgradesStand : MonoBehaviour
 {
-    [SerializeField] private Upgrades _upgrades;
+    [SerializeField] private UpgradesPanel _upgrades;
 
     public void EnableUpgradesPanel()
     {

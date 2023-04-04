@@ -8,7 +8,7 @@ public class ConeUpgrades : MonoBehaviour
     [SerializeField] private AudioSource _departure;
     [SerializeField] private Spawner _spawner;
     [SerializeField] private Cone _conePrefab;
-    [SerializeField] private MoneyPoint _moneyPoint;
+    [SerializeField] private CashCounter _cashCounter;
     [SerializeField] private TMP_Text _priceText;
     [SerializeField] private int _price;
 
@@ -34,10 +34,10 @@ public class ConeUpgrades : MonoBehaviour
 
     public void Unlock()
     {
-        if (_moneyPoint.CurrentDollarsCount >= _price)
+        if (_cashCounter.CountDollars >= _price)
         {
             _advertisingOperator.ShowInterstitial();
-            _moneyPoint.SpendMoney(_price);
+            _cashCounter.SpendDollars(_price);
             _spawner.ChangeConePrefab(_conePrefab);
             StartAnimationClose();
             _boxCollider.enabled = false;
