@@ -1,27 +1,28 @@
 using System;
 using UnityEngine;
-using UnityEngine.Audio;
 
 public class SoundMusic : MonoBehaviour
 {
-    [SerializeField] private AudioMixerGroup _mixerGroup;
     [SerializeField] private ActiveMusicButton _soundOn;
     [SerializeField] private InactiveMusicButton _soundOff;
 
-    private const string MusicVolumeText = "MusicVolume";
-    private const float MinVolume = -80f;
-    private const float MaxVolume = 0f;
+    public bool IsPlay { get; private set; }
 
-    public bool IsActive { get; private set; }
-
-    private void Awake()
+    public void SetDefaultValues()
     {
-        IsActive = true;
+        IsPlay = true;
 
-        if (PlayerPrefs.HasKey(KeysData.MusicVolumeValue) == true)
-            IsActive = Convert.ToBoolean(PlayerPrefs.GetInt(KeysData.MusicVolumeValue));
+        if (IsPlay == true)
+            Enable();
+        else
+            Disable();
+    }
 
-        if (IsActive == true)
+    public void SetStartValues(int value)
+    {
+        IsPlay = Convert.ToBoolean(value);
+
+        if (IsPlay == true)
             Enable();
         else
             Disable();
@@ -29,17 +30,15 @@ public class SoundMusic : MonoBehaviour
 
     public void Enable()
     {
-        _mixerGroup.audioMixer.SetFloat(MusicVolumeText, MaxVolume);
         _soundOn.gameObject.SetActive(true);
         _soundOff.gameObject.SetActive(false);
-        IsActive = true;
+        IsPlay = true;
     }
 
     public void Disable()
     {
-        _mixerGroup.audioMixer.SetFloat(MusicVolumeText, MinVolume);
         _soundOff.gameObject.SetActive(true);
         _soundOn.gameObject.SetActive(false);
-        IsActive = false;
+        IsPlay = false;
     }
 }

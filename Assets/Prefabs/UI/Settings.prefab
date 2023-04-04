@@ -481,7 +481,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7161a1abd6a21f74e946a1ce4b32ff53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mixerGroup: {fileID: 655291915029764376, guid: 96603bdbb1ea0084aa7f2becfc0db6f1, type: 2}
   _soundOn: {fileID: 1328827447659274236}
   _soundOff: {fileID: 1328827446791599612}
 --- !u!1 &1328827446636848659
@@ -504,7 +503,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1328827446636848656
 RectTransform:
   m_ObjectHideFlags: 0
@@ -646,6 +645,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10b9051cdb4a77d4c852771671a5759e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _mixerGroup: {fileID: -2625771124740214459, guid: 96603bdbb1ea0084aa7f2becfc0db6f1, type: 2}
 --- !u!1 &1328827446767851775
 GameObject:
   m_ObjectHideFlags: 0
@@ -706,9 +706,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b929bea62aac6334986b42179ffc8819, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pausePanel: {fileID: 1328827446345039549}
-  _pauseSound: {fileID: 8806392458275804250}
-  _playSound: {fileID: 3325762949394207728}
   _pause: {fileID: 8121885238407588935}
   _play: {fileID: 1328827446784164624}
 --- !u!1 &1328827446784164626
@@ -873,6 +870,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0749b1fc9c7de3e4589e83f64b90f27c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _pauseAndPlay: {fileID: 1328827446767851773}
+  _audioListener: {fileID: 0}
+  _sound: {fileID: 8806392458275804250}
+  _pausePanel: {fileID: 1328827446345039549}
 --- !u!1 &1328827446791599603
 GameObject:
   m_ObjectHideFlags: 0
@@ -1035,6 +1036,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 624a38e5db056874d9ea4e15cd3a171f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _mixerGroup: {fileID: 655291915029764376, guid: 96603bdbb1ea0084aa7f2becfc0db6f1, type: 2}
 --- !u!1 &1328827446796072163
 GameObject:
   m_ObjectHideFlags: 0
@@ -1345,6 +1347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c4d2f002962e554fbf3da123102737b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _mixerGroup: {fileID: -2625771124740214459, guid: 96603bdbb1ea0084aa7f2becfc0db6f1, type: 2}
 --- !u!1 &1328827447309032183
 GameObject:
   m_ObjectHideFlags: 0
@@ -1396,7 +1399,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d389d518db292a4ea4f09b6ecbed7ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mixerGroup: {fileID: -2625771124740214459, guid: 96603bdbb1ea0084aa7f2becfc0db6f1, type: 2}
   _soundOn: {fileID: 1328827446636848669}
   _soundOff: {fileID: 1328827447028826122}
 --- !u!1 &1328827447659274227
@@ -1419,7 +1421,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1328827447659274224
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1561,6 +1563,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 338adf6aa61075a4e87720a95d8bfccb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _mixerGroup: {fileID: 655291915029764376, guid: 96603bdbb1ea0084aa7f2becfc0db6f1, type: 2}
 --- !u!1 &1328827447831619831
 GameObject:
   m_ObjectHideFlags: 0
@@ -1858,7 +1861,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1126848439393537224
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2000,6 +2003,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8f9d3f7acafa4b4680d0c78502b57a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _pauseAndPlay: {fileID: 1328827446767851773}
+  _audioListener: {fileID: 0}
+  _sound: {fileID: 3325762949394207728}
+  _pausePanel: {fileID: 1328827446345039549}
 --- !u!1001 &1328827445918992768
 PrefabInstance:
   m_ObjectHideFlags: 0
