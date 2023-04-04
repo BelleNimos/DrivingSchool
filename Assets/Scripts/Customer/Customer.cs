@@ -12,7 +12,8 @@ public class Customer : MonoBehaviour
     private CustomerMovement _movement;
     private CustomerAnimator _animator;
     private StackDollars _stackDollars;
-    private MoneyPoint _moneyPoint;
+    private MoneyTarget _moneyTarget;
+    private CashCounter _cashCounter;
     private int _moneyToWithdraw;
     private float _maxWaitingSeconds;
     private float _waitingSeconds;
@@ -58,9 +59,9 @@ public class Customer : MonoBehaviour
 
     private void TakeMoney()
     {
-        if (_moneyPoint.CurrentDollarsCount >= _moneyToWithdraw)
-            _moneyPoint.SpendMoney(_moneyToWithdraw);
-
+        if (_cashCounter.CountDollars >= _moneyToWithdraw)
+            _cashCounter.SpendDollars(_moneyToWithdraw);
+        
         GoToExit();
         _waitingSeconds = 0f;
     }
@@ -80,9 +81,14 @@ public class Customer : MonoBehaviour
         _stackDollars = stackDollars;
     }
 
-    public void SetMoneyPoint(MoneyPoint moneyPoint)
+    public void SetCashCounter(CashCounter cashCounter)
     {
-        _moneyPoint = moneyPoint;
+        _cashCounter = cashCounter;
+    }
+
+    public void SetMoneyPoint(MoneyTarget moneyPoint)
+    {
+        _moneyTarget = moneyPoint;
     }
 
     public void SetLastTarget(CustomerLastTarget lastTarget)
@@ -108,7 +114,8 @@ public class Customer : MonoBehaviour
     public void InstantiateStackDollars()
     {
         StackDollars stackDollars = Instantiate(_stackDollars, transform.position, Quaternion.Euler(0f, 20f, 0f));
-        stackDollars.SetMoneyPoint(_moneyPoint);
+        stackDollars.SetMoneyPoint(_moneyTarget);
+        stackDollars.SetCashCounter(_cashCounter);
     }
 
     public void SetTarget(Transform target)

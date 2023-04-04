@@ -9,7 +9,8 @@ public class CustomerArea : MonoBehaviour
     [SerializeField] private Scale _sliderCustomer;
     [SerializeField] private Entrance _entrance;
     [SerializeField] private CustomerLastTarget _customerLastTarget;
-    [SerializeField] private MoneyPoint _moneyPoint;
+    [SerializeField] private MoneyTarget _moneyTarget;
+    [SerializeField] private CashCounter _cashCounter;
     [SerializeField] private Exit _exit;
     [SerializeField] private Player _player;
     [SerializeField] private int _minDelay;
@@ -65,7 +66,8 @@ public class CustomerArea : MonoBehaviour
 
             int index = Random.Range(0, _customerFirstTargets.Count);
             _customers.Add(_entrance.InstantiateCustomer());
-            _customers[_customers.Count - 1].SetMoneyPoint(_moneyPoint);
+            _customers[_customers.Count - 1].SetMoneyPoint(_moneyTarget);
+            _customers[_customers.Count - 1].SetCashCounter(_cashCounter);
             _customers[_customers.Count - 1].SetStackDollars(_stackDollarsPrefab);
             _customers[_customers.Count - 1].SetFirstTarget(_customerFirstTargets[index]);
             _customers[_customers.Count - 1].SetLastTarget(_customerLastTarget);
