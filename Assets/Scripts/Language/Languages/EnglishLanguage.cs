@@ -1,7 +1,4 @@
 public class EnglishLanguage : Language
 {
-    private void Awake()
-    {
-        ThisLanguage = KeysData.EnglishLanguageText;
-    }
+    public override string ThisLanguage { get; protected set; } = KeysData.EnglishLanguageText;
 }

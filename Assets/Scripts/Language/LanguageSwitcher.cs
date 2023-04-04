@@ -1,4 +1,3 @@
-using Agava.YandexGames;
 using UnityEngine;
 
 public class LanguageSwitcher : MonoBehaviour
@@ -18,19 +17,13 @@ public class LanguageSwitcher : MonoBehaviour
     [SerializeField] private InternationalText _pause;
     [SerializeField] private InternationalText _max;
     [SerializeField] private InternationalText _transitionLevel;
+    [SerializeField] private InternationalText _leaderboardText;
 
-    private void Start()
-    {
-        if (PlayerPrefs.HasKey(KeysData.CurrentLanguage) == false)
-            SetLanguage(YandexGamesSdk.Environment.i18n.lang);
-        else if (PlayerPrefs.HasKey(KeysData.CurrentLanguage) == true)
-            SetLanguage(PlayerPrefs.GetString(KeysData.CurrentLanguage));
-        else
-            SetLanguage(KeysData.EnglishLanguageText);
-    }
+    public string CurrentLanguage { get; private set; }
 
     public void SetLanguage(string language)
     {
+        CurrentLanguage = language;
         _languageButton.SetLanguage(language);
         _coneUpgrades.SetLanguage(language);
         _lessonNorth.SetLanguage(language);
@@ -46,5 +39,6 @@ public class LanguageSwitcher : MonoBehaviour
         _pause.SetLanguage(language);
         _max.SetLanguage(language);
         _transitionLevel.SetLanguage(language);
+        _leaderboardText.SetLanguage(language);
     }
 }

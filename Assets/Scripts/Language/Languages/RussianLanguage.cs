@@ -1,7 +1,4 @@
 public class RussianLanguage : Language
 {
-    private void Awake()
-    {
-        ThisLanguage = KeysData.RussianLanguageText;
-    }
+    public override string ThisLanguage { get; protected set; } = KeysData.RussianLanguageText;
 }
