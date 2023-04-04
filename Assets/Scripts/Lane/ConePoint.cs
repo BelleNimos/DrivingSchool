@@ -9,7 +9,8 @@ public class ConePoint : MonoBehaviour
     [SerializeField] private Material _newMaterial;
     [SerializeField] private Transform _positionSpawnDollar;
     [SerializeField] private Dollar _dollarPrefab;
-    [SerializeField] private MoneyPoint _moneyPoint;
+    [SerializeField] private MoneyTarget _moneyPoint;
+    [SerializeField] private CashCounter _cashCounter;
 
     private WaitForSeconds _waitForSeconds;
     private Renderer _renderer;
@@ -57,7 +58,7 @@ public class ConePoint : MonoBehaviour
             _renderer.material = _eldenMaterial;
     }
 
-    private void CreateDollar(Transform transform, int count)
+    private void CreateDollars(Transform transform, int count)
     {
         StartCoroutine(InstantiateDollars(transform, count));
     }
@@ -66,6 +67,7 @@ public class ConePoint : MonoBehaviour
     {
         Dollar dollar = Instantiate(_dollarPrefab, transform.position, Quaternion.identity);
         dollar.SetMoneyPoint(_moneyPoint);
+        dollar.SetCashCounter(_cashCounter);
         dollar.StartMove();
     }
 
@@ -89,7 +91,7 @@ public class ConePoint : MonoBehaviour
             {
                 cone.transform.SetParent(transform, true);
                 cone.transform.localRotation = Quaternion.LookRotation(nextRotation);
-                CreateDollar(_positionSpawnDollar, cone.CountDollars);
+                CreateDollars(_positionSpawnDollar, cone.CountDollarsSpawned);
                 cone.StartFallAnimation();
                 cone.PlayFallSound();
             }
