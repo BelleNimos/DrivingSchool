@@ -936,6 +936,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1bb92e511aad8744872a5766a8695be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _loadSceneLanguage: {fileID: 2063664244}
 --- !u!114 &2063664244
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class StartScene : MonoBehaviour
 {
+    private int _indexNewScene = 1;
+
     private void Awake()
     {
         YandexGamesSdk.CallbackLogging = true;
@@ -17,7 +19,7 @@ public class StartScene : MonoBehaviour
         while (true)
         {
             if (YandexGamesSdk.IsInitialized == true)
-                SceneManager.LoadScene(1);
+                SceneManager.LoadScene(_indexNewScene);
 
             yield return new WaitForSecondsRealtime(0.25f);
         }
