@@ -4,6 +4,7 @@ public static class KeysData
     public static readonly string SpawnerCountWaves = "SpawnerCountWaves";
     public static readonly string PlayerMoveSpeed = "PlayerMoveSpeed";
     public static readonly string PlayerDollarsCount = "PlayerDollarsCount";
+    public static readonly string TotalDollarsCount = "TotalDollarsCount";
     public static readonly string UpgradesSpawnerPrice = "UpgradesSpawnerPrice";
     public static readonly string UpgradesSpeedPrice = "UpgradesSpeedPrice";
     public static readonly string UpgradesBagPrice = "UpgradesBagPrice";
