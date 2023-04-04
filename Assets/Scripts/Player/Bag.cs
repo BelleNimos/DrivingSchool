@@ -9,6 +9,7 @@ public class Bag : MonoBehaviour
 
     private Stack<Cone> _cones;
     private Animator _animator;
+    private float _startSpeedAnimator = 1f;
 
     private const string RockingText = "Rocking";
     private const int NumJumps = 1;
@@ -21,20 +22,22 @@ public class Bag : MonoBehaviour
     public int CurrentConesCount => _cones.Count;
     public float SpeedAnimator => _animator.speed;
 
-    private void Start()
+    private void Awake()
     {
         _cones = new Stack<Cone>();
         _animator = GetComponent<Animator>();
+    }
 
-        if (PlayerPrefs.HasKey(KeysData.BagSpeedAnimator) == true)
-            _animator.speed = PlayerPrefs.GetFloat(KeysData.BagSpeedAnimator);
-        else
-            _animator.speed = 1f;
+    public void SetDefaultValues()
+    {
+        MaxConesCount = 12;
+        _animator.speed = _startSpeedAnimator;
+    }
 
-        if (PlayerPrefs.HasKey(KeysData.BagConesMaxCount) == true)
-            MaxConesCount = PlayerPrefs.GetInt(KeysData.BagConesMaxCount);
-        else
-            MaxConesCount = 12;
+    public void SetStartValues(int maxConesCount, float speedAnimator)
+    {
+        MaxConesCount = maxConesCount;
+        _animator.speed = speedAnimator;
     }
 
     public void AddCone(Cone cone)

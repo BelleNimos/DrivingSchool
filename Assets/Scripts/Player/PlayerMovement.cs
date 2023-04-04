@@ -9,11 +9,11 @@ public class PlayerMovement : MonoBehaviour
     private CharacterController _characterController;
     private BoxCollider _boxCollider;
     private float _moveSpeed;
-    private float _slowDownMoveSpeed;
-    private float _rotateSpeed;
-    private float _gravityForce;
-    private float _currentGravity;
-    private bool _isSlowDown;
+    private float _slowDownMoveSpeed = 6f;
+    private float _rotateSpeed = 1f;
+    private float _gravityForce = 10f;
+    private float _currentGravity = 0f;
+    private bool _isSlowDown = false;
 
     private const float SurplusFactorSpeed = 0.2f;
     private const float SurplusFactorRadius = 0.1f;
@@ -21,38 +21,11 @@ public class PlayerMovement : MonoBehaviour
     public float MoveSpeed => _moveSpeed;
     public Vector3 Radius => _boxCollider.size;
 
-    private void Start()
+    private void Awake()
     {
         _playerAnimator = GetComponent<PlayerAnimator>();
         _characterController = GetComponent<CharacterController>();
         _boxCollider = GetComponent<BoxCollider>();
-        _rotateSpeed = 1f;
-        _gravityForce = 10;
-        _currentGravity = 0;
-        _slowDownMoveSpeed = 6f;
-        _isSlowDown = false;
-
-        if (PlayerPrefs.HasKey(KeysData.PlayerMoveSpeed) == true)
-            _moveSpeed = PlayerPrefs.GetFloat(KeysData.PlayerMoveSpeed);
-        else
-            _moveSpeed = 8;
-
-        float x = 0;
-        float y = 0;
-        float z = 0;
-
-        if (PlayerPrefs.HasKey(KeysData.PlayerRadiusX) == true && PlayerPrefs.HasKey(KeysData.PlayerRadiusY) == true && PlayerPrefs.HasKey(KeysData.PlayerRadiusZ) == true)
-        {
-            x = PlayerPrefs.GetFloat(KeysData.PlayerRadiusX);
-            y = PlayerPrefs.GetFloat(KeysData.PlayerRadiusY);
-            z = PlayerPrefs.GetFloat(KeysData.PlayerRadiusZ);
-
-            _boxCollider.size = new Vector3(x, y, z);
-        }
-        else
-        {
-            _boxCollider.size = new Vector3(0.5f, 1.8f, 0.5f);
-        }
     }
 
     private void Update()
@@ -120,11 +93,30 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public void SetDefaultValues()
+    {
+        _moveSpeed = 8f;
+
+        float sizeX = 0.5f;
+        float sizeY = 1.5f;
+        float sizeZ = 0.5f;
+
+        Vector3 radius = new Vector3(sizeX, sizeY, sizeZ);
+
+        _boxCollider.size = radius;
+    }
+
+    public void SetStartValues(float value, Vector3 radius)
+    {
+        _moveSpeed = value;
+        _boxCollider.size = radius;
+    }
+
     public void IncreaseSpeed()
     {
         _moveSpeed += SurplusFactorSpeed;
         IncreaseRadius();
-        _playerAnimator.IncreaseSpeedAnimation();
+        _playerAnimator.IncreaseSpeedAnimator();
         _bag.IncreaseSpeedAnimation();
     }
 

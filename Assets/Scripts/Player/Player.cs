@@ -1,21 +1,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(PlayerMovement))]
+[RequireComponent(typeof(PlayerMovement), typeof(Wallet))]
 public class Player : MonoBehaviour
 {
     [SerializeField] private Bag _bag;
-    [SerializeField] private MoneyPoint _moneyPoint;
 
     private List<Customer> _customers;
     private PlayerMovement _characterMovement;
+    private Wallet _wallet;
 
     public int CurrentCustomersCount => _customers.Count;
 
-    private void Start()
+    private void Awake()
     {
         _customers = new List<Customer>();
         _characterMovement = GetComponent<PlayerMovement>();
+        _wallet = GetComponent<Wallet>();
     }
 
     private void Update()
@@ -49,7 +50,7 @@ public class Player : MonoBehaviour
                     _bag.AddCone(cone);
 
         if (collision.TryGetComponent<ConeUpgrades>(out ConeUpgrades conesUpgrade))
-            if (_moneyPoint.CurrentDollarsCount >= conesUpgrade.Price)
+            if (_wallet.CountDollars >= conesUpgrade.Price)
                 conesUpgrade.Unlock();
 
         if (collision.TryGetComponent<StackDollars>(out StackDollars stackDollars))

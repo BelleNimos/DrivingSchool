@@ -4,6 +4,7 @@ using UnityEngine;
 public class PlayerAnimator : MonoBehaviour
 {
     private Animator _animator;
+    private float _startSpeedAnimator = 1f;
 
     private const string Carry = "Carry";
     private const string Run = "Run";
@@ -11,14 +12,24 @@ public class PlayerAnimator : MonoBehaviour
 
     public float SpeedAnimator => _animator.speed;
 
-    private void Start()
+    private void Awake()
     {
         _animator = GetComponent<Animator>();
+    }
 
-        if (PlayerPrefs.HasKey(KeysData.PlayerSpeedAnimator) == true)
-            _animator.speed = PlayerPrefs.GetFloat(KeysData.PlayerSpeedAnimator);
-        else
-            _animator.speed = 1f;
+    public void SetDefaultValues()
+    {
+        _animator.speed = _startSpeedAnimator;
+    }
+
+    public void SetStartValues(float speedAnimator)
+    {
+        _animator.speed = speedAnimator;
+    }
+
+    public void IncreaseSpeedAnimator()
+    {
+        _animator.speed += 0.02f;
     }
 
     public void StartRunAnimation()
@@ -47,10 +58,5 @@ public class PlayerAnimator : MonoBehaviour
         _animator.SetBool(CarryIdle, true);
         _animator.SetBool(Carry, false);
         _animator.SetBool(Run, false);
-    }
-
-    public void IncreaseSpeedAnimation()
-    {
-        _animator.speed += 0.02f;
     }
 }
