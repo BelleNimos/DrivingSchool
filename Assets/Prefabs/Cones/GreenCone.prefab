@@ -61,6 +61,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: f135db93127f7764e8ecc4921cd90c14, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 188d0479721b3334fb8c868ae8ca0d32, type: 3}
+--- !u!82 &431022266165910478 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2614114286774825815, guid: 188d0479721b3334fb8c868ae8ca0d32, type: 3}
+  m_PrefabInstance: {fileID: 2430957950515734681}
+  m_PrefabAsset: {fileID: 0}
 --- !u!82 &3643527670441418324 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 1381503911781824205, guid: 188d0479721b3334fb8c868ae8ca0d32, type: 3}
@@ -91,6 +96,7 @@ MonoBehaviour:
   _addSound: {fileID: 8896587857531639767}
   _fallSound: {fileID: 3750017298427917994}
   _collisionSound: {fileID: 3643527670441418324}
+  _destroySound: {fileID: 431022266165910478}
 --- !u!82 &8896587857531639767 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 6542455810262105934, guid: 188d0479721b3334fb8c868ae8ca0d32, type: 3}

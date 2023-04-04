@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3723881706368937540}
   - component: {fileID: 8243494761940519493}
   - component: {fileID: 4442286809814328751}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 1878618698251801400}
   - component: {fileID: 8336791620107981042}
   - component: {fileID: 7055698453930873354}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: Beam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -208,7 +208,7 @@ GameObject:
   - component: {fileID: 7197467835584049650}
   - component: {fileID: 3237672825755600021}
   - component: {fileID: 97606810910974936}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: Sphere (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

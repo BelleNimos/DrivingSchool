@@ -7,18 +7,17 @@ public class Spawner : MonoBehaviour
     [SerializeField] private List<Transform> _points;
     [SerializeField] private Scale _sliderCone;
     [SerializeField] private Cone _startConePrefab;
-    [SerializeField] private MoneyPoint _moneyPoint;
+    [SerializeField] private CashCounter _cashCounter;
 
     private Stack<Cone> _cones;
-    private WaitForSeconds _waitForSeconds;
     private Cone _conePrefab;
-    private int _countWaves;
-    private float _timer;
+    private int _countWaves = 5;
+    private float _timer = 0f;
 
     private const int ConesInWaveCount = 4;
-    private const float MinTime = 0.05f;
+    private const float DelayGiveAway = 0.05f;
 
-    public bool IsReady { get; private set; }
+    public bool IsReady { get; private set; } = false;
     public int IndexCone => _conePrefab.Index;
     public int CurrentConesCount => _cones.Count;
     public int CountWaves => _countWaves;
@@ -26,23 +25,6 @@ public class Spawner : MonoBehaviour
     private void Awake()
     {
         _cones = new Stack<Cone>();
-        _waitForSeconds = new WaitForSeconds(0.1f);
-    }
-
-    private void Start()
-    {
-        _timer = 0f;
-        IsReady = false;
-
-        if (PlayerPrefs.HasKey(KeysData.IndexCone) == true)
-            SpawnerPrefabs.SpawnerPrefabsInstance.GiveAwayPrefab(this);
-        else
-            _conePrefab = _startConePrefab;
-
-        if (PlayerPrefs.HasKey(KeysData.SpawnerCountWaves) == true)
-            _countWaves = PlayerPrefs.GetInt(KeysData.SpawnerCountWaves);
-        else
-            _countWaves = 5;
     }
 
     private void Update()
@@ -84,17 +66,28 @@ public class Spawner : MonoBehaviour
                 positionY = (positionY + i) * distanceCoefficient;
                 Vector3 position = new Vector3(positionX, positionY, positionZ);
                 cone = Instantiate(_conePrefab, position, Quaternion.Euler(0f, 20f, 0f));
-                cone.SetMoneyPoint(_moneyPoint);
+                cone.SetCashCounter(_cashCounter);
                 _cones.Push(cone);
 
-                yield return _waitForSeconds;
+                yield return new WaitForSeconds(0.1f);
             }
         }
     }
 
+    public void SetDefaultValues()
+    {
+        _conePrefab = _startConePrefab;
+    }
+
+    public void SetStartValues(int countWaves, int indexCone)
+    {
+        _countWaves = countWaves;
+        SpawnerPrefabs.SpawnerPrefabsInstance.GiveAwayPrefab(this, indexCone);
+    }
+
     public void GiveAwayCone(Bag bag)
     {
-        if (CurrentConesCount > 0 && _timer >= MinTime)
+        if (CurrentConesCount > 0 && _timer >= DelayGiveAway)
         {
             bag.AddCone(_cones.Pop());
             _timer = 0f;

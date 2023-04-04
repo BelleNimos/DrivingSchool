@@ -20,10 +20,10 @@ public class SpawnerPrefabs : MonoBehaviour
         }
     }
 
-    public void GiveAwayPrefab(Spawner spawner)
+    public void GiveAwayPrefab(Spawner spawner, int indexCone)
     {
         foreach (var cone in _conePrefabs)
-            if (cone.Index == PlayerPrefs.GetInt(KeysData.IndexCone))
+            if (cone.Index == indexCone)
                 spawner.ChangeConePrefab(cone);
     }
 }

@@ -10,7 +10,7 @@ public abstract class Cone : MonoBehaviour
     private Animator _animator;
     private Rigidbody _rigidbody;
     private MeshCollider _collider;
-    private MoneyPoint _moneyPoint;
+    private CashCounter _cashCounter;
     private float _waitingSeconds;
 
     private const string Fall = "Fall";
@@ -19,7 +19,7 @@ public abstract class Cone : MonoBehaviour
     private const int ConeLayer = 9;
     private const int ConeUsedLayer = 10;
 
-    public abstract int CountDollars { get; }
+    public abstract int CountDollarsSpawned { get; }
     public abstract int Index { get; }
     public bool IsCollision { get; private set; }
 
@@ -56,9 +56,9 @@ public abstract class Cone : MonoBehaviour
 
     private void TakeMoney()
     {
-        if (_moneyPoint.CurrentDollarsCount >= CountDollars)
-            _moneyPoint.SpendMoney(CountDollars);
-        
+        if (_cashCounter.CountDollars >= CountDollarsSpawned)
+            _cashCounter.SpendDollars(CountDollarsSpawned);
+
         Destroy(gameObject);
     }
 
@@ -81,11 +81,6 @@ public abstract class Cone : MonoBehaviour
         IsCollision = false;
     }
 
-    public void SetMoneyPoint(MoneyPoint moneyPoint)
-    {
-        _moneyPoint = moneyPoint;
-    }
-
     public void StartFallAnimation()
     {
         _animator.Play(Fall);
@@ -99,5 +94,10 @@ public abstract class Cone : MonoBehaviour
     public void PlayFallSound()
     {
         _fallSound.Play();
+    }
+
+    public void SetCashCounter(CashCounter cashCounter)
+    {
+        _cashCounter = cashCounter;
     }
 }

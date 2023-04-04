@@ -71,6 +71,11 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: 1381503911781824205, guid: 188d0479721b3334fb8c868ae8ca0d32, type: 3}
   m_PrefabInstance: {fileID: 1042369178963137472}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &3039945318362079383 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2614114286774825815, guid: 188d0479721b3334fb8c868ae8ca0d32, type: 3}
+  m_PrefabInstance: {fileID: 1042369178963137472}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5611195748461885602 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4875645719419644770, guid: 188d0479721b3334fb8c868ae8ca0d32, type: 3}
@@ -91,6 +96,7 @@ MonoBehaviour:
   _addSound: {fileID: 6105832004890471566}
   _fallSound: {fileID: 2000159551391960563}
   _collisionSound: {fileID: 2115332013009970445}
+  _destroySound: {fileID: 3039945318362079383}
 --- !u!82 &6105832004890471566 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 6542455810262105934, guid: 188d0479721b3334fb8c868ae8ca0d32, type: 3}

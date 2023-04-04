@@ -86,6 +86,7 @@ MonoBehaviour:
   _addSound: {fileID: 801640730724208088}
   _fallSound: {fileID: 4927576427138296997}
   _collisionSound: {fileID: 4825766871431152731}
+  _destroySound: {fileID: 8472313295304212929}
 --- !u!82 &4825766871431152731 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 1381503911781824205, guid: 188d0479721b3334fb8c868ae8ca0d32, type: 3}
@@ -94,5 +95,10 @@ AudioSource:
 --- !u!82 &4927576427138296997 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 1564653137581268531, guid: 188d0479721b3334fb8c868ae8ca0d32, type: 3}
+  m_PrefabInstance: {fileID: 5896486358696981142}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &8472313295304212929 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2614114286774825815, guid: 188d0479721b3334fb8c868ae8ca0d32, type: 3}
   m_PrefabInstance: {fileID: 5896486358696981142}
   m_PrefabAsset: {fileID: 0}
